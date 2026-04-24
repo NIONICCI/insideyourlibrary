@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inside Your Library — Ancient Philosophies. Modern Meaning.</title>
+<meta name="description" content="Inside Your Library is a suite of self-discovery and traditional healing apps drawing on ancient philosophical traditions — palmistry, dream interpretation, iridology, graphology, numerology, astrology and more. Already written. Already yours.">
+<meta name="keywords" content="palm reading, palmistry app, dream interpretation, iridology, graphology, numerology, astrology, self discovery, ancient philosophies, traditional healing, inside your library, NIO">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://insideyourlibrary.com/">
+<meta property="og:title" content="Inside Your Library — Ancient Philosophies. Modern Meaning.">
+<meta property="og:description" content="A suite of self-discovery and traditional healing apps. Your palms, dreams, eyes, handwriting, numbers and stars — already written. Already yours.">
+<meta property="og:url" content="https://insideyourlibrary.com/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Inside Your Library — Ancient Philosophies. Modern Meaning.">
+<meta name="twitter:description" content="Ancient philosophies. Modern meaning. Already written. Already yours."
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a18;
+    --deep: #0d0d22;
+    --surface: #12122a;
+    --card: #161630;
+    --gold: #c9a84c;
+    --gold-light: #e8c96a;
+    --silver: #a8b8d0;
+    --silver-light: #d0dce8;
+    --text: #e8e0d0;
+    --muted: #8890a8;
+    --teal: #4ab8a0;
+    --purple: #8b5cf6;
+    --star: rgba(201,168,76,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* STARFIELD */
+  .starfield {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle var(--d, 3s) ease-in-out infinite;
+    opacity: var(--o, 0.4);
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: var(--o, 0.4); transform: scale(1); }
+    50% { opacity: 0.1; transform: scale(0.5); }
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(10,10,24,0.95), transparent);
+    backdrop-filter: blur(8px);
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+  }
+  .nav-logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+  .nav-logo-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    line-height: 1.3;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--silver);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    z-index: 1;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 40%, rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+  }
+  .hero-logo {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 1s ease 0.2s forwards;
+    opacity: 0;
+    filter: drop-shadow(0 0 40px rgba(201,168,76,0.3));
+  }
+  .hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    margin-bottom: 1rem;
+    animation: fadeUp 1s ease 0.4s forwards;
+    opacity: 0;
+    line-height: 1.2;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--silver);
+    max-width: 560px;
+    margin-bottom: 3rem;
+    animation: fadeUp 1s ease 0.6s forwards;
+    opacity: 0;
+  }
+  .hero-divider {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 0 auto 3rem;
+    animation: fadeUp 1s ease 0.8s forwards;
+    opacity: 0;
+  }
+  .hero-tagline {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    color: var(--muted);
+    animation: fadeUp 1s ease 1s forwards;
+    opacity: 0;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTION */
+  section {
+    position: relative;
+    z-index: 1;
+  }
+  .section-header {
+    text-align: center;
+    padding: 5rem 2rem 3rem;
+  }
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+  .section-body {
+    font-size: 1.1rem;
+    color: var(--silver);
+    max-width: 620px;
+    margin: 0 auto;
+    font-style: italic;
+  }
+
+  /* LIBRARY GRID */
+  .library {
+    padding: 2rem 2rem 6rem;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .library-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  .book-card {
+    position: relative;
+    background: var(--card);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+  }
+  .book-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(201,168,76,0.35);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(201,168,76,0.08);
+  }
+  .book-card.coming-soon {
+    opacity: 0.65;
+  }
+  .book-card.coming-soon:hover {
+    opacity: 0.85;
+    transform: translateY(-4px);
+  }
+  .book-cover {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .book-card:hover .book-cover {
+    transform: scale(1.03);
+  }
+  .book-info {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+  .book-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  .book-subtitle {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 1.2rem;
+  }
+  .btn-launch {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink);
+    background: var(--gold);
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .btn-launch:hover {
+    background: var(--gold-light);
+    transform: scale(1.03);
+  }
+  .btn-coming {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    border: 1px solid rgba(168,184,208,0.25);
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+  }
+  .live-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(201,168,76,0.9);
+    color: var(--ink);
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ABOUT NIO */
+  .about {
+    padding: 6rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .about-divider {
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 0 auto 4rem;
+  }
+  .about h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 2rem;
+  }
+  .about p {
+    font-size: 1.1rem;
+    color: var(--silver);
+    margin-bottom: 1.5rem;
+    line-height: 1.9;
+  }
+  .about p em { color: var(--gold-light); font-style: italic; }
+  .nio-signature {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    margin-top: 2rem;
+    letter-spacing: 0.2em;
+  }
+  .nio-tagline {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    font-family: 'Cinzel', serif;
+    margin-top: 0.5rem;
+  }
+
+  /* PHILOSOPHY */
+  .philosophy {
+    padding: 5rem 2rem;
+    background: var(--surface);
+    border-top: 1px solid rgba(201,168,76,0.08);
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+  }
+  .philosophy-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 3rem;
+    text-align: center;
+  }
+  .pillar h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .pillar p {
+    font-size: 1rem;
+    color: var(--silver);
+    font-style: italic;
+    line-height: 1.8;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(201,168,76,0.08);
+    position: relative;
+    z-index: 1;
+  }
+  .footer-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy {
+    font-size: 0.8rem;
+    color: rgba(136,144,168,0.5);
+  }
+
+  /* SOCIAL */
+  .social-strip {
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .social-strip p {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .social-links a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--silver);
+    text-decoration: none;
+    border: 1px solid rgba(168,184,208,0.2);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    transition: all 0.3s;
+  }
+  .social-links a:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .stream-label {
+    text-align: center;
+    padding: 2rem 0 1.5rem;
+    position: relative;
+  }
+  .stream-label::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(201,168,76,0.3), transparent);
+  }
+  .stream-label .section-label {
+    background: var(--ink);
+    padding: 0 1.5rem;
+    position: relative;
+  }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .library-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- STARFIELD -->
+<div class="starfield" id="starfield"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="images/iyl-logo.png" alt="Inside Your Library">
+    <div class="nav-logo-text">INSIDE YOUR<br>LIBRARY</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#library">The Library</a></li>
+    <li><a href="#about">About NIO</a></li>
+    <li><a href="https://inyourhands.app" target="_blank">In Your Hands</a></li>
+    <li><a href="https://inyourdreams.app" target="_blank">In Your Dreams</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">INSIDE YOUR LIBRARY</div>
+  <img src="images/iyl-logo.png" alt="Inside Your Library" class="hero-logo">
+  <h1>Ancient Philosophies.<br><span>Modern Meaning.</span></h1>
+  <p class="hero-sub">A suite of self-discovery and traditional healing apps drawn from centuries of human knowledge — palmistry, dreams, eyes, handwriting, numbers, stars and beyond.</p>
+  <div class="hero-divider"></div>
+  <p class="hero-tagline">ALREADY WRITTEN &nbsp;✦&nbsp; ALREADY YOURS</p>
+</div>
+
+<!-- LIBRARY -->
+<section id="library">
+  <div class="section-header">
+    <span class="section-label">THE COLLECTION</span>
+    <h2 class="section-title">The Library</h2>
+    <p class="section-body">Every answer you have ever looked for has been written into you from the beginning. These are the books that help you read it.</p>
+  </div>
+
+  <div class="library">
+
+    <div class="stream-label">
+      <span class="section-label">SELF DISCOVERY</span>
+    </div>
+    <div class="library-grid">
+
+      <!-- IN YOUR HANDS — LIVE -->
+      <div class="book-card">
+        <span class="live-badge">LIVE</span>
+        <img src="images/inyourhands-cover.jpg" alt="In Your Hands — Palmistry" class="book-cover">
+        <div class="book-info">
+          <div class="book-title">In Your Hands</div>
+          <div class="book-subtitle">Palmistry &amp; Palm Reading</div>
+          <a href="https://inyourhands.app" target="_blank" class="btn-launch">Launch App →</a>
+        </div>
+      </div>
+
+      <!-- IN YOUR DREAMS — LIVE -->
+      <div class="book-card">
+        <span class="live-badge">LIVE</span>
+        <img src="images/inyourdreams-cover.jpg" alt="In Your Dreams — Dream Interpretation" class="book-cover">
+        <div class="book-info">
+          <div class="book-title">In Your Dreams</div>
+          <div class="book-subtitle">Dream Interpretation &amp; Dreamometer™</div>
+          <a href="https://inyourdreams.app" target="_blank" class="btn-launch">Launch App →</a>
+        </div>
+      </div>
+
+      <!-- IN YOUR FACE — COMING SOON -->
+      <div class="book-card coming-soon">
+        <img src="images/inyourface-cover.jpg" alt="In Your Face — Physiognomy" class="book-cover">
+        <div class="book-info">
+          <div class="book-title">In Your Face</div>
+          <div class="book-subtitle">Physiognomy &amp; Character</div>
+          <span class="btn-coming">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- IN YOUR HANDWRITING — COMING SOON -->
+      <div class="book-card coming-soon">
+        <img src="images/inyourhandwriting-cover.jpg" alt="In Your Handwriting — Graphology" class="book-cover">
+        <div class="book-info">
+          <div class="book-title">In Your Handwriting</div>
+          <div class="book-subtitle">Graphology &amp; Handwriting Analysis</div>
+          <span class="btn-coming">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- IN YOUR NUMBERS — COMING SOON -->
+      <div class="book-card coming-soon">
+        <img src="images/inyournumbers-cover.jpg" alt="In Your Numbers — Numerology" class="book-cover">
+        <div class="book-info">
+          <div class="book-title">In Your Numbers</div>
+          <div class="book-subtitle">Numerology &amp; the Science of Numbers</div>
+          <span class="btn-coming">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- IN YOUR STARS — COMING SOON -->
+      <div class="book-card coming-soon">
+        <img src="images/inyourstars-cover.jpg" alt="In Your Stars — Astrology" class="book-cover">
+        <div class="book-info">
+          <div class="book-title">In Your Stars</div>
+          <div class="book-subtitle">Astrology &amp; Your Celestial Blueprint</div>
+          <span class="btn-coming">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- IN YOUR TEA CUP — COMING SOON -->
+      <div class="book-card coming-soon">
+        <img src="images/inyourteacup-cover.jpg" alt="In Your Tea Cup — Tasseomancy" class="book-cover">
+        <div class="book-info">
+          <div class="book-title">In Your Tea Cup</div>
+          <div class="book-subtitle">Tasseomancy &amp; Tea Leaf Reading</div>
+          <span class="btn-coming">Coming Soon</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="stream-label" style="margin-top: 4rem;">
+      <span class="section-label">TRADITIONAL HEALING WISDOM</span>
+    </div>
+    <div class="library-grid">
+
+      <!-- IN YOUR EYES — COMING SOON -->
+      <div class="book-card coming-soon">
+        <img src="images/inyoureyes-cover.jpg" alt="In Your Eyes — Iridology" class="book-cover">
+        <div class="book-info">
+          <div class="book-title">In Your Eyes</div>
+          <div class="book-subtitle">Iridology &amp; Constitutional Analysis</div>
+          <span class="btn-coming">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- IN YOUR KITCHEN — COMING SOON -->
+      <div class="book-card coming-soon">
+        <div class="book-cover" style="background: linear-gradient(135deg, #1a2a1a, #0a1a0a); display:flex; align-items:center; justify-content:center; aspect-ratio:1;">
+          <span style="font-family:'Cinzel',serif; font-size:2rem; color:rgba(201,168,76,0.3);">✦</span>
+        </div>
+        <div class="book-info">
+          <div class="book-title">In Your Garden</div>
+          <div class="book-subtitle">Food as Medicine &amp; Folk Healing Traditions</div>
+          <span class="btn-coming">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- IN YOUR REMEDIES — COMING SOON -->
+      <div class="book-card coming-soon">
+        <div class="book-cover" style="background: linear-gradient(135deg, #1a1a2a, #0a0a1a); display:flex; align-items:center; justify-content:center; aspect-ratio:1;">
+          <span style="font-family:'Cinzel',serif; font-size:2rem; color:rgba(201,168,76,0.3);">✦</span>
+        </div>
+        <div class="book-info">
+          <div class="book-title">In Your Remedies</div>
+          <div class="book-subtitle">Homeopathy &amp; Traditional Medicine</div>
+          <span class="btn-coming">Coming Soon</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<div class="philosophy">
+  <div class="philosophy-inner">
+    <div class="pillar">
+      <h3>ANCIENT PHILOSOPHIES</h3>
+      <p>Three thousand years of human knowledge — palmistry, dream science, iridology, graphology, numerology, astrology, tasseomancy and traditional healing. Not invented. Inherited.</p>
+    </div>
+    <div class="pillar">
+      <h3>ALREADY WRITTEN</h3>
+      <p>The answers were never outside you. They were written into your hands, your eyes, your dreams, from the very beginning.</p>
+    </div>
+    <div class="pillar">
+      <h3>MODERN MEANING</h3>
+      <p>Not predictions. Not prescriptions. A mirror held up to what you already carry — interpreted with precision for the person you are today.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT NIO -->
+<section id="about">
+  <div class="about">
+    <div class="about-divider"></div>
+    <span class="section-label">THE CREATOR</span>
+    <h2>About NIO</h2>
+    <p>NIO is the creator behind the Inside Your Library suite — a collection of self-discovery apps built on the belief that the most important things about a person are <em>already written</em> into them, waiting to be read.</p>
+    <p>Each app in the library draws on a different ancient tradition — palmistry, dream science, iridology, graphology, numerology, astrology — and makes it accessible, personal and precise for the modern reader.</p>
+    <p>The library is always growing. There are more books to come.</p>
+    <div class="nio-signature">NIO</div>
+    <div class="nio-tagline">SEE WHAT OTHERS MISS</div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<div class="social-strip">
+  <p>FOLLOW THE LIBRARY</p>
+  <div class="social-links">
+    <a href="https://www.instagram.com/inyourhands_palmreading" target="_blank">Instagram — IYH</a>
+    <a href="https://www.instagram.com/inyourdreams_meaning" target="_blank">Instagram — IYD</a>
+    <a href="https://www.instagram.com/insideyourlibrary" target="_blank">Instagram — IYL</a>
+    <a href="https://www.tiktok.com/@insideyourlibrary" target="_blank">TikTok — IYL</a>
+    <a href="https://www.tiktok.com/@inyourhands_palmreading" target="_blank">TikTok — IYH</a>
+    <a href="https://www.tiktok.com/@inyourdreams_meaning" target="_blank">TikTok — IYD</a>
+    <a href="https://www.pinterest.com/insideyourlibrary" target="_blank">Pinterest</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">INSIDE YOUR LIBRARY</div>
+  <div class="footer-links">
+    <a href="https://inyourhands.app" target="_blank">inyourhands.app</a>
+    <a href="https://inyourdreams.app" target="_blank">inyourdreams.app</a>
+    <a href="#library">The Library</a>
+    <a href="#about">About NIO</a>
+  </div>
+  <p class="footer-copy">© 2026 Inside Your Library. All rights reserved.</p>
+</footer>
+
+<script>
+  // Generate starfield
+  const sf = document.getElementById('starfield');
+  for (let i = 0; i < 180; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    s.style.cssText = `
+      left: ${Math.random()*100}%;
+      top: ${Math.random()*100}%;
+      --d: ${2+Math.random()*4}s;
+      --o: ${0.2+Math.random()*0.6};
+      width: ${Math.random() > 0.85 ? 3 : 2}px;
+      height: ${Math.random() > 0.85 ? 3 : 2}px;
+      animation-delay: ${Math.random()*4}s;
+    `;
+    sf.appendChild(s);
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.book-card, .pillar, .about p').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
