@@ -59,7 +59,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to bottom, rgba(26,15,8,0.95), transparent);
   }
   .nav-logo {
     display: flex;
@@ -186,7 +185,7 @@
   }
   .section-label {
     font-family: 'Cinzel', serif;
-    font-size: 0.65rem;
+    font-size: 0.85rem;
     letter-spacing: 0.4em;
     color: var(--gold);
     margin-bottom: 1rem;
@@ -319,6 +318,12 @@
     height: 1px;
     background: linear-gradient(to right, transparent, var(--gold), transparent);
     margin: 0 auto 4rem;
+  }
+  .collection-divider {
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 0.8rem auto 0;
   }
   .about h2 {
     font-family: 'Cinzel', serif;
@@ -527,9 +532,10 @@
 <!-- LIBRARY -->
 <section id="library">
   <div class="section-header">
-    <span class="section-label">THE COLLECTION</span>
     <h2 class="section-title">The Library</h2>
     <p class="section-body">Every answer you have ever looked for has been written into you from the beginning. These are the books that help you read it.</p>
+    <span class="section-label" style="margin-top: 2rem; margin-bottom: 0;">THE COLLECTION</span>
+    <div class="collection-divider"></div>
   </div>
 
   <div class="library">
