@@ -20,19 +20,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a0f08;
-    --deep: #221610;
-    --surface: #2a1c12;
-    --card: #2e1f14;
-    --gold: #c9a84c;
-    --gold-light: #e8c96a;
+    --ink: #241712;
+    --deep: #2c1d17;
+    --surface: #34241c;
+    --card: #382820;
+    --gold: #d4b876;
+    --gold-light: #e6cf95;
     --silver: #a8b8d0;
     --silver-light: #d0dce8;
-    --text: #e8e0d0;
-    --muted: #8890a8;
-    --teal: #4ab8a0;
+    --text: #ebe4d6;
+    --muted: #9a93a8;
+    --teal: #7eb5a8;
+    --teal-soft: #a4cdc2;
+    --blush: #c9a4a0;
+    --blush-soft: #d8b8b3;
     --purple: #8b5cf6;
-    --star: rgba(201,168,76,0.15);
+    --star: rgba(212,184,118,0.15);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -70,7 +73,7 @@
     width: 48px;
     height: 48px;
     object-fit: contain;
-    filter: drop-shadow(0 0 12px rgba(201,168,76,0.25));
+    filter: drop-shadow(0 0 12px rgba(212,184,118,0.25));
   }
   .nav-logo-text {
     font-family: 'Cinzel', serif;
@@ -110,7 +113,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 50% 40%, rgba(201,168,76,0.06) 0%, transparent 70%);
+    background: radial-gradient(ellipse at 50% 40%, rgba(212,184,118,0.06) 0%, transparent 70%);
     pointer-events: none;
   }
   .hero-eyebrow {
@@ -129,7 +132,7 @@
     margin-bottom: 2.5rem;
     animation: fadeUp 1s ease 0.2s forwards;
     opacity: 0;
-    filter: drop-shadow(0 0 60px rgba(201,168,76,0.45)) drop-shadow(0 0 25px rgba(255,200,120,0.25));
+    filter: drop-shadow(0 0 60px rgba(212,184,118,0.45)) drop-shadow(0 0 25px rgba(255,200,120,0.25));
   }
   .hero h1 {
     font-family: 'Cinzel', serif;
@@ -146,7 +149,7 @@
   .hero-sub {
     font-size: 1.2rem;
     font-style: italic;
-    color: var(--silver);
+    color: var(--teal-soft);
     max-width: 560px;
     margin-bottom: 3rem;
     animation: fadeUp 1s ease 0.6s forwards;
@@ -219,7 +222,7 @@
   .book-card {
     position: relative;
     background: var(--card);
-    border: 1px solid rgba(201,168,76,0.12);
+    border: 1px solid rgba(212,184,118,0.12);
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
@@ -227,8 +230,8 @@
   }
   .book-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(201,168,76,0.35);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(201,168,76,0.08);
+    border-color: rgba(212,184,118,0.35);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(212,184,118,0.08);
   }
   .book-card.coming-soon {
     opacity: 0.65;
@@ -249,7 +252,7 @@
   }
   .book-info {
     padding: 1.5rem;
-    border-top: 1px solid rgba(201,168,76,0.1);
+    border-top: 1px solid rgba(212,184,118,0.1);
   }
   .book-title {
     font-family: 'Cinzel', serif;
@@ -365,8 +368,8 @@
   .philosophy {
     padding: 5rem 2rem;
     background: var(--surface);
-    border-top: 1px solid rgba(201,168,76,0.08);
-    border-bottom: 1px solid rgba(201,168,76,0.08);
+    border-top: 1px solid rgba(212,184,118,0.08);
+    border-bottom: 1px solid rgba(212,184,118,0.08);
   }
   .philosophy-inner {
     max-width: 900px;
@@ -394,7 +397,7 @@
   footer {
     padding: 3rem 2rem;
     text-align: center;
-    border-top: 1px solid rgba(201,168,76,0.08);
+    border-top: 1px solid rgba(212,184,118,0.08);
     position: relative;
     z-index: 1;
   }
@@ -442,7 +445,7 @@
   }
   .copy-email-btn {
     background: transparent;
-    border: 1px solid rgba(201,168,76,0.3);
+    border: 1px solid rgba(212,184,118,0.3);
     color: var(--gold);
     font-family: 'Cinzel', serif;
     font-size: 0.65rem;
@@ -456,11 +459,11 @@
     vertical-align: middle;
   }
   .copy-email-btn:hover {
-    background: rgba(201,168,76,0.1);
+    background: rgba(212,184,118,0.1);
     border-color: var(--gold);
   }
   .copy-email-btn.copied {
-    background: rgba(201,168,76,0.15);
+    background: rgba(212,184,118,0.15);
     color: var(--gold-light);
     border-color: var(--gold-light);
   }
@@ -514,7 +517,7 @@
     transform: translateX(-50%);
     width: 200px;
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(201,168,76,0.3), transparent);
+    background: linear-gradient(to right, transparent, rgba(212,184,118,0.3), transparent);
   }
   .stream-label .section-label {
     background: var(--ink);
@@ -670,7 +673,7 @@
       <!-- IN YOUR REMEDIES — COMING SOON -->
       <div class="book-card coming-soon">
         <div class="book-cover" style="background: linear-gradient(135deg, #3a2820, #2a1814); display:flex; align-items:center; justify-content:center; aspect-ratio:1;">
-          <span style="font-family:'Cinzel',serif; font-size:2rem; color:rgba(201,168,76,0.3);">✦</span>
+          <span style="font-family:'Cinzel',serif; font-size:2rem; color:rgba(212,184,118,0.3);">✦</span>
         </div>
         <div class="book-info">
           <div class="book-title">In Your Remedies</div>
@@ -689,7 +692,7 @@
       <!-- LITTLE LIBRARY — COMING SOON -->
       <div class="book-card coming-soon">
         <div class="book-cover" style="background: linear-gradient(135deg, #3a2820, #2a1814); display:flex; align-items:center; justify-content:center; aspect-ratio:1;">
-          <span style="font-family:'Cinzel',serif; font-size:2rem; color:rgba(201,168,76,0.3);">✦</span>
+          <span style="font-family:'Cinzel',serif; font-size:2rem; color:rgba(212,184,118,0.3);">✦</span>
         </div>
         <div class="book-info">
           <div class="book-title">Little Library</div>
@@ -701,7 +704,7 @@
       <!-- IN YOUR FAITH — COMING SOON -->
       <div class="book-card coming-soon">
         <div class="book-cover" style="background: linear-gradient(135deg, #3a2820, #2a1814); display:flex; align-items:center; justify-content:center; aspect-ratio:1;">
-          <span style="font-family:'Cinzel',serif; font-size:2rem; color:rgba(201,168,76,0.3);">✦</span>
+          <span style="font-family:'Cinzel',serif; font-size:2rem; color:rgba(212,184,118,0.3);">✦</span>
         </div>
         <div class="book-info">
           <div class="book-title">In Your Faith</div>
