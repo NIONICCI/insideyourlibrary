@@ -20,10 +20,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0a0a18;
-    --deep: #0d0d22;
-    --surface: #12122a;
-    --card: #161630;
+    --ink: #1a0f08;
+    --deep: #221610;
+    --surface: #2a1c12;
+    --card: #2e1f14;
     --gold: #c9a84c;
     --gold-light: #e8c96a;
     --silver: #a8b8d0;
@@ -48,28 +48,6 @@
     overflow-x: hidden;
   }
 
-  /* STARFIELD */
-  .starfield {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
-  }
-  .star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    border-radius: 50%;
-    animation: twinkle var(--d, 3s) ease-in-out infinite;
-    opacity: var(--o, 0.4);
-  }
-  @keyframes twinkle {
-    0%, 100% { opacity: var(--o, 0.4); transform: scale(1); }
-    50% { opacity: 0.1; transform: scale(0.5); }
-  }
-
   /* NAV */
   nav {
     position: fixed;
@@ -81,7 +59,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to bottom, rgba(10,10,24,0.95), transparent);
+    background: linear-gradient(to bottom, rgba(26,15,8,0.95), transparent);
     backdrop-filter: blur(8px);
   }
   .nav-logo {
@@ -516,10 +494,6 @@
 </head>
 <body>
 
-<!-- STARFIELD -->
-<div class="starfield" id="starfield"></div>
-
-<!-- SUITE BANNER -->
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
@@ -660,7 +634,7 @@
 
       <!-- IN YOUR REMEDIES — COMING SOON -->
       <div class="book-card coming-soon">
-        <div class="book-cover" style="background: linear-gradient(135deg, #1a1a2a, #0a0a1a); display:flex; align-items:center; justify-content:center; aspect-ratio:1;">
+        <div class="book-cover" style="background: linear-gradient(135deg, #2a1c12, #1a0f08); display:flex; align-items:center; justify-content:center; aspect-ratio:1;">
           <span style="font-family:'Cinzel',serif; font-size:2rem; color:rgba(201,168,76,0.3);">✦</span>
         </div>
         <div class="book-info">
@@ -679,7 +653,7 @@
 
       <!-- LITTLE LIBRARY — COMING SOON -->
       <div class="book-card coming-soon">
-        <div class="book-cover" style="background: linear-gradient(135deg, #1a1a2a, #0a0a1a); display:flex; align-items:center; justify-content:center; aspect-ratio:1;">
+        <div class="book-cover" style="background: linear-gradient(135deg, #2a1c12, #1a0f08); display:flex; align-items:center; justify-content:center; aspect-ratio:1;">
           <span style="font-family:'Cinzel',serif; font-size:2rem; color:rgba(201,168,76,0.3);">✦</span>
         </div>
         <div class="book-info">
@@ -691,7 +665,7 @@
 
       <!-- IN YOUR FAITH — COMING SOON -->
       <div class="book-card coming-soon">
-        <div class="book-cover" style="background: linear-gradient(135deg, #1a1a2a, #0a0a1a); display:flex; align-items:center; justify-content:center; aspect-ratio:1;">
+        <div class="book-cover" style="background: linear-gradient(135deg, #2a1c12, #1a0f08); display:flex; align-items:center; justify-content:center; aspect-ratio:1;">
           <span style="font-family:'Cinzel',serif; font-size:2rem; color:rgba(201,168,76,0.3);">✦</span>
         </div>
         <div class="book-info">
@@ -761,28 +735,11 @@
     <a href="#library">The Library</a>
     <a href="#about">About Louise</a>
   </div>
-  <p class="footer-contact">Contact the Library — <a href="mailto:nio@insideyourlibrary.com">nio@insideyourlibrary.com</a></p>
+  <p class="footer-contact">Contact the Library — <a href="mailto:hello@insideyourlibrary.com">hello@insideyourlibrary.com</a></p>
   <p class="footer-copy">© 2026 Inside Your Library. All rights reserved.</p>
 </footer>
 
 <script>
-  // Generate starfield
-  const sf = document.getElementById('starfield');
-  for (let i = 0; i < 180; i++) {
-    const s = document.createElement('div');
-    s.className = 'star';
-    s.style.cssText = `
-      left: ${Math.random()*100}%;
-      top: ${Math.random()*100}%;
-      --d: ${2+Math.random()*4}s;
-      --o: ${0.2+Math.random()*0.6};
-      width: ${Math.random() > 0.85 ? 3 : 2}px;
-      height: ${Math.random() > 0.85 ? 3 : 2}px;
-      animation-delay: ${Math.random()*4}s;
-    `;
-    sf.appendChild(s);
-  }
-
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
