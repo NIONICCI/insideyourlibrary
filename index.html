@@ -441,6 +441,30 @@
   .footer-contact a:hover {
     color: var(--gold-light);
   }
+  .copy-email-btn {
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    padding: 0.3rem 0.7rem;
+    margin-left: 0.6rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-style: normal;
+    vertical-align: middle;
+  }
+  .copy-email-btn:hover {
+    background: rgba(201,168,76,0.1);
+    border-color: var(--gold);
+  }
+  .copy-email-btn.copied {
+    background: rgba(201,168,76,0.15);
+    color: var(--gold-light);
+    border-color: var(--gold-light);
+  }
 
   /* SOCIAL */
   .social-strip {
@@ -748,11 +772,27 @@
     <a href="#library">The Library</a>
     <a href="#about">About Louise</a>
   </div>
-  <p class="footer-contact">Contact the Library — <a href="mailto:hello@insideyourlibrary.com">hello@insideyourlibrary.com</a></p>
+  <p class="footer-contact">Contact the Library — <a href="mailto:hello@insideyourlibrary.com">hello@insideyourlibrary.com</a><button class="copy-email-btn" onclick="copyEmail(this)" aria-label="Copy email address">COPY</button></p>
   <p class="footer-copy">© 2026 Inside Your Library. All rights reserved.</p>
 </footer>
 
 <script>
+  // Copy email to clipboard
+  function copyEmail(btn) {
+    navigator.clipboard.writeText('hello@insideyourlibrary.com').then(() => {
+      const original = btn.textContent;
+      btn.textContent = 'COPIED';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove('copied');
+      }, 2000);
+    }).catch(() => {
+      btn.textContent = 'ERROR';
+      setTimeout(() => { btn.textContent = 'COPY'; }, 2000);
+    });
+  }
+
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
