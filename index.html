@@ -438,33 +438,57 @@
   /* ---------- LOUISE BAND ---------- */
   .louise {
     position: relative;
-    padding: 7rem 3rem;
+    padding: 0;
     background: var(--cream);
     overflow: hidden;
+    min-height: 640px;
+    display: flex;
+    align-items: stretch;
+  }
+  .louise-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url('louise-band.jpg');
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+  /* Cream fade pulls focus to the right side where text sits */
+  .louise-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        to right,
+        rgba(246, 241, 230, 0.0) 0%,
+        rgba(246, 241, 230, 0.0) 35%,
+        rgba(246, 241, 230, 0.55) 50%,
+        rgba(246, 241, 230, 0.92) 65%,
+        var(--cream) 78%
+      );
+    pointer-events: none;
   }
   .louise-inner {
-    max-width: 1180px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 5rem;
-    align-items: center;
-  }
-  .louise-portrait {
     position: relative;
-    align-self: end;
-  }
-  .louise-portrait img {
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
     width: 100%;
-    max-width: 380px;
-    height: auto;
-    display: block;
-    filter: drop-shadow(0 30px 50px rgba(45, 36, 25, 0.18));
+    padding: 7rem 3rem;
+    display: flex;
+    justify-content: flex-end;
   }
   .louise-text {
     position: relative;
+    max-width: 480px;
+    text-align: left;
   }
-  .louise-text .label { display: block; margin-bottom: 1.4rem; }
+  .louise-text .label {
+    display: block;
+    margin-bottom: 1.4rem;
+  }
   .louise-headline {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 400;
@@ -480,7 +504,6 @@
     color: var(--ink-soft);
     line-height: 1.7;
     margin-bottom: 1.4rem;
-    max-width: 540px;
   }
   .louise-signoff {
     margin-top: 2.4rem;
@@ -755,10 +778,24 @@
         rgba(246, 241, 230, 0.0) 75%
       );
     }
-    .louise-inner { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
-    .louise-portrait img { margin: 0 auto; max-width: 320px; }
-    .louise-body { margin-inline: auto; }
+    .louise { min-height: auto; }
+    .louise-inner { padding: 5rem 2rem; justify-content: center; }
+    .louise-text { text-align: center; max-width: 540px; }
     .louise-signoff { align-items: center; }
+    .louise-bg::after {
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(246, 241, 230, 0.0) 0%,
+          rgba(246, 241, 230, 0.55) 45%,
+          rgba(246, 241, 230, 0.95) 65%,
+          var(--cream) 100%
+        );
+    }
+    .louise-bg {
+      background-position: center top;
+      background-size: cover;
+    }
     .values-inner { grid-template-columns: 1fr; gap: 2rem; }
     .value { justify-content: center; max-width: 460px; margin: 0 auto; }
   }
@@ -1001,10 +1038,8 @@
 <!-- LOUISE                                         -->
 <!-- ============================================== -->
 <section id="louise" class="louise">
+  <div class="louise-bg" aria-hidden="true"></div>
   <div class="louise-inner">
-    <div class="louise-portrait reveal">
-      <img src="louise-portrait.png" alt="Louise, head librarian of Inside Your Library">
-    </div>
     <div class="louise-text reveal">
       <span class="label">The Head Librarian</span>
       <h3 class="louise-headline">The light is on.</h3>
