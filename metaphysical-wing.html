@@ -24,20 +24,20 @@
     --cream-warm:      #efe7d4;
     --ink:             #2d2419;
 
-    /* Dark wing palette — brightened gold for better legibility */
-    --night:           #0d0a06;
-    --night-soft:      #14100a;
-    --night-mid:       #1c1710;
-    --night-warm:      #221a10;
-    --gold:            #d4a957;
-    --gold-bright:     #e6c279;
+    /* Dark wing palette — warmer night, brighter gold, more legible parchment */
+    --night:           #1a1408;
+    --night-soft:      #221a0e;
+    --night-mid:       #2a2014;
+    --night-warm:      #2e2415;
+    --gold:            #e0b766;
+    --gold-bright:     #f0d089;
     --gold-soft:       #c2a266;
-    --gold-glow:       rgba(230, 194, 121, 0.22);
-    --parchment:       #ebe0c4;
-    --parchment-soft:  rgba(235, 224, 196, 0.78);
-    --parchment-mute:  rgba(235, 224, 196, 0.55);
-    --rule:            rgba(212, 169, 87, 0.28);
-    --rule-soft:       rgba(212, 169, 87, 0.12);
+    --gold-glow:       rgba(240, 208, 137, 0.28);
+    --parchment:       #f4ecd4;
+    --parchment-soft:  rgba(244, 236, 212, 0.92);
+    --parchment-mute:  rgba(244, 236, 212, 0.68);
+    --rule:            rgba(224, 183, 102, 0.32);
+    --rule-soft:       rgba(224, 183, 102, 0.16);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -136,13 +136,24 @@
     /* Painted celestial backdrop on the right — soft gold star glow */
     content: '';
     position: absolute;
-    top: 8rem;
-    right: -4rem;
-    width: 700px;
-    height: 600px;
+    top: 6rem;
+    right: -6rem;
+    width: 820px;
+    height: 720px;
     background:
-      radial-gradient(circle at 30% 40%, rgba(230, 194, 121, 0.12) 0%, transparent 50%),
-      radial-gradient(circle at 70% 60%, rgba(212, 169, 87, 0.08) 0%, transparent 55%);
+      radial-gradient(circle at 30% 40%, rgba(240, 208, 137, 0.18) 0%, transparent 50%),
+      radial-gradient(circle at 70% 60%, rgba(224, 183, 102, 0.12) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .wing-hero::after {
+    /* Subtle warm wash behind headline */
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: -10rem;
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle at center, rgba(224, 183, 102, 0.08) 0%, transparent 60%);
     pointer-events: none;
   }
   .wing-hero-inner {
@@ -209,6 +220,10 @@
     position: relative;
     padding: 3rem 3rem 6rem;
     background: var(--night);
+    background-image:
+      radial-gradient(ellipse at 20% 30%, rgba(224, 183, 102, 0.10) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 70%, rgba(224, 183, 102, 0.08) 0%, transparent 55%),
+      radial-gradient(ellipse at 50% 100%, rgba(224, 183, 102, 0.06) 0%, transparent 60%);
   }
   .tiles-header {
     text-align: center;
@@ -228,7 +243,7 @@
     color: var(--gold);
     font-size: 0.7rem;
     letter-spacing: 0.8em;
-    opacity: 0.7;
+    opacity: 0.8;
   }
 
   .tiles-grid {
@@ -237,33 +252,59 @@
     gap: 1.4rem;
     max-width: 1280px;
     margin: 0 auto;
+    position: relative;
   }
 
   .tile-card {
     position: relative;
     display: block;
     aspect-ratio: 1 / 1;
-    overflow: hidden;
+    overflow: visible;
     border-radius: 4px;
     cursor: pointer;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transition: transform 0.5s ease;
+  }
+  /* Brass glow halo behind each tile */
+  .tile-card::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    z-index: -1;
+    border-radius: 8px;
+    background: radial-gradient(ellipse at center, rgba(224, 183, 102, 0.18) 0%, rgba(224, 183, 102, 0.06) 50%, transparent 75%);
+    opacity: 0.6;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+  .tile-card:hover::after { opacity: 1; }
+  .tile-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 4px;
     box-shadow:
-      0 8px 24px rgba(0, 0, 0, 0.4),
-      0 2px 6px rgba(0, 0, 0, 0.3);
+      0 10px 30px rgba(0, 0, 0, 0.5),
+      0 2px 8px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(224, 183, 102, 0.18);
+    transition: box-shadow 0.5s ease;
   }
   .tile-card:hover {
     transform: translateY(-6px);
+  }
+  .tile-card:hover .tile-card-inner {
     box-shadow:
-      0 18px 40px rgba(0, 0, 0, 0.5),
-      0 4px 12px rgba(230, 194, 121, 0.15);
+      0 20px 50px rgba(0, 0, 0, 0.55),
+      0 4px 14px rgba(0, 0, 0, 0.35),
+      0 0 0 1px rgba(240, 208, 137, 0.35),
+      0 0 24px rgba(224, 183, 102, 0.18);
   }
   .tile-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.9s ease, filter 0.5s ease;
-    /* Slight brightness lift on tiles so they don't feel too dark on screen */
-    filter: brightness(1.06);
+    filter: brightness(1.08);
   }
   .tile-card:hover img { transform: scale(1.04); }
 
@@ -697,38 +738,50 @@
 
     <!-- IN YOUR NUMBERS — OPENING SOON -->
     <div class="tile-card is-locked reveal" aria-label="In Your Numbers — opening soon">
-      <span class="tile-soon">Opening Soon</span>
-      <img src="tile-numbers.jpg" alt="In Your Numbers — Numerology for self-awareness, life purpose and the numbers that shape your path." loading="lazy" decoding="async">
+      <div class="tile-card-inner">
+        <span class="tile-soon">Opening Soon</span>
+        <img src="tile-numbers.jpg" alt="In Your Numbers — Numerology for self-awareness, life purpose and the numbers that shape your path." loading="lazy" decoding="async">
+      </div>
     </div>
 
     <!-- IN YOUR STARS — OPENING SOON -->
     <div class="tile-card is-locked reveal" aria-label="In Your Stars — opening soon">
-      <span class="tile-soon">Opening Soon</span>
-      <img src="tile-stars.jpg" alt="In Your Stars — Astrology for self-discovery, alignment and a life written in the stars." loading="lazy" decoding="async">
+      <div class="tile-card-inner">
+        <span class="tile-soon">Opening Soon</span>
+        <img src="tile-stars.jpg" alt="In Your Stars — Astrology for self-discovery, alignment and a life written in the stars." loading="lazy" decoding="async">
+      </div>
     </div>
 
     <!-- IN YOUR PALMS — OPENING SOON -->
     <div class="tile-card is-locked reveal" aria-label="In Your Palms — opening soon">
-      <span class="tile-soon">Opening Soon</span>
-      <img src="tile-palms.jpg" alt="In Your Palms — Palmistry for self-discovery, intuition and a life written in your hands." loading="lazy" decoding="async">
+      <div class="tile-card-inner">
+        <span class="tile-soon">Opening Soon</span>
+        <img src="tile-palms.jpg" alt="In Your Palms — Palmistry for self-discovery, intuition and a life written in your hands." loading="lazy" decoding="async">
+      </div>
     </div>
 
     <!-- IN YOUR HANDWRITING — LIVE -->
     <a href="https://inyourhands.app" target="_blank" rel="noopener" class="tile-card is-live reveal" aria-label="Enter In Your Handwriting">
-      <span class="tile-enter-cue">Enter →</span>
-      <img src="tile-handwriting.jpg" alt="In Your Handwriting — What your handwriting reveals through graphology." loading="lazy" decoding="async">
+      <div class="tile-card-inner">
+        <span class="tile-enter-cue">Enter →</span>
+        <img src="tile-handwriting.jpg" alt="In Your Handwriting — What your handwriting reveals through graphology." loading="lazy" decoding="async">
+      </div>
     </a>
 
     <!-- IN YOUR DREAMS — LIVE -->
     <a href="https://inyourdreams.app" target="_blank" rel="noopener" class="tile-card is-live reveal" aria-label="Enter In Your Dreams">
-      <span class="tile-enter-cue">Enter →</span>
-      <img src="tile-dreams.jpg" alt="In Your Dreams — Dream Interpretation for self-discovery, guidance and a deeper understanding of your inner world." loading="lazy" decoding="async">
+      <div class="tile-card-inner">
+        <span class="tile-enter-cue">Enter →</span>
+        <img src="tile-dreams.jpg" alt="In Your Dreams — Dream Interpretation for self-discovery, guidance and a deeper understanding of your inner world." loading="lazy" decoding="async">
+      </div>
     </a>
 
     <!-- IN YOUR CUP — OPENING SOON -->
     <div class="tile-card is-locked reveal" aria-label="In Your Cup — opening soon">
-      <span class="tile-soon">Opening Soon</span>
-      <img src="tile-cup.jpg" alt="In Your Cup — Tasseography for self-discovery, intuition and a life revealed in the leaves." loading="lazy" decoding="async">
+      <div class="tile-card-inner">
+        <span class="tile-soon">Opening Soon</span>
+        <img src="tile-cup.jpg" alt="In Your Cup — Tasseography for self-discovery, intuition and a life revealed in the leaves." loading="lazy" decoding="async">
+      </div>
     </div>
 
   </div>
