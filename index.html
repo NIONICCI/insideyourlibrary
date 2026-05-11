@@ -441,7 +441,7 @@
     padding: 0;
     background: var(--cream);
     overflow: hidden;
-    min-height: 580px;
+    min-height: 480px;
     display: flex;
     align-items: stretch;
   }
@@ -450,14 +450,15 @@
     top: 0;
     bottom: 0;
     left: 0;
-    width: 55%;
+    width: 100%;
+    max-width: 280px;
     z-index: 0;
     background-image: url('louise-band.jpg');
     background-size: contain;
     background-position: left bottom;
     background-repeat: no-repeat;
   }
-  /* Cream fade pulls focus to the right side where text sits */
+  /* Cream fade on the right edge of the painting itself */
   .louise-bg::after {
     content: '';
     position: absolute;
@@ -466,9 +467,9 @@
       linear-gradient(
         to right,
         rgba(246, 241, 230, 0.0) 0%,
-        rgba(246, 241, 230, 0.0) 50%,
-        rgba(246, 241, 230, 0.4) 70%,
-        rgba(246, 241, 230, 0.95) 90%,
+        rgba(246, 241, 230, 0.0) 35%,
+        rgba(246, 241, 230, 0.6) 65%,
+        rgba(246, 241, 230, 0.95) 85%,
         var(--cream) 100%
       );
     pointer-events: none;
@@ -476,16 +477,17 @@
   .louise-inner {
     position: relative;
     z-index: 1;
-    max-width: 1400px;
+    max-width: 1280px;
     margin: 0 auto;
     width: 100%;
-    padding: 6rem 3rem;
+    padding: 5rem 3rem 5rem 320px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    align-items: center;
   }
   .louise-text {
     position: relative;
-    max-width: 480px;
+    max-width: 580px;
     text-align: left;
   }
   .louise-text .label {
