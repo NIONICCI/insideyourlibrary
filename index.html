@@ -458,18 +458,20 @@
     background-position: left bottom;
     background-repeat: no-repeat;
   }
-  /* Cream fade on the right edge of the painting itself */
-  .louise-bg::after {
-    content: '';
+  /* Cream fade — sits outside the painting, only kicks in past her right edge */
+  .louise-fade {
     position: absolute;
-    inset: 0;
+    top: 0;
+    bottom: 0;
+    left: 220px;
+    width: 240px;
+    z-index: 1;
     background:
       linear-gradient(
         to right,
         rgba(246, 241, 230, 0.0) 0%,
-        rgba(246, 241, 230, 0.0) 55%,
-        rgba(246, 241, 230, 0.75) 78%,
-        rgba(246, 241, 230, 0.98) 92%,
+        rgba(246, 241, 230, 0.5) 40%,
+        rgba(246, 241, 230, 0.9) 70%,
         var(--cream) 100%
       );
     pointer-events: none;
@@ -1051,6 +1053,7 @@
 <!-- ============================================== -->
 <section id="louise" class="louise">
   <div class="louise-bg" aria-hidden="true"></div>
+  <div class="louise-fade" aria-hidden="true"></div>
   <div class="louise-inner">
     <div class="louise-text reveal">
       <span class="label">The Head Librarian</span>
