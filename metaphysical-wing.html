@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Metaphysical Wing — Inside Your Library</title>
+<meta name="description" content="Step beyond the ordinary and into the realm of symbols, spirit and the subtle threads that connect us all. Numerology, astrology, palmistry, handwriting, dream interpretation, and tasseography.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://insideyourlibrary.com/metaphysical-wing.html">
+
+<meta property="og:title" content="The Metaphysical Wing — Inside Your Library">
+<meta property="og:description" content="Explore the mysteries of the unseen. Numerology, astrology, palmistry, handwriting, dream interpretation, and tasseography.">
+<meta property="og:url" content="https://insideyourlibrary.com/metaphysical-wing.html">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    /* Light palette (kept for cross-page consistency in nav) */
+    --cream:           #f6f1e6;
+    --cream-warm:      #efe7d4;
+    --ink:             #2d2419;
+
+    /* Dark wing palette — brightened gold for better legibility */
+    --night:           #0d0a06;
+    --night-soft:      #14100a;
+    --night-mid:       #1c1710;
+    --night-warm:      #221a10;
+    --gold:            #d4a957;
+    --gold-bright:     #e6c279;
+    --gold-soft:       #c2a266;
+    --gold-glow:       rgba(230, 194, 121, 0.22);
+    --parchment:       #ebe0c4;
+    --parchment-soft:  rgba(235, 224, 196, 0.78);
+    --parchment-mute:  rgba(235, 224, 196, 0.55);
+    --rule:            rgba(212, 169, 87, 0.28);
+    --rule-soft:       rgba(212, 169, 87, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--night);
+    color: var(--parchment);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding: 1.4rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(13, 10, 6, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+  .nav-logo img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    filter: brightness(1.1);
+  }
+  .nav-logo-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.28em;
+    color: var(--parchment);
+    font-weight: 500;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.6rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.24em;
+    color: var(--parchment-soft);
+    transition: color 0.3s, border-color 0.3s;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+  }
+  .nav-links a:hover,
+  .nav-links a.active { color: var(--gold-bright); border-color: var(--gold-bright); }
+
+  .nav-cta {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    color: var(--parchment);
+    padding: 0.7rem 1.6rem;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    transition: all 0.3s;
+    background: transparent;
+  }
+  .nav-cta:hover {
+    background: var(--gold);
+    color: var(--night);
+    border-color: var(--gold-bright);
+  }
+
+  /* ---------- HERO ---------- */
+  .wing-hero {
+    position: relative;
+    padding: 9rem 3rem 5rem;
+    min-height: 60vh;
+    background: var(--night);
+    overflow: hidden;
+  }
+  .wing-hero::before {
+    /* Painted celestial backdrop on the right — soft gold star glow */
+    content: '';
+    position: absolute;
+    top: 8rem;
+    right: -4rem;
+    width: 700px;
+    height: 600px;
+    background:
+      radial-gradient(circle at 30% 40%, rgba(230, 194, 121, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 70% 60%, rgba(212, 169, 87, 0.08) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .wing-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .wing-hero-text {
+    max-width: 520px;
+  }
+  .wing-hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.36em;
+    color: var(--gold-bright);
+    margin-bottom: 1.4rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .wing-hero-eyebrow::after {
+    content: '✦';
+    color: var(--gold);
+    font-size: 0.7em;
+    letter-spacing: normal;
+  }
+  .wing-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: clamp(3rem, 6vw, 5.4rem);
+    line-height: 0.98;
+    color: var(--parchment);
+    letter-spacing: -0.012em;
+    margin-bottom: 1.8rem;
+  }
+  .wing-hero-sub {
+    font-size: 1.15rem;
+    color: var(--parchment-soft);
+    line-height: 1.6;
+    max-width: 440px;
+  }
+  .wing-hero-art {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px;
+  }
+  /* Decorative celestial SVG art on the right */
+  .celestial-art {
+    width: 100%;
+    max-width: 560px;
+    opacity: 0.9;
+  }
+
+  /* ---------- TILES SECTION ---------- */
+  .tiles {
+    position: relative;
+    padding: 3rem 3rem 6rem;
+    background: var(--night);
+  }
+  .tiles-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .tiles-header h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.32em;
+    color: var(--gold-bright);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .tiles-header-ornament {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.8em;
+    opacity: 0.7;
+  }
+
+  .tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .tile-card {
+    position: relative;
+    display: block;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.4),
+      0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  .tile-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 18px 40px rgba(0, 0, 0, 0.5),
+      0 4px 12px rgba(230, 194, 121, 0.15);
+  }
+  .tile-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.9s ease, filter 0.5s ease;
+    /* Slight brightness lift on tiles so they don't feel too dark on screen */
+    filter: brightness(1.06);
+  }
+  .tile-card:hover img { transform: scale(1.04); }
+
+  /* Soft gold border-glow on hover for live tiles */
+  .tile-card.is-live::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    pointer-events: none;
+    transition: border-color 0.4s ease;
+    z-index: 2;
+  }
+  .tile-card.is-live:hover::before {
+    border-color: var(--gold-bright);
+    box-shadow: inset 0 0 24px rgba(230, 194, 121, 0.15);
+  }
+
+  /* "Enter" cue on live tiles — appears on hover */
+  .tile-enter-cue {
+    position: absolute;
+    bottom: 1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(13, 10, 6, 0.88);
+    color: var(--gold-bright);
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.32em;
+    padding: 0.55rem 1.2rem;
+    border: 1px solid var(--gold);
+    border-radius: 2px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 3;
+    white-space: nowrap;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .tile-card.is-live:hover .tile-enter-cue {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-4px);
+  }
+
+  /* "Opening Soon" ribbon — always visible on locked tiles */
+  .tile-soon {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(13, 10, 6, 0.88);
+    color: var(--gold-bright);
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.32em;
+    padding: 0.45rem 1rem;
+    border: 1px solid var(--gold);
+    border-radius: 2px;
+    text-transform: uppercase;
+    z-index: 3;
+    white-space: nowrap;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  /* Slight darken on locked tiles so they read as inactive */
+  .tile-card.is-locked img {
+    filter: brightness(0.85);
+  }
+  .tile-card.is-locked { cursor: default; }
+  .tile-card.is-locked:hover {
+    transform: translateY(-3px);
+  }
+  .tile-card.is-locked:hover img {
+    transform: scale(1);
+  }
+
+  /* ---------- DREAMOMETER PANEL ---------- */
+  .dreamometer-panel {
+    margin: 4rem auto 0;
+    max-width: 1280px;
+    background: linear-gradient(135deg, var(--night-warm) 0%, var(--night-soft) 100%);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 3rem 3rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 3rem;
+    align-items: center;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+  .dreamometer-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(circle at 15% 50%, rgba(230, 194, 121, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 85% 50%, rgba(230, 194, 121, 0.05) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  .dreamometer-icon {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    z-index: 1;
+  }
+  .dreamometer-icon svg { width: 100%; height: 100%; }
+
+  .dreamometer-text {
+    position: relative;
+    z-index: 1;
+  }
+  .dreamometer-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.28em;
+    color: var(--gold-bright);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .dreamometer-rule {
+    width: 36px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .dreamometer-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--parchment);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+  .dreamometer-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--parchment-soft);
+  }
+
+  .dreamometer-cta {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    color: var(--night);
+    background: var(--gold-bright);
+    padding: 1rem 1.8rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    transition: all 0.35s ease;
+    white-space: nowrap;
+  }
+  .dreamometer-cta:hover {
+    background: var(--parchment);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(230, 194, 121, 0.25);
+  }
+  .dreamometer-cta::after {
+    content: '→';
+    transition: transform 0.3s ease;
+  }
+  .dreamometer-cta:hover::after { transform: translateX(4px); }
+
+  .dreamometer-link {
+    display: block;
+    text-align: center;
+    margin-top: 1.4rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.24em;
+    color: var(--parchment-mute);
+    text-transform: lowercase;
+    position: relative;
+    z-index: 1;
+  }
+  .dreamometer-link a {
+    color: var(--gold-soft);
+    transition: color 0.3s;
+  }
+  .dreamometer-link a:hover { color: var(--gold-bright); }
+
+  /* ---------- BACK LINK ---------- */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 5rem auto 0;
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    color: var(--parchment-mute);
+    text-transform: uppercase;
+    transition: color 0.3s, gap 0.3s;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+  }
+  .back-link::before {
+    content: '←';
+    transition: transform 0.3s;
+  }
+  .back-link:hover {
+    color: var(--gold-bright);
+    gap: 0.9rem;
+  }
+  .back-link:hover::before { transform: translateX(-4px); }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--night-soft);
+    padding: 4.5rem 3rem 2.5rem;
+    color: var(--parchment-soft);
+    text-align: center;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .footer-mark {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.36em;
+    color: var(--parchment);
+    margin-bottom: 0.6rem;
+  }
+  .footer-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--parchment-mute);
+    font-size: 1rem;
+    margin-bottom: 2.4rem;
+  }
+  .footer-nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .footer-nav a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    color: var(--parchment-soft);
+    transition: color 0.3s;
+    text-transform: uppercase;
+  }
+  .footer-nav a:hover { color: var(--gold-bright); }
+
+  .footer-copy {
+    font-size: 0.82rem;
+    color: var(--parchment-mute);
+    margin-top: 1.2rem;
+  }
+
+  /* ---------- ANIMATION ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 1024px) {
+    .wing-hero { padding: 8rem 2rem 4rem; }
+    .wing-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .wing-hero-art { min-height: 280px; }
+    .tiles-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .dreamometer-panel {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 1.6rem;
+      padding: 2.5rem 2rem;
+    }
+    .dreamometer-icon { margin: 0 auto; }
+    .dreamometer-rule { margin: 0 auto 1rem; }
+  }
+  @media (max-width: 720px) {
+    nav { padding: 1rem 1.4rem; }
+    .nav-links { display: none; }
+    .nav-logo-text { display: none; }
+    .nav-cta { padding: 0.6rem 1.2rem; font-size: 0.62rem; }
+    .wing-hero { padding: 7rem 1.4rem 3rem; }
+    .tiles { padding: 2rem 1.4rem 4rem; }
+    .tiles-grid { grid-template-columns: 1fr; }
+    footer { padding-left: 1.4rem; padding-right: 1.4rem; }
+    .footer-nav { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================== -->
+<!-- NAV                                            -->
+<!-- ============================================== -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="iyl-logo.png" alt="Inside Your Library">
+    <span class="nav-logo-text">INSIDE YOUR LIBRARY</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#wings" class="active">The Library</a></li>
+    <li><a href="/#louise">About Louise</a></li>
+  </ul>
+  <a href="/" class="nav-cta">Inside Your Library</a>
+</nav>
+
+<!-- ============================================== -->
+<!-- HERO                                           -->
+<!-- ============================================== -->
+<section class="wing-hero">
+  <div class="wing-hero-inner">
+    <div class="wing-hero-text reveal">
+      <div class="wing-hero-eyebrow">The Metaphysical Wing</div>
+      <h1>Explore the<br>Unseen</h1>
+      <p class="wing-hero-sub">Step beyond the ordinary and into the realm of symbols, spirit and the subtle threads that connect us all.</p>
+    </div>
+
+    <div class="wing-hero-art reveal" aria-hidden="true">
+      <!-- Decorative celestial SVG — orrery + crystal + books motif -->
+      <svg class="celestial-art" viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg">
+        <!-- background stars -->
+        <g fill="#e6c279" opacity="0.55">
+          <circle cx="120" cy="60" r="1"/>
+          <circle cx="200" cy="40" r="1.4"/>
+          <circle cx="320" cy="55" r="1"/>
+          <circle cx="420" cy="80" r="1.2"/>
+          <circle cx="500" cy="50" r="1"/>
+          <circle cx="80" cy="120" r="1"/>
+          <circle cx="540" cy="180" r="1.2"/>
+          <circle cx="40" cy="200" r="1"/>
+          <circle cx="490" cy="260" r="1"/>
+          <circle cx="150" cy="180" r="0.8"/>
+          <circle cx="380" cy="40" r="0.8"/>
+        </g>
+
+        <!-- 4-point sparkle star top center -->
+        <g transform="translate(280, 50)">
+          <polygon points="0,-26 4,0 0,4 -4,0" fill="#e6c279"/>
+          <polygon points="0,26 -4,0 0,-4 4,0" fill="#e6c279"/>
+          <polygon points="-26,0 0,-4 4,0 0,4" fill="#e6c279"/>
+          <polygon points="26,0 0,4 -4,0 0,-4" fill="#e6c279"/>
+          <circle cx="0" cy="0" r="2" fill="#e6c279"/>
+        </g>
+
+        <!-- crystal obelisk on books -->
+        <g transform="translate(170, 280)">
+          <!-- books stack -->
+          <rect x="-50" y="20" width="100" height="18" fill="#2a1f12" stroke="#d4a957" stroke-width="0.6"/>
+          <rect x="-45" y="38" width="90" height="16" fill="#221a10" stroke="#d4a957" stroke-width="0.6"/>
+          <rect x="-50" y="54" width="100" height="14" fill="#2a1f12" stroke="#d4a957" stroke-width="0.6"/>
+          <!-- decorative spines -->
+          <line x1="-50" y1="29" x2="50" y2="29" stroke="#d4a957" stroke-width="0.4" opacity="0.5"/>
+          <line x1="-45" y1="46" x2="45" y2="46" stroke="#d4a957" stroke-width="0.4" opacity="0.5"/>
+          <!-- crystal obelisk -->
+          <polygon points="-12,20 12,20 14,-20 8,-40 -8,-40 -14,-20" fill="none" stroke="#e6c279" stroke-width="1.4" stroke-linejoin="round"/>
+          <polygon points="-12,20 12,20 0,-50" fill="none" stroke="#e6c279" stroke-width="0.8" opacity="0.6"/>
+          <line x1="-8" y1="-40" x2="0" y2="-50" stroke="#e6c279" stroke-width="1"/>
+          <line x1="8" y1="-40" x2="0" y2="-50" stroke="#e6c279" stroke-width="1"/>
+        </g>
+
+        <!-- candle in centre -->
+        <g transform="translate(290, 310)">
+          <rect x="-5" y="-30" width="10" height="40" fill="#ebe0c4" stroke="#d4a957" stroke-width="0.8"/>
+          <!-- flame -->
+          <ellipse cx="0" cy="-38" rx="3" ry="6" fill="#e6c279"/>
+          <ellipse cx="0" cy="-38" rx="1.5" ry="3" fill="#fff5d8"/>
+          <!-- glow -->
+          <circle cx="0" cy="-38" r="14" fill="#e6c279" opacity="0.08"/>
+          <circle cx="0" cy="-38" r="22" fill="#e6c279" opacity="0.05"/>
+          <!-- base -->
+          <ellipse cx="0" cy="11" rx="10" ry="3" fill="none" stroke="#d4a957" stroke-width="0.8"/>
+        </g>
+
+        <!-- armillary sphere / orrery on right -->
+        <g transform="translate(440, 220)">
+          <!-- equatorial ring -->
+          <ellipse cx="0" cy="0" rx="80" ry="22" fill="none" stroke="#e6c279" stroke-width="1.6"/>
+          <ellipse cx="0" cy="0" rx="80" ry="22" fill="none" stroke="#e6c279" stroke-width="0.4" stroke-dasharray="2 4" opacity="0.5"/>
+          <!-- meridian ring (vertical) -->
+          <ellipse cx="0" cy="0" rx="22" ry="80" fill="none" stroke="#d4a957" stroke-width="1.4"/>
+          <!-- tilted ring -->
+          <ellipse cx="0" cy="0" rx="78" ry="34" fill="none" stroke="#d4a957" stroke-width="1" opacity="0.7" transform="rotate(-22)"/>
+          <ellipse cx="0" cy="0" rx="78" ry="34" fill="none" stroke="#d4a957" stroke-width="1" opacity="0.7" transform="rotate(22)"/>
+          <!-- centre sun -->
+          <circle cx="0" cy="0" r="6" fill="#e6c279"/>
+          <circle cx="0" cy="0" r="10" fill="none" stroke="#e6c279" stroke-width="0.5" opacity="0.5"/>
+          <!-- small orbiting bodies -->
+          <circle cx="-80" cy="0" r="2.5" fill="#e6c279"/>
+          <circle cx="62" cy="-16" r="1.8" fill="#e6c279"/>
+          <!-- stand -->
+          <line x1="0" y1="80" x2="0" y2="120" stroke="#d4a957" stroke-width="1.8"/>
+          <ellipse cx="0" cy="124" rx="20" ry="4" fill="none" stroke="#d4a957" stroke-width="1.4"/>
+          <line x1="-14" y1="124" x2="-18" y2="138" stroke="#d4a957" stroke-width="1.4"/>
+          <line x1="14" y1="124" x2="18" y2="138" stroke="#d4a957" stroke-width="1.4"/>
+          <line x1="0" y1="124" x2="0" y2="138" stroke="#d4a957" stroke-width="1.4"/>
+        </g>
+
+        <!-- faint constellation lines top right -->
+        <g stroke="#d4a957" stroke-width="0.5" fill="none" opacity="0.35">
+          <line x1="380" y1="40" x2="420" y2="80"/>
+          <line x1="420" y1="80" x2="500" y2="50"/>
+          <line x1="500" y1="50" x2="540" y2="100"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== -->
+<!-- TILES                                          -->
+<!-- ============================================== -->
+<section class="tiles">
+  <div class="tiles-header reveal">
+    <h2>Choose a Path within the Metaphysical Wing</h2>
+    <div class="tiles-header-ornament">✦ ✦ ✦</div>
+  </div>
+
+  <div class="tiles-grid">
+
+    <!-- IN YOUR NUMBERS — OPENING SOON -->
+    <div class="tile-card is-locked reveal" aria-label="In Your Numbers — opening soon">
+      <span class="tile-soon">Opening Soon</span>
+      <img src="tile-numbers.jpg" alt="In Your Numbers — Numerology for self-awareness, life purpose and the numbers that shape your path." loading="lazy" decoding="async">
+    </div>
+
+    <!-- IN YOUR STARS — OPENING SOON -->
+    <div class="tile-card is-locked reveal" aria-label="In Your Stars — opening soon">
+      <span class="tile-soon">Opening Soon</span>
+      <img src="tile-stars.jpg" alt="In Your Stars — Astrology for self-discovery, alignment and a life written in the stars." loading="lazy" decoding="async">
+    </div>
+
+    <!-- IN YOUR PALMS — OPENING SOON -->
+    <div class="tile-card is-locked reveal" aria-label="In Your Palms — opening soon">
+      <span class="tile-soon">Opening Soon</span>
+      <img src="tile-palms.jpg" alt="In Your Palms — Palmistry for self-discovery, intuition and a life written in your hands." loading="lazy" decoding="async">
+    </div>
+
+    <!-- IN YOUR HANDWRITING — LIVE -->
+    <a href="https://inyourhands.app" target="_blank" rel="noopener" class="tile-card is-live reveal" aria-label="Enter In Your Handwriting">
+      <span class="tile-enter-cue">Enter →</span>
+      <img src="tile-handwriting.jpg" alt="In Your Handwriting — What your handwriting reveals through graphology." loading="lazy" decoding="async">
+    </a>
+
+    <!-- IN YOUR DREAMS — LIVE -->
+    <a href="https://inyourdreams.app" target="_blank" rel="noopener" class="tile-card is-live reveal" aria-label="Enter In Your Dreams">
+      <span class="tile-enter-cue">Enter →</span>
+      <img src="tile-dreams.jpg" alt="In Your Dreams — Dream Interpretation for self-discovery, guidance and a deeper understanding of your inner world." loading="lazy" decoding="async">
+    </a>
+
+    <!-- IN YOUR CUP — OPENING SOON -->
+    <div class="tile-card is-locked reveal" aria-label="In Your Cup — opening soon">
+      <span class="tile-soon">Opening Soon</span>
+      <img src="tile-cup.jpg" alt="In Your Cup — Tasseography for self-discovery, intuition and a life revealed in the leaves." loading="lazy" decoding="async">
+    </div>
+
+  </div>
+
+  <!-- ============================================== -->
+  <!-- DREAMOMETER PANEL                              -->
+  <!-- ============================================== -->
+  <div class="dreamometer-panel reveal">
+    <div class="dreamometer-icon" aria-hidden="true">
+      <svg viewBox="0 0 120 120">
+        <!-- outer ring -->
+        <circle cx="60" cy="60" r="56" fill="#14100a" stroke="#d4a957" stroke-width="1.4"/>
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#d4a957" stroke-width="0.6" opacity="0.5"/>
+        <!-- compass tick marks -->
+        <g stroke="#e6c279" stroke-width="1.2" stroke-linecap="round">
+          <line x1="60" y1="14" x2="60" y2="20"/>
+          <line x1="60" y1="100" x2="60" y2="106"/>
+          <line x1="14" y1="60" x2="20" y2="60"/>
+          <line x1="100" y1="60" x2="106" y2="60"/>
+        </g>
+        <!-- minor ticks -->
+        <g stroke="#d4a957" stroke-width="0.8" opacity="0.7">
+          <line x1="29" y1="29" x2="33" y2="33"/>
+          <line x1="91" y1="29" x2="87" y2="33"/>
+          <line x1="29" y1="91" x2="33" y2="87"/>
+          <line x1="91" y1="91" x2="87" y2="87"/>
+        </g>
+        <!-- inner dial face -->
+        <circle cx="60" cy="60" r="36" fill="none" stroke="#d4a957" stroke-width="0.6"/>
+        <!-- compass labels (just markers) -->
+        <g fill="#e6c279" font-family="Cinzel, serif" font-size="6" text-anchor="middle">
+          <text x="60" y="30">N</text>
+          <text x="60" y="96">S</text>
+          <text x="92" y="62">E</text>
+          <text x="28" y="62">W</text>
+        </g>
+        <!-- pointer needle -->
+        <g transform="translate(60, 60) rotate(35)">
+          <polygon points="0,-30 4,0 0,4 -4,0" fill="#e6c279"/>
+          <polygon points="0,30 -3,0 0,-2 3,0" fill="#d4a957" opacity="0.7"/>
+        </g>
+        <!-- centre cap -->
+        <circle cx="60" cy="60" r="3" fill="#e6c279"/>
+        <!-- decorative stars -->
+        <circle cx="44" cy="44" r="0.8" fill="#e6c279"/>
+        <circle cx="78" cy="78" r="0.8" fill="#e6c279"/>
+        <circle cx="44" cy="78" r="0.8" fill="#e6c279"/>
+        <circle cx="78" cy="44" r="0.8" fill="#e6c279"/>
+      </svg>
+    </div>
+
+    <div class="dreamometer-text">
+      <div class="dreamometer-title">The Dreamometer</div>
+      <div class="dreamometer-rule"></div>
+      <div class="dreamometer-headline">Discover what the world is dreaming about.</div>
+      <div class="dreamometer-sub">Contribute to a living global dream tracker for free.</div>
+    </div>
+
+    <a href="https://inyourdreams.app" target="_blank" rel="noopener" class="dreamometer-cta">Visit the Dreamometer</a>
+  </div>
+
+  <div class="dreamometer-link">
+    <a href="https://inyourdreams.app" target="_blank" rel="noopener">inyourdreams.app ↗</a>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- BACK LINK                                      -->
+  <!-- ============================================== -->
+  <a href="/" class="back-link">Return to the Library</a>
+</section>
+
+<!-- ============================================== -->
+<!-- FOOTER                                         -->
+<!-- ============================================== -->
+<footer>
+  <div class="footer-mark">INSIDE YOUR LIBRARY</div>
+  <div class="footer-tag">Tended by Louise. Already written. Already yours.</div>
+
+  <div class="footer-nav">
+    <a href="/">Home</a>
+    <a href="/#wings">The Library</a>
+    <a href="/#louise">About Louise</a>
+    <a href="https://inyourhands.app" target="_blank" rel="noopener">In Your Handwriting</a>
+    <a href="https://inyourdreams.app" target="_blank" rel="noopener">In Your Dreams</a>
+  </div>
+
+  <p class="footer-copy">© 2026 Inside Your Library. All rights reserved.</p>
+</footer>
+
+<!-- ============================================== -->
+<!-- SCRIPT                                         -->
+<!-- ============================================== -->
+<script>
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+</body>
+</html>
