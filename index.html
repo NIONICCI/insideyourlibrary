@@ -22,6 +22,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="library-hero.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Cinzel:wght@400;500;600&family=Cormorant+Upright:wght@300;400;500&family=Caveat:wght@500&display=swap" rel="stylesheet">
 
 <style>
@@ -162,6 +163,7 @@
     position: absolute;
     inset: 0;
     z-index: 0;
+    background: var(--cream-warm);
   }
   .hero-bg img {
     width: 100%;
@@ -288,7 +290,7 @@
   /* ---------- WINGS SECTION ---------- */
   .wings {
     position: relative;
-    padding: 7rem 3rem 6rem;
+    padding: 4.5rem 3rem 6rem;
     background: var(--cream-warm);
     border-top: 1px solid var(--rule-soft);
     border-bottom: 1px solid var(--rule-soft);
@@ -298,13 +300,13 @@
     position: absolute;
     top: 0; left: 50%;
     width: 1px;
-    height: 3.5rem;
+    height: 2.5rem;
     background: var(--gold);
     transform: translateX(-50%);
   }
   .wings-header {
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 2.4rem;
     max-width: 720px;
     margin-inline: auto;
   }
@@ -325,7 +327,7 @@
   }
   .wings-ornament {
     text-align: center;
-    margin: 1.6rem 0 0;
+    margin: 1rem 0 0;
     color: var(--gold);
     font-size: 0.85rem;
     letter-spacing: 1em;
@@ -334,9 +336,10 @@
   .wings-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 0.5rem;
-    max-width: 1340px;
+    gap: 0.8rem;
+    max-width: 1480px;
     margin: 0 auto;
+    padding: 0 1rem;
     align-items: end;
   }
 
@@ -774,7 +777,7 @@
 <!-- ============================================== -->
 <section class="hero">
   <div class="hero-bg">
-    <img src="library-hero.jpg" alt="A sunlit library interior with bookshelves and a reading table" loading="eager">
+    <img src="library-hero.jpg" alt="A sunlit library interior with bookshelves and a reading table" fetchpriority="high" decoding="async" loading="eager">
   </div>
 
   <div class="hero-text">
