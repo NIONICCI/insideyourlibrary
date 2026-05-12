@@ -473,21 +473,31 @@
     background-size: contain;
     background-position: left bottom;
     background-repeat: no-repeat;
+    -webkit-mask-image: linear-gradient(to right,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,1) 60%,
+      rgba(0,0,0,0.55) 85%,
+      rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to right,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,1) 60%,
+      rgba(0,0,0,0.55) 85%,
+      rgba(0,0,0,0) 100%);
   }
-  /* Cream fade — sits outside the painting, only kicks in past her right edge */
+  /* Cream fade — overlay layer that finishes the transition past the portrait's right edge */
   .louise-fade {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 220px;
-    width: 240px;
+    left: 200px;
+    width: 200px;
     z-index: 1;
     background:
       linear-gradient(
         to right,
         rgba(246, 241, 230, 0.0) 0%,
-        rgba(246, 241, 230, 0.5) 40%,
-        rgba(246, 241, 230, 0.9) 70%,
+        rgba(246, 241, 230, 0.5) 35%,
+        rgba(246, 241, 230, 0.92) 75%,
         var(--cream) 100%
       );
     pointer-events: none;
