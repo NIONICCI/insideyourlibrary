@@ -186,15 +186,6 @@
     min-height: 88vh;
   }
 
-  .wing-hero-flourish {
-    font-family: 'Cormorant Upright', serif;
-    color: var(--gold-soft);
-    font-size: 1.2rem;
-    letter-spacing: 0.4em;
-    margin-bottom: 1.4rem;
-    opacity: 0.85;
-  }
-
   .wing-hero-eyebrow {
     font-family: 'Cinzel', serif;
     font-size: 0.82rem;
@@ -234,12 +225,23 @@
   }
 
   .wing-hero-divider {
-    margin: 1.4rem 0 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 1.6rem 0 1.8rem;
+  }
+  .wing-hero-divider .star {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
     color: var(--gold);
-    font-family: 'Cinzel', serif;
-    font-size: 1rem;
-    letter-spacing: 0.3em;
-    opacity: 0.8;
+    opacity: 0.85;
+  }
+  .wing-hero-divider .bar {
+    height: 1px;
+    width: 110px;
+    background: var(--gold);
+    opacity: 0.55;
   }
 
   .wing-hero-couplet {
@@ -260,28 +262,7 @@
     color: var(--tobacco-soft);
     line-height: 1.7;
     max-width: 30rem;
-    margin-bottom: 2.2rem;
-  }
-
-  .wing-hero-cta {
-    display: inline-block;
-    font-family: 'Cinzel', serif;
-    font-size: 0.78rem;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--cream);
-    background: var(--forest-deep);
-    padding: 1rem 2rem;
-    border-radius: 4px;
-    align-self: flex-start;
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.06),
-      0 6px 18px rgba(58, 69, 48, 0.22);
-    transition: background .3s ease, transform .3s ease;
-  }
-  .wing-hero-cta:hover {
-    background: var(--forest);
-    transform: translateY(-1px);
+    margin-bottom: 0;
   }
 
   /* ====================================================== */
@@ -329,8 +310,7 @@
       0 10px 32px rgba(45, 36, 25, 0.10),
       0 2px 8px rgba(45, 36, 25, 0.06);
     transition: transform .35s ease, box-shadow .35s ease;
-    display: flex;
-    flex-direction: column;
+    display: block;
   }
   .tile-card.is-live { cursor: pointer; }
   .tile-card.is-live:hover {
@@ -342,6 +322,7 @@
   }
 
   .tile-image {
+    position: relative;
     width: 100%;
     aspect-ratio: 1 / 1;
     background: var(--paper);
@@ -355,52 +336,68 @@
     display: block;
   }
 
-  .tile-footer {
+  /* Button/caption overlay — anchored to bottom of image */
+  .tile-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
     justify-content: center;
-    padding: 1.3rem 1rem 1.5rem;
-    background: var(--paper);
+    padding: 0 1rem 1.4rem;
+    pointer-events: none;
+  }
+  .tile-overlay > * {
+    pointer-events: auto;
   }
 
   .tile-enter {
     display: inline-block;
     font-family: 'Cinzel', serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.32em;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--cream);
-    background: #1f2438;
-    padding: 0.7rem 1.8rem;
+    color: #f4ead0;
+    background: rgba(31, 36, 56, 0.92);
+    padding: 0.65rem 1.7rem;
     border-radius: 3px;
-    border: 1px solid rgba(212, 175, 80, 0.45);
+    border: 1px solid rgba(212, 175, 80, 0.55);
     box-shadow:
       inset 0 1px 0 rgba(255,255,255,0.08),
-      0 4px 12px rgba(20, 24, 40, 0.18);
+      0 6px 16px rgba(20, 24, 40, 0.32);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
     transition: background .3s ease, transform .3s ease;
   }
   .tile-card.is-live:hover .tile-enter {
-    background: #2a3151;
+    background: rgba(42, 49, 81, 0.95);
     transform: translateY(-1px);
   }
 
   .tile-soon {
+    display: inline-block;
     font-family: 'Cinzel', serif;
-    font-size: 0.72rem;
+    font-size: 0.66rem;
     letter-spacing: 0.34em;
     text-transform: uppercase;
-    color: var(--tobacco-mute);
-    padding: 0.7rem 1.8rem;
-    border-top: 1px solid var(--rule-soft);
-    border-bottom: 1px solid var(--rule-soft);
-    opacity: 0.82;
+    color: #f4ead0;
+    background: rgba(58, 40, 24, 0.78);
+    padding: 0.6rem 1.5rem;
+    border-radius: 3px;
+    border: 1px solid rgba(212, 175, 80, 0.4);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.06),
+      0 4px 12px rgba(45, 36, 25, 0.25);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
   }
   .tile-soon::before,
   .tile-soon::after {
     content: '✦';
-    color: var(--gold);
-    margin: 0 0.6rem;
+    color: var(--gold-soft);
+    margin: 0 0.5rem;
     font-size: 0.7em;
-    opacity: 0.7;
+    opacity: 0.9;
   }
 
   /* ====================================================== */
@@ -579,46 +576,110 @@
   /* RESPONSIVE                                             */
   /* ====================================================== */
   @media (max-width: 980px) {
-    nav { padding: 0.8rem 1.5rem; }
+    nav {
+      padding: 0.7rem 1rem;
+    }
     .nav-links { display: none; }
-    .nav-logo-text { font-size: 0.68rem; }
+    .nav-logo {
+      gap: 0.5rem;
+    }
+    .nav-logo img {
+      width: 32px;
+      height: 32px;
+    }
+    .nav-logo-text {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      white-space: nowrap;
+    }
+    .nav-cta {
+      padding: 0.5rem 0.9rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      white-space: nowrap;
+      border-radius: 999px;
+    }
 
     .wing-hero {
       min-height: auto;
     }
     .wing-hero-text {
-      padding: 3.5rem 1.6rem 3.5rem;
-      min-height: auto;
+      padding: 3rem 1.4rem 3.5rem;
+      min-height: 62vh;
       max-width: 100%;
     }
+    .wing-hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      margin-bottom: 1.1rem;
+    }
+    .wing-hero-title .line-1 {
+      font-size: clamp(2rem, 9vw, 3rem);
+      letter-spacing: 0.02em;
+    }
+    .wing-hero-title .line-2 {
+      font-size: clamp(2.8rem, 14vw, 4.5rem);
+      margin-left: 0;
+      margin-top: -0.15rem;
+    }
+    .wing-hero-divider {
+      margin: 1.2rem 0 1.4rem;
+    }
+    .wing-hero-divider .bar { width: 80px; }
+    .wing-hero-couplet {
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .wing-hero-body {
+      font-size: 0.98rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
     .wing-hero-bg img {
-      object-position: center right;
+      object-position: 65% center;
     }
     .wing-hero-bg::after {
       background: linear-gradient(
         180deg,
-        rgba(246, 241, 230, 0.95) 0%,
-        rgba(246, 241, 230, 0.82) 40%,
-        rgba(246, 241, 230, 0.5) 70%,
-        rgba(246, 241, 230, 0.2) 100%
+        rgba(246, 241, 230, 0.97) 0%,
+        rgba(246, 241, 230, 0.95) 30%,
+        rgba(246, 241, 230, 0.85) 55%,
+        rgba(246, 241, 230, 0.55) 80%,
+        rgba(246, 241, 230, 0.25) 100%
       );
     }
 
-    .path-section { padding: 4rem 1.5rem 4.5rem; }
+    .path-section { padding: 3.5rem 1.2rem 4rem; }
+    .path-header { margin-bottom: 2.5rem; }
+    .path-header .ornament {
+      font-size: 0.66rem;
+      letter-spacing: 0.36em;
+    }
+    .path-header .ornament::before,
+    .path-header .ornament::after {
+      margin: 0 0.5rem;
+    }
     .tiles-grid {
       grid-template-columns: 1fr;
-      gap: 1.6rem;
+      gap: 1.4rem;
       max-width: 420px;
     }
 
     .dreamometer {
-      margin: 0 1.5rem 4rem;
+      margin: 0 1.2rem 4rem;
       grid-template-columns: 1fr;
-      gap: 2rem;
-      padding: 2.5rem 1.6rem;
+      gap: 1.5rem;
+      padding: 2.5rem 1.4rem;
     }
     .dm-left { text-align: center; }
     .dm-left p { margin-left: auto; margin-right: auto; }
+    .dm-dial-placeholder { max-width: 220px; }
+
+    footer {
+      padding: 3rem 1.4rem 2.5rem;
+    }
+    .footer-nav { gap: 1.2rem; }
+    .footer-social { gap: 1.2rem; }
   }
 
   @media (min-width: 981px) and (max-width: 1180px) {
@@ -642,7 +703,7 @@
     <li><a href="/#wings" class="active">The Library</a></li>
     <li><a href="/#louise">About Louise</a></li>
   </ul>
-  <a href="/" class="nav-cta">Return Home</a>
+  <a href="/" class="nav-cta">← Home</a>
 </nav>
 
 <!-- ============================================== -->
@@ -654,13 +715,17 @@
   </div>
 
   <div class="wing-hero-text">
-    <div class="wing-hero-flourish">✦ ❦ ✦</div>
     <div class="wing-hero-eyebrow">Welcome to the</div>
     <h1 class="wing-hero-title">
       <span class="line-1">Metaphysical</span>
       <span class="line-2">Wing</span>
     </h1>
-    <div class="wing-hero-divider">✦</div>
+    <div class="wing-hero-divider" aria-hidden="true">
+      <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z" fill="currentColor"/>
+      </svg>
+      <span class="bar"></span>
+    </div>
     <p class="wing-hero-couplet">
       <span>The deeper shelves.</span>
       <span>The quieter questions.</span>
@@ -670,7 +735,6 @@
       These timeless tools have guided seekers for centuries.
       They are here for you.
     </p>
-    <a href="#paths" class="wing-hero-cta">Step Into the Wing</a>
   </div>
 </section>
 
@@ -688,9 +752,9 @@
     <a href="https://inyourhands.app" target="_blank" rel="noopener" class="tile-card is-live reveal" aria-label="Enter In Your Handwriting">
       <div class="tile-image">
         <img src="tile-handwriting.jpg" alt="In Your Handwriting — quill, ink, and old books on parchment" loading="lazy" decoding="async">
-      </div>
-      <div class="tile-footer">
-        <span class="tile-enter">Enter</span>
+        <div class="tile-overlay">
+          <span class="tile-enter">Enter</span>
+        </div>
       </div>
     </a>
 
@@ -698,9 +762,9 @@
     <div class="tile-card reveal" aria-label="In Your Stars — coming soon">
       <div class="tile-image">
         <img src="tile-stars.jpg" alt="In Your Stars — brass telescope, leather books and celestial globe" loading="lazy" decoding="async">
-      </div>
-      <div class="tile-footer">
-        <span class="tile-soon">Coming Soon</span>
+        <div class="tile-overlay">
+          <span class="tile-soon">Coming Soon</span>
+        </div>
       </div>
     </div>
 
@@ -708,9 +772,9 @@
     <div class="tile-card reveal" aria-label="In Your Palms — coming soon">
       <div class="tile-image">
         <img src="tile-palms.jpg" alt="In Your Palms — two open hands with a guiding star between them" loading="lazy" decoding="async">
-      </div>
-      <div class="tile-footer">
-        <span class="tile-soon">Coming Soon</span>
+        <div class="tile-overlay">
+          <span class="tile-soon">Coming Soon</span>
+        </div>
       </div>
     </div>
 
@@ -718,9 +782,9 @@
     <div class="tile-card reveal" aria-label="In Your Cup — coming soon">
       <div class="tile-image">
         <img src="tile-cup.jpg" alt="In Your Cup — ornate teacup and saucer flanked by compass roses" loading="lazy" decoding="async">
-      </div>
-      <div class="tile-footer">
-        <span class="tile-soon">Coming Soon</span>
+        <div class="tile-overlay">
+          <span class="tile-soon">Coming Soon</span>
+        </div>
       </div>
     </div>
 
@@ -728,9 +792,9 @@
     <div class="tile-card reveal" aria-label="In Your Numbers — coming soon">
       <div class="tile-image">
         <img src="tile-numbers.jpg" alt="In Your Numbers — open numerology book, crystal and brass candlestick" loading="lazy" decoding="async">
-      </div>
-      <div class="tile-footer">
-        <span class="tile-soon">Coming Soon</span>
+        <div class="tile-overlay">
+          <span class="tile-soon">Coming Soon</span>
+        </div>
       </div>
     </div>
 
@@ -738,9 +802,9 @@
     <a href="https://inyourdreams.app" target="_blank" rel="noopener" class="tile-card is-live reveal" aria-label="Enter In Your Dreams">
       <div class="tile-image">
         <img src="tile-dreams.jpg" alt="In Your Dreams — stacked leather dream books and a single candle beneath a crescent moon" loading="lazy" decoding="async">
-      </div>
-      <div class="tile-footer">
-        <span class="tile-enter">Enter</span>
+        <div class="tile-overlay">
+          <span class="tile-enter">Enter</span>
+        </div>
       </div>
     </a>
 
