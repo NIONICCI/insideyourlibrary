@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Natural Healing Wing — Inside Your Library</title>
+<meta name="description" content="The old remedies. The slow knowing. Step into a room of plants, simples and quiet rituals — herbs, sleep, the healing garden, homeopathy, aromatherapy and teas.">
+<link rel="canonical" href="https://insideyourlibrary.com/natural-healing-wing.html">
+
+<meta property="og:title" content="The Natural Healing Wing — Inside Your Library">
+<meta property="og:description" content="The old remedies. The slow knowing. A room of plants, simples and quiet rituals.">
+<meta property="og:url" content="https://insideyourlibrary.com/natural-healing-wing.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://insideyourlibrary.com/natural-healing-page.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Natural Healing Wing — Inside Your Library">
+<meta name="twitter:description" content="The old remedies. The slow knowing.">
+<meta name="twitter:image" content="https://insideyourlibrary.com/natural-healing-page.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="natural-healing-page.jpg" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500;600&family=Cinzel:wght@400;500;600&family=Cormorant+Upright:wght@300;400;500&family=Pinyon+Script&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream:           #f6f1e6;
+    --cream-warm:      #efe7d4;
+    --paper:           #ede4cf;
+    --paper-deep:      #e3d6b9;
+    --ink:             #2d2419;
+    --ink-soft:        #4a3e2d;
+    --ink-mute:        #6b5e48;
+    /* Tobacco brown — for headlines, matches landing page wordmark */
+    --tobacco:         #3a2818;
+    --tobacco-soft:    #54402a;
+    --tobacco-mute:    #7a6347;
+    --gold:            #a87f3c;
+    --gold-soft:       #c2a266;
+    --gold-glow:       rgba(168, 127, 60, 0.18);
+    /* Forest green from homepage CTA — for continuity */
+    --forest:          #4f5a43;
+    --forest-deep:     #3a4530;
+    --sage:            #6d7a5c;
+    --sage-deep:       #4f5a43;
+    --rule:            rgba(45, 36, 25, 0.18);
+    --rule-soft:       rgba(45, 36, 25, 0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+  img { display: block; max-width: 100%; }
+
+  .label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ====================================================== */
+  /* NAV (mirrors index.html)                               */
+  /* ====================================================== */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(246, 241, 230, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule-soft);
+    padding: 0.9rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--ink);
+  }
+  .nav-logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  .nav-logo-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.28em;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.4rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: color .3s ease, border-color .3s ease;
+  }
+  .nav-links a:hover,
+  .nav-links a.active { color: var(--gold); border-color: var(--gold); }
+  .nav-cta {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: var(--ink);
+    padding: 0.65rem 1.4rem;
+    border-radius: 999px;
+    transition: background .3s ease;
+  }
+  .nav-cta:hover { background: var(--gold); }
+
+  /* ====================================================== */
+  /* HERO — full-bleed room photo with overlay text on left */
+  /* ====================================================== */
+  .wing-hero {
+    position: relative;
+    min-height: 72vh;
+    background: var(--cream);
+    overflow: hidden;
+  }
+
+  .wing-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .wing-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right 25%;
+  }
+  /* Soft cream wash on the left so the text reads cleanly on the wall area */
+  .wing-hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(246, 241, 230, 0.92) 0%,
+      rgba(246, 241, 230, 0.78) 22%,
+      rgba(246, 241, 230, 0.35) 38%,
+      rgba(246, 241, 230, 0.05) 50%,
+      rgba(246, 241, 230, 0) 60%
+    );
+    pointer-events: none;
+  }
+
+  .wing-hero-text {
+    position: relative;
+    z-index: 1;
+    padding: 5rem 4rem 5rem 5.5rem;
+    max-width: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 72vh;
+  }
+
+  .wing-hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.34em;
+    color: var(--tobacco-mute);
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+  }
+
+  .wing-hero-title {
+    font-family: 'Cormorant SC', 'Cormorant Garamond', serif;
+    font-weight: 500;
+    color: var(--forest-deep);
+    line-height: 1.0;
+    letter-spacing: 0;
+    margin-bottom: 0.4rem;
+  }
+  .wing-hero-title .line-1 {
+    display: block;
+    font-family: 'Cormorant SC', 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.6vw, 3.1rem);
+    letter-spacing: 0.04em;
+    font-weight: 500;
+    color: var(--forest-deep);
+    white-space: nowrap;
+  }
+  .wing-hero-title .line-2 {
+    display: block;
+    font-family: 'Pinyon Script', 'Dancing Script', cursive;
+    font-style: normal;
+    font-size: clamp(3.2rem, 6vw, 5.4rem);
+    color: var(--forest-deep);
+    font-weight: 400;
+    margin-top: -0.25rem;
+    margin-left: 0.4rem;
+    line-height: 1.0;
+    letter-spacing: 0;
+  }
+
+  .wing-hero-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 1.6rem 0 1.8rem;
+  }
+  .wing-hero-divider .star {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: var(--gold);
+    opacity: 0.85;
+  }
+  .wing-hero-divider .bar {
+    height: 1px;
+    width: 110px;
+    background: var(--gold);
+    opacity: 0.55;
+  }
+
+  .wing-hero-couplet {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.45rem;
+    color: var(--tobacco-soft);
+    line-height: 1.4;
+    margin-bottom: 1.4rem;
+    font-weight: 400;
+  }
+  .wing-hero-couplet span {
+    display: block;
+  }
+
+  .wing-hero-body {
+    font-size: 1.06rem;
+    color: var(--tobacco-soft);
+    line-height: 1.7;
+    max-width: 30rem;
+    margin-bottom: 0;
+  }
+
+  /* ====================================================== */
+  /* CHOOSE YOUR PATH                                       */
+  /* ====================================================== */
+  .path-section {
+    padding: 5.5rem 4rem 6rem;
+    background: var(--cream);
+  }
+
+  .path-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+  .path-header .ornament {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.5em;
+    color: var(--tobacco-mute);
+    text-transform: uppercase;
+  }
+  .path-header .ornament::before,
+  .path-header .ornament::after {
+    content: '—';
+    color: var(--gold);
+    margin: 0 1rem;
+    opacity: 0.7;
+  }
+
+  .tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .tile-card {
+    position: relative;
+    background: var(--paper);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.5) inset,
+      0 10px 32px rgba(45, 36, 25, 0.10),
+      0 2px 8px rgba(45, 36, 25, 0.06);
+    transition: transform .35s ease, box-shadow .35s ease;
+    display: block;
+  }
+  .tile-card.is-live { cursor: pointer; }
+  .tile-card.is-live:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.5) inset,
+      0 18px 44px rgba(45, 36, 25, 0.16),
+      0 4px 12px rgba(45, 36, 25, 0.08);
+  }
+
+  .tile-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: var(--paper);
+    overflow: hidden;
+  }
+  .tile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* Parchment placeholder for tiles without painted illustration */
+  .tile-placeholder {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 25%, rgba(255,255,255,0.45), transparent 60%),
+      radial-gradient(ellipse at 70% 75%, rgba(168,127,60,0.05), transparent 55%),
+      linear-gradient(135deg, #f0e8d2 0%, #e8dfc4 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2.2rem 1.6rem 1.2rem;
+    text-align: center;
+  }
+  /* Inner brass-line frame */
+  .tile-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(168, 127, 60, 0.35);
+    border-radius: 2px;
+    pointer-events: none;
+  }
+  /* Corner ornaments (4) */
+  .tile-corner {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    color: #a87f3c;
+    opacity: 0.65;
+    pointer-events: none;
+  }
+  .tile-corner.tl { top: 6px; left: 6px; }
+  .tile-corner.tr { top: 6px; right: 6px; transform: scaleX(-1); }
+  .tile-corner.bl { bottom: 6px; left: 6px; transform: scaleY(-1); }
+  .tile-corner.br { bottom: 6px; right: 6px; transform: scale(-1, -1); }
+
+  .tile-placeholder-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.32em;
+    color: var(--tobacco-mute);
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .tile-placeholder-title {
+    font-family: 'Pinyon Script', 'Dancing Script', cursive;
+    font-size: 2.6rem;
+    color: var(--tobacco);
+    line-height: 1.0;
+    margin-bottom: 1.4rem;
+    position: relative;
+    z-index: 1;
+  }
+  .tile-placeholder-illo {
+    width: 60%;
+    max-width: 140px;
+    margin: 0 auto 1rem;
+    color: rgba(77, 90, 67, 0.55);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .tile-placeholder-illo svg { width: 100%; height: auto; display: block; }
+  .tile-placeholder-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.92rem;
+    color: var(--tobacco-soft);
+    line-height: 1.4;
+    max-width: 80%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+  }
+
+  /* Button/caption overlay — anchored to bottom of image */
+  .tile-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem 0.85rem;
+    pointer-events: none;
+  }
+  .tile-overlay > * {
+    pointer-events: auto;
+  }
+
+  .tile-enter {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #f4ead0;
+    background: rgba(31, 36, 56, 0.92);
+    padding: 0.42rem 1.1rem;
+    border-radius: 3px;
+    border: 1px solid rgba(212, 175, 80, 0.55);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.08),
+      0 6px 16px rgba(20, 24, 40, 0.32);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    transition: background .3s ease, transform .3s ease;
+  }
+  .tile-card.is-live:hover .tile-enter {
+    background: rgba(42, 49, 81, 0.95);
+    transform: translateY(-1px);
+  }
+
+  .tile-soon {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.56rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #f4ead0;
+    background: rgba(58, 40, 24, 0.82);
+    padding: 0.4rem 1rem;
+    border-radius: 3px;
+    border: 1px solid rgba(212, 175, 80, 0.4);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.06),
+      0 4px 12px rgba(45, 36, 25, 0.25);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+  .tile-soon::before,
+  .tile-soon::after {
+    content: '✦';
+    color: var(--gold-soft);
+    margin: 0 0.4rem;
+    font-size: 0.7em;
+    opacity: 0.9;
+  }
+
+  /* ====================================================== */
+  /* LIVING INSTRUMENT PLACEHOLDER PANEL                    */
+  /* (used by Dreamometer + Nature's Pulse)                 */
+  /* ====================================================== */
+  .dreamometer {
+    margin: 0 4rem 5rem;
+    background: var(--paper);
+    border: 1px solid var(--rule-soft);
+    border-radius: 6px;
+    padding: 3.5rem 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.5) inset,
+      0 10px 32px rgba(45, 36, 25, 0.08);
+  }
+  /* Sage variant for Nature's Pulse */
+  .dreamometer.is-nature {
+    background:
+      radial-gradient(circle at 20% 30%, rgba(168,127,60,0.06), transparent 55%),
+      radial-gradient(circle at 80% 70%, rgba(109,122,92,0.08), transparent 55%),
+      var(--paper);
+  }
+  .dreamometer.is-nature .dm-left .dm-eyebrow,
+  .dreamometer.is-nature .dm-left h3,
+  .dreamometer.is-nature .dm-coming {
+    color: var(--forest-deep);
+  }
+  .dreamometer.is-nature .dm-left h3 {
+    color: var(--forest-deep);
+  }
+  .dreamometer.is-nature .dm-left h3 .dm-tm {
+    color: var(--sage);
+  }
+  .dreamometer.is-nature .dm-left .dm-divider {
+    color: var(--sage);
+  }
+
+  .dm-left .dm-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.36em;
+    color: var(--tobacco-mute);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .dm-left h3 {
+    font-family: 'Cormorant SC', 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    letter-spacing: 0.04em;
+    color: var(--tobacco);
+    margin-bottom: 0.2rem;
+  }
+  .dm-left h3 .dm-tm {
+    font-size: 0.55em;
+    vertical-align: super;
+    letter-spacing: 0;
+    color: var(--gold);
+    margin-left: 0.05em;
+  }
+  .dm-left .dm-divider {
+    color: var(--gold);
+    font-size: 0.9rem;
+    margin: 0.8rem 0 1.2rem;
+    opacity: 0.7;
+  }
+  .dm-left p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--tobacco-soft);
+    line-height: 1.5;
+    margin-bottom: 1.6rem;
+    max-width: 28rem;
+  }
+  .dm-coming {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--tobacco-mute);
+    padding: 0.7rem 1.6rem;
+    display: inline-block;
+    border-top: 1px solid var(--rule-soft);
+    border-bottom: 1px solid var(--rule-soft);
+    opacity: 0.85;
+  }
+  .dm-coming::before,
+  .dm-coming::after {
+    content: '✦';
+    color: var(--gold);
+    margin: 0 0.6rem;
+    font-size: 0.7em;
+    opacity: 0.7;
+  }
+
+  .dm-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .dm-dial-placeholder {
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1 / 1;
+    opacity: 0.85;
+  }
+
+  /* ====================================================== */
+  /* FOOTER                                                 */
+  /* ====================================================== */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+  }
+  .footer-mark {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.35em;
+    color: var(--gold-soft);
+    margin-bottom: 0.5rem;
+  }
+  .footer-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: rgba(246, 241, 230, 0.7);
+    margin-bottom: 2rem;
+  }
+  .footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .footer-nav a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--paper);
+    opacity: 0.7;
+    transition: opacity .3s ease, color .3s ease;
+  }
+  .footer-nav a:hover { color: var(--gold-soft); opacity: 1; }
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .footer-social a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--paper);
+    opacity: 0.55;
+    transition: opacity .3s ease, color .3s ease;
+  }
+  .footer-social a:hover { color: var(--gold-soft); opacity: 1; }
+  .footer-contact {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: rgba(246, 241, 230, 0.6);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  .footer-contact a { color: var(--gold-soft); }
+  .footer-copy {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    color: rgba(246, 241, 230, 0.35);
+  }
+
+  /* ====================================================== */
+  /* REVEAL                                                 */
+  /* ====================================================== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+  /* ====================================================== */
+  /* RESPONSIVE                                             */
+  /* ====================================================== */
+  @media (max-width: 980px) {
+    nav {
+      padding: 0.7rem 1rem;
+    }
+    .nav-links { display: none; }
+    .nav-logo {
+      gap: 0.5rem;
+    }
+    .nav-logo img {
+      width: 32px;
+      height: 32px;
+    }
+    .nav-logo-text {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      white-space: nowrap;
+    }
+    .nav-cta {
+      padding: 0.5rem 0.9rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      white-space: nowrap;
+      border-radius: 999px;
+    }
+
+    .wing-hero {
+      min-height: auto;
+    }
+    .wing-hero-text {
+      padding: 3rem 1.4rem 3.5rem;
+      min-height: 62vh;
+      max-width: 100%;
+    }
+    .wing-hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      margin-bottom: 1.1rem;
+    }
+    .wing-hero-title .line-1 {
+      font-size: clamp(1.7rem, 7.4vw, 2.5rem);
+      letter-spacing: 0.02em;
+    }
+    .wing-hero-title .line-2 {
+      font-size: clamp(2.8rem, 14vw, 4.5rem);
+      margin-left: 0;
+      margin-top: -0.15rem;
+    }
+    .wing-hero-divider {
+      margin: 1.2rem 0 1.4rem;
+    }
+    .wing-hero-divider .bar { width: 80px; }
+    .wing-hero-couplet {
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .wing-hero-body {
+      font-size: 0.98rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+    .wing-hero-bg img {
+      object-position: 70% 25%;
+    }
+    .wing-hero-bg::after {
+      background: linear-gradient(
+        180deg,
+        rgba(246, 241, 230, 0.78) 0%,
+        rgba(246, 241, 230, 0.55) 40%,
+        rgba(246, 241, 230, 0.25) 75%,
+        rgba(246, 241, 230, 0.05) 100%
+      );
+    }
+
+    .path-section { padding: 3.5rem 1.2rem 4rem; }
+    .path-header { margin-bottom: 2.5rem; }
+    .path-header .ornament {
+      font-size: 0.66rem;
+      letter-spacing: 0.36em;
+    }
+    .path-header .ornament::before,
+    .path-header .ornament::after {
+      margin: 0 0.5rem;
+    }
+    .tiles-grid {
+      grid-template-columns: 1fr;
+      gap: 1.4rem;
+      max-width: 420px;
+    }
+
+    .dreamometer {
+      margin: 0 1.2rem 4rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 2.5rem 1.4rem;
+    }
+    .dm-left { text-align: center; }
+    .dm-left p { margin-left: auto; margin-right: auto; }
+    .dm-dial-placeholder { max-width: 220px; }
+
+    footer {
+      padding: 3rem 1.4rem 2.5rem;
+    }
+    .footer-nav { gap: 1.2rem; }
+    .footer-social { gap: 1.2rem; }
+  }
+
+  @media (min-width: 981px) and (max-width: 1180px) {
+    .tiles-grid { grid-template-columns: repeat(2, 1fr); max-width: 820px; }
+    .dreamometer { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================== -->
+<!-- NAV                                            -->
+<!-- ============================================== -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="iyl-logo.png" alt="Inside Your Library">
+    <span class="nav-logo-text">INSIDE YOUR LIBRARY</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#wings" class="active">The Library</a></li>
+    <li><a href="/#louise">About Louise</a></li>
+  </ul>
+  <a href="/" class="nav-cta">← Home</a>
+</nav>
+
+<!-- ============================================== -->
+<!-- HERO                                           -->
+<!-- ============================================== -->
+<section class="wing-hero">
+  <div class="wing-hero-bg" aria-hidden="true">
+    <img src="natural-healing-page.jpg" alt="" fetchpriority="high" decoding="async" loading="eager">
+  </div>
+
+  <div class="wing-hero-text">
+    <div class="wing-hero-eyebrow">Welcome to the</div>
+    <h1 class="wing-hero-title">
+      <span class="line-1">Natural Healing</span>
+      <span class="line-2">Wing</span>
+    </h1>
+    <div class="wing-hero-divider" aria-hidden="true">
+      <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z" fill="currentColor"/>
+      </svg>
+      <span class="bar"></span>
+    </div>
+    <p class="wing-hero-couplet">
+      <span>The old remedies.</span>
+      <span>The slow knowing.</span>
+    </p>
+    <p class="wing-hero-body">
+      Step into a room of plants, simples and quiet rituals.
+      Here are the old ways of tending &mdash; the herbs that lined the windowsill,
+      the remedies passed down without writing.
+      The garden remembers. So does the body.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================== -->
+<!-- CHOOSE YOUR PATH                               -->
+<!-- ============================================== -->
+<section id="paths" class="path-section">
+  <div class="path-header reveal">
+    <span class="ornament">Choose Your Path</span>
+  </div>
+
+  <div class="tiles-grid">
+
+    <!-- IN YOUR EYES — COMING SOON -->
+    <div class="tile-card reveal" aria-label="In Your Eyes — coming soon">
+      <div class="tile-image">
+        <div class="tile-placeholder">
+          <svg class="tile-corner tl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner tr" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner bl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner br" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <div class="tile-placeholder-eyebrow">In Your</div>
+          <div class="tile-placeholder-title">Eyes</div>
+          <div class="tile-placeholder-illo" aria-hidden="true">
+            <svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+              <path d="M10 30 Q 70 -10, 130 30 Q 70 70, 10 30 Z"/>
+              <circle cx="70" cy="30" r="14"/>
+              <circle cx="70" cy="30" r="5" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <div class="tile-placeholder-body">Iridology and what the eyes can tell.</div>
+        </div>
+        <div class="tile-overlay">
+          <span class="tile-soon">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- IN YOUR SLEEP — COMING SOON -->
+    <div class="tile-card reveal" aria-label="In Your Sleep — coming soon">
+      <div class="tile-image">
+        <div class="tile-placeholder">
+          <svg class="tile-corner tl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner tr" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner bl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner br" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <div class="tile-placeholder-eyebrow">In Your</div>
+          <div class="tile-placeholder-title">Sleep</div>
+          <div class="tile-placeholder-illo" aria-hidden="true">
+            <svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+              <path d="M40 38 Q 70 4, 100 38 Q 90 20, 70 16 Q 50 20, 40 38 Z"/>
+              <circle cx="40" cy="20" r="1.5" fill="currentColor"/>
+              <circle cx="105" cy="22" r="1" fill="currentColor"/>
+              <circle cx="30" cy="32" r="1" fill="currentColor"/>
+              <circle cx="115" cy="34" r="1.5" fill="currentColor"/>
+              <circle cx="70" cy="8" r="1" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="tile-placeholder-body">For the long nights and the restless ones &mdash; the gentle ways back to sleep.</div>
+        </div>
+        <div class="tile-overlay">
+          <span class="tile-soon">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- IN YOUR GARDEN — COMING SOON -->
+    <div class="tile-card reveal" aria-label="In Your Garden — coming soon">
+      <div class="tile-image">
+        <div class="tile-placeholder">
+          <svg class="tile-corner tl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner tr" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner bl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner br" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <div class="tile-placeholder-eyebrow">In Your</div>
+          <div class="tile-placeholder-title">Garden</div>
+          <div class="tile-placeholder-illo" aria-hidden="true">
+            <svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+              <path d="M70 55 L 70 18"/>
+              <path d="M70 35 Q 50 30, 45 20 Q 56 24, 70 30"/>
+              <path d="M70 40 Q 90 35, 95 25 Q 84 29, 70 35"/>
+              <path d="M70 24 Q 60 18, 56 10 Q 65 14, 70 22"/>
+              <path d="M70 26 Q 80 20, 84 12 Q 75 16, 70 24"/>
+              <ellipse cx="70" cy="14" rx="3" ry="2" fill="currentColor" opacity="0.6" stroke="none"/>
+            </svg>
+          </div>
+          <div class="tile-placeholder-body">The healing garden &mdash; herbs, plants and the medicine that grows.</div>
+        </div>
+        <div class="tile-overlay">
+          <span class="tile-soon">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- THE SCENT CABINET — COMING SOON -->
+    <div class="tile-card reveal" aria-label="The Scent Cabinet — coming soon">
+      <div class="tile-image">
+        <div class="tile-placeholder">
+          <svg class="tile-corner tl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner tr" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner bl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner br" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <div class="tile-placeholder-eyebrow">The</div>
+          <div class="tile-placeholder-title">Scent Cabinet</div>
+          <div class="tile-placeholder-illo" aria-hidden="true">
+            <svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+              <!-- Three apothecary bottles -->
+              <path d="M50 22 L 50 18 L 56 18 L 56 22 L 58 26 L 58 52 L 48 52 L 48 26 Z"/>
+              <path d="M68 18 L 68 14 L 76 14 L 76 18 L 79 22 L 79 52 L 65 52 L 65 22 Z"/>
+              <path d="M88 20 L 88 17 L 94 17 L 94 20 L 96 24 L 96 52 L 86 52 L 86 24 Z"/>
+              <line x1="48" y1="38" x2="58" y2="38" opacity="0.5"/>
+              <line x1="65" y1="36" x2="79" y2="36" opacity="0.5"/>
+              <line x1="86" y1="38" x2="96" y2="38" opacity="0.5"/>
+              <!-- Wisp -->
+              <path d="M53 18 Q 53 12, 55 10 Q 53 8, 55 4" opacity="0.45"/>
+            </svg>
+          </div>
+          <div class="tile-placeholder-body">Aromatherapy &mdash; essential oils and the language of scent.</div>
+        </div>
+        <div class="tile-overlay">
+          <span class="tile-soon">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- IN YOUR WATER — COMING SOON -->
+    <div class="tile-card reveal" aria-label="In Your Water — coming soon">
+      <div class="tile-image">
+        <div class="tile-placeholder">
+          <svg class="tile-corner tl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner tr" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner bl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner br" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <div class="tile-placeholder-eyebrow">In Your</div>
+          <div class="tile-placeholder-title">Water</div>
+          <div class="tile-placeholder-illo" aria-hidden="true">
+            <svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+              <!-- Dropper bottle -->
+              <path d="M68 16 L 68 22 L 60 22 L 60 50 Q 60 56, 66 56 L 78 56 Q 84 56, 84 50 L 84 22 L 76 22 L 76 16 Z"/>
+              <line x1="68" y1="22" x2="76" y2="22"/>
+              <!-- Falling drops -->
+              <path d="M40 18 Q 38 22, 40 25 Q 42 22, 40 18 Z" fill="currentColor" opacity="0.5" stroke="none"/>
+              <path d="M100 20 Q 98 24, 100 27 Q 102 24, 100 20 Z" fill="currentColor" opacity="0.45" stroke="none"/>
+              <path d="M108 32 Q 106 36, 108 39 Q 110 36, 108 32 Z" fill="currentColor" opacity="0.35" stroke="none"/>
+              <path d="M32 30 Q 30 34, 32 37 Q 34 34, 32 30 Z" fill="currentColor" opacity="0.4" stroke="none"/>
+            </svg>
+          </div>
+          <div class="tile-placeholder-body">Homeopathy &mdash; the gentle tradition of like cures like.</div>
+        </div>
+        <div class="tile-overlay">
+          <span class="tile-soon">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- THE TEA CABINET — COMING SOON -->
+    <div class="tile-card reveal" aria-label="The Tea Cabinet — coming soon">
+      <div class="tile-image">
+        <div class="tile-placeholder">
+          <svg class="tile-corner tl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner tr" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner bl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <svg class="tile-corner br" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path d="M2 14 Q 2 2, 14 2"/>
+            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
+            <path d="M4 8 L 8 4" opacity="0.5"/>
+          </svg>
+          <div class="tile-placeholder-eyebrow">The</div>
+          <div class="tile-placeholder-title">Tea Cabinet</div>
+          <div class="tile-placeholder-illo" aria-hidden="true">
+            <svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+              <!-- Teacup -->
+              <path d="M50 30 L 50 46 Q 50 52, 56 52 L 86 52 Q 92 52, 92 46 L 92 30 Z"/>
+              <!-- Saucer -->
+              <ellipse cx="71" cy="54" rx="32" ry="3"/>
+              <!-- Handle -->
+              <path d="M92 34 Q 100 34, 100 40 Q 100 46, 92 46"/>
+              <!-- Steam -->
+              <path d="M62 26 Q 60 20, 62 14 Q 60 10, 62 4" opacity="0.4"/>
+              <path d="M72 26 Q 70 20, 72 14 Q 70 10, 72 4" opacity="0.5"/>
+              <path d="M82 26 Q 80 20, 82 14 Q 80 10, 82 4" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="tile-placeholder-body">A curated shelf of teas and the rituals around them.</div>
+        </div>
+        <div class="tile-overlay">
+          <span class="tile-soon">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================== -->
+<!-- NATURE'S PULSE PLACEHOLDER                     -->
+<!-- ============================================== -->
+<section class="dreamometer is-nature reveal" aria-label="Nature's Pulse">
+
+  <div class="dm-left">
+    <div class="dm-eyebrow">A Living Instrument</div>
+    <h3>Nature&rsquo;s Pulse</h3>
+    <div class="dm-divider">&#10042;</div>
+    <p>A weekly reading of what nature is calling attention to &mdash; the plant of the moment, the season&rsquo;s remedy, the small ritual to hold close.</p>
+    <span class="dm-coming">Coming Soon</span>
+  </div>
+
+  <div class="dm-right">
+    <svg class="dm-dial-placeholder" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <radialGradient id="dialFaceSage" cx="50%" cy="45%" r="60%">
+          <stop offset="0%" stop-color="#4f5a43" stop-opacity="0.10"/>
+          <stop offset="100%" stop-color="#4f5a43" stop-opacity="0.02"/>
+        </radialGradient>
+      </defs>
+
+      <!-- Oak/sage outer ring -->
+      <circle cx="140" cy="140" r="132" fill="none" stroke="#7a6347" stroke-width="2" opacity="0.55"/>
+      <circle cx="140" cy="140" r="124" fill="none" stroke="#7a6347" stroke-width="0.6" opacity="0.4"/>
+
+      <!-- Quiet face -->
+      <circle cx="140" cy="140" r="120" fill="url(#dialFaceSage)"/>
+
+      <!-- Four cardinal seasonal markers -->
+      <g stroke="#6d7a5c" stroke-width="1" stroke-linecap="round" opacity="0.65" fill="none">
+        <line x1="140" y1="14" x2="140" y2="26"/>
+        <line x1="140" y1="254" x2="140" y2="266"/>
+        <line x1="14" y1="140" x2="26" y2="140"/>
+        <line x1="254" y1="140" x2="266" y2="140"/>
+      </g>
+      <g stroke="#6d7a5c" stroke-width="0.6" stroke-linecap="round" opacity="0.4" fill="none">
+        <line x1="55" y1="55" x2="63" y2="63"/>
+        <line x1="217" y1="55" x2="225" y2="63"/>
+        <line x1="55" y1="217" x2="63" y2="225"/>
+        <line x1="217" y1="217" x2="225" y2="225"/>
+      </g>
+
+      <!-- Season labels -->
+      <g font-family="Cinzel, serif" font-size="8" fill="#6d7a5c" opacity="0.85" letter-spacing="1.5">
+        <text x="140" y="42" text-anchor="middle">SPRING</text>
+        <text x="140" y="246" text-anchor="middle">AUTUMN</text>
+        <text x="42" y="143" text-anchor="middle">WINTER</text>
+        <text x="238" y="143" text-anchor="middle">SUMMER</text>
+      </g>
+
+      <!-- Inner ring -->
+      <circle cx="140" cy="140" r="72" fill="none" stroke="#7a6347" stroke-width="0.8" opacity="0.4"/>
+
+      <!-- Central tree-of-life — simplified botanical -->
+      <g transform="translate(140 140)" stroke="#4f5a43" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <!-- Trunk -->
+        <path d="M 0 30 L 0 -10"/>
+        <!-- Roots -->
+        <path d="M 0 30 Q -8 36, -16 40"/>
+        <path d="M 0 30 Q 8 36, 16 40"/>
+        <path d="M 0 30 Q -4 38, -8 44"/>
+        <path d="M 0 30 Q 4 38, 8 44"/>
+        <!-- Canopy -->
+        <circle cx="0" cy="-22" r="22" stroke="#4f5a43" stroke-width="1.2" fill="none" opacity="0.85"/>
+        <!-- Branches -->
+        <path d="M 0 -8 Q -10 -16, -16 -22" opacity="0.65"/>
+        <path d="M 0 -8 Q 10 -16, 16 -22" opacity="0.65"/>
+        <path d="M 0 -2 Q -14 -10, -20 -16" opacity="0.55"/>
+        <path d="M 0 -2 Q 14 -10, 20 -16" opacity="0.55"/>
+        <!-- Leaves -->
+        <circle cx="-12" cy="-30" r="2" fill="#4f5a43" opacity="0.7"/>
+        <circle cx="14" cy="-32" r="2" fill="#4f5a43" opacity="0.7"/>
+        <circle cx="0" cy="-40" r="2" fill="#4f5a43" opacity="0.7"/>
+        <circle cx="-18" cy="-18" r="1.5" fill="#4f5a43" opacity="0.5"/>
+        <circle cx="18" cy="-18" r="1.5" fill="#4f5a43" opacity="0.5"/>
+      </g>
+
+      <!-- Faint scattered botanical dots -->
+      <g fill="#6d7a5c" opacity="0.4">
+        <circle cx="100" cy="100" r="1"/>
+        <circle cx="180" cy="95" r="0.8"/>
+        <circle cx="195" cy="180" r="1"/>
+        <circle cx="90" cy="190" r="0.8"/>
+        <circle cx="200" cy="135" r="0.6"/>
+        <circle cx="80" cy="135" r="0.6"/>
+        <circle cx="140" cy="80" r="0.7"/>
+        <circle cx="140" cy="200" r="0.7"/>
+      </g>
+    </svg>
+  </div>
+
+</section>
+
+<!-- ============================================== -->
+<!-- FOOTER                                         -->
+<!-- ============================================== -->
+<footer>
+  <div class="footer-mark">INSIDE YOUR LIBRARY</div>
+  <div class="footer-tag">Tended by Louise. Already written. Already yours.</div>
+
+  <div class="footer-nav">
+    <a href="/#wings">The Library</a>
+    <a href="/#louise">About Louise</a>
+    <a href="https://inyourhands.app" target="_blank" rel="noopener">In Your Handwriting</a>
+    <a href="https://inyourdreams.app" target="_blank" rel="noopener">In Your Dreams</a>
+  </div>
+
+  <div class="footer-social">
+    <a href="https://www.instagram.com/insideyourlibrary" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@insideyourlibrary" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.pinterest.com/insideyourlibrary" target="_blank" rel="noopener">Pinterest</a>
+  </div>
+
+  <p class="footer-contact">Write to the library — <a href="mailto:hello@insideyourlibrary.com">hello@insideyourlibrary.com</a></p>
+  <p class="footer-copy">© 2026 Inside Your Library. All rights reserved.</p>
+</footer>
+
+<script>
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>
