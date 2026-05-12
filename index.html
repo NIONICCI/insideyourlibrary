@@ -484,6 +484,14 @@
       rgba(0,0,0,0.55) 85%,
       rgba(0,0,0,0) 100%);
   }
+  /* Pseudo-element overlay - empty by default, mobile gradient attached via media query */
+  .louise-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    pointer-events: none;
+  }
   /* Cream fade — overlay layer that finishes the transition past the portrait's right edge */
   .louise-fade {
     position: absolute;
@@ -828,15 +836,19 @@
       background:
         linear-gradient(
           to bottom,
-          rgba(246, 241, 230, 0.0) 0%,
-          rgba(246, 241, 230, 0.55) 45%,
-          rgba(246, 241, 230, 0.95) 65%,
+          rgba(246, 241, 230, 0.88) 0%,
+          rgba(246, 241, 230, 0.78) 35%,
+          rgba(246, 241, 230, 0.85) 65%,
           var(--cream) 100%
         );
     }
     .louise-bg {
+      max-width: 100%;
       background-position: center top;
       background-size: cover;
+      /* Remove the desktop right-edge mask on mobile (portrait is full-width here) */
+      -webkit-mask-image: none;
+      mask-image: none;
     }
     .values-inner { grid-template-columns: 1fr; gap: 2rem; }
     .value { justify-content: flex-start; max-width: 460px; margin: 0 auto; }
@@ -858,7 +870,16 @@
     }
     .hero-monogram { display: none; }
     .wings { padding: 5rem 1.4rem 4rem; }
-    .wings-grid { grid-template-columns: repeat(2, 1fr); }
+    .wings-header h2 {
+      font-size: clamp(1.7rem, 7.5vw, 2.4rem);
+      line-height: 1.15;
+    }
+    .wings-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 360px;
+      margin: 0 auto;
+    }
     .louise, .subscribe, .values, footer { padding-left: 1.4rem; padding-right: 1.4rem; }
     .footer-nav, .footer-social { gap: 1rem; }
   }
