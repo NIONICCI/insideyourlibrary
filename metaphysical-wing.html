@@ -4,48 +4,56 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Metaphysical Wing — Inside Your Library</title>
-<meta name="description" content="Step beyond the ordinary and into the realm of symbols, spirit and the subtle threads that connect us all. Numerology, astrology, palmistry, handwriting, dream interpretation, and tasseography.">
-<meta name="robots" content="index, follow">
+<meta name="description" content="The deeper shelves. The quieter questions. Explore the ancient arts of meaning, symbolism, and inner knowing — palmistry, dreams, handwriting, numerology, astrology, tasseography.">
 <link rel="canonical" href="https://insideyourlibrary.com/metaphysical-wing.html">
 
 <meta property="og:title" content="The Metaphysical Wing — Inside Your Library">
-<meta property="og:description" content="Explore the mysteries of the unseen. Numerology, astrology, palmistry, handwriting, dream interpretation, and tasseography.">
+<meta property="og:description" content="The deeper shelves. The quieter questions. Explore the ancient arts of meaning, symbolism, and inner knowing.">
 <meta property="og:url" content="https://insideyourlibrary.com/metaphysical-wing.html">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://insideyourlibrary.com/metaphysical-room.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Metaphysical Wing — Inside Your Library">
+<meta name="twitter:description" content="The deeper shelves. The quieter questions.">
+<meta name="twitter:image" content="https://insideyourlibrary.com/metaphysical-room.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="metaphysical-room.jpg" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500;600&family=Cinzel:wght@400;500;600&family=Cormorant+Upright:wght@300;400;500&family=Pinyon+Script&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    /* Light palette (kept for cross-page consistency in nav) */
     --cream:           #f6f1e6;
     --cream-warm:      #efe7d4;
+    --paper:           #ede4cf;
+    --paper-deep:      #e3d6b9;
     --ink:             #2d2419;
-
-    /* Dark wing palette — warm walnut wood tones */
-    --night:           #4d3a26;
-    --night-soft:      #574330;
-    --night-mid:       #604c37;
-    --night-warm:      #6a553e;
-    --gold:            #ecc887;
-    --gold-bright:     #f7dca5;
-    --gold-soft:       #d8b478;
-    --gold-glow:       rgba(247, 220, 165, 0.34);
-    --parchment:       #faf3e0;
-    --parchment-soft:  rgba(250, 243, 224, 0.95);
-    --parchment-mute:  rgba(250, 243, 224, 0.76);
-    --rule:            rgba(236, 200, 135, 0.42);
-    --rule-soft:       rgba(236, 200, 135, 0.22);
+    --ink-soft:        #4a3e2d;
+    --ink-mute:        #6b5e48;
+    /* Tobacco brown — for headlines, matches landing page wordmark */
+    --tobacco:         #3a2818;
+    --tobacco-soft:    #54402a;
+    --tobacco-mute:    #7a6347;
+    --gold:            #a87f3c;
+    --gold-soft:       #c2a266;
+    --gold-glow:       rgba(168, 127, 60, 0.18);
+    /* Forest green from homepage CTA — for continuity */
+    --forest:          #4f5a43;
+    --forest-deep:     #3a4530;
+    --sage:            #6d7a5c;
+    --sage-deep:       #4f5a43;
+    --rule:            rgba(45, 36, 25, 0.18);
+    --rule-soft:       rgba(45, 36, 25, 0.08);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--night);
-    color: var(--parchment);
+    background: var(--cream);
+    color: var(--ink);
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 18px;
     line-height: 1.65;
@@ -54,554 +62,543 @@
   }
 
   a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
   img { display: block; max-width: 100%; }
 
-  /* ---------- NAV ---------- */
+  .label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ====================================================== */
+  /* NAV (mirrors index.html)                               */
+  /* ====================================================== */
   nav {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
-    z-index: 50;
-    padding: 1.4rem 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(13, 10, 6, 0.85);
+    z-index: 100;
+    background: rgba(246, 241, 230, 0.92);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--rule-soft);
+    padding: 0.9rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   .nav-logo {
     display: flex;
     align-items: center;
-    gap: 0.9rem;
+    gap: 0.7rem;
+    color: var(--ink);
   }
   .nav-logo img {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
-    filter: brightness(1.1);
   }
   .nav-logo-text {
     font-family: 'Cinzel', serif;
     font-size: 0.78rem;
     letter-spacing: 0.28em;
-    color: var(--parchment);
+    color: var(--ink);
     font-weight: 500;
   }
   .nav-links {
     display: flex;
-    gap: 2.6rem;
+    gap: 2.4rem;
     list-style: none;
   }
   .nav-links a {
     font-family: 'Cinzel', serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.24em;
-    color: var(--parchment-soft);
-    transition: color 0.3s, border-color 0.3s;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
     padding-bottom: 4px;
     border-bottom: 1px solid transparent;
+    transition: color .3s ease, border-color .3s ease;
   }
   .nav-links a:hover,
-  .nav-links a.active { color: var(--gold-bright); border-color: var(--gold-bright); }
-
+  .nav-links a.active { color: var(--gold); border-color: var(--gold); }
   .nav-cta {
     font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.22em;
-    color: var(--parchment);
-    padding: 0.7rem 1.6rem;
-    border: 1px solid var(--gold);
+    font-size: 0.74rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: var(--ink);
+    padding: 0.65rem 1.4rem;
     border-radius: 999px;
-    transition: all 0.3s;
-    background: transparent;
+    transition: background .3s ease;
   }
-  .nav-cta:hover {
-    background: var(--gold);
-    color: var(--night);
-    border-color: var(--gold-bright);
+  .nav-cta:hover { background: var(--gold); }
+
+  /* ====================================================== */
+  /* HERO — left text column, right room photo              */
+  /* ====================================================== */
+  .wing-hero {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    min-height: 78vh;
+    background: var(--cream);
+    position: relative;
   }
 
-  /* ---------- HERO ---------- */
-  .wing-hero {
-    position: relative;
-    padding: 9rem 3rem 5rem;
-    min-height: 60vh;
-    background: var(--night);
-    overflow: hidden;
-  }
-  .wing-hero::before {
-    /* Painted celestial backdrop on the right — soft gold star glow */
-    content: '';
-    position: absolute;
-    top: 6rem;
-    right: -6rem;
-    width: 820px;
-    height: 720px;
-    background:
-      radial-gradient(circle at 30% 40%, rgba(240, 208, 137, 0.18) 0%, transparent 50%),
-      radial-gradient(circle at 70% 60%, rgba(224, 183, 102, 0.12) 0%, transparent 55%);
-    pointer-events: none;
-  }
-  .wing-hero::after {
-    /* Subtle warm wash behind headline */
-    content: '';
-    position: absolute;
-    top: 30%;
-    left: -10rem;
-    width: 600px;
-    height: 400px;
-    background: radial-gradient(circle at center, rgba(224, 183, 102, 0.08) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  .wing-hero-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
   .wing-hero-text {
-    max-width: 520px;
+    padding: 5rem 4rem 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
   }
+
+  .wing-hero-flourish {
+    font-family: 'Cormorant Upright', serif;
+    color: var(--gold-soft);
+    font-size: 1.2rem;
+    letter-spacing: 0.4em;
+    margin-bottom: 1.4rem;
+    opacity: 0.85;
+  }
+
   .wing-hero-eyebrow {
     font-family: 'Cinzel', serif;
-    font-size: 0.78rem;
-    letter-spacing: 0.36em;
-    color: var(--gold-bright);
-    margin-bottom: 1.4rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.34em;
+    color: var(--tobacco-mute);
     text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-  .wing-hero-eyebrow::after {
-    content: '✦';
-    color: var(--gold);
-    font-size: 0.7em;
-    letter-spacing: normal;
-  }
-  .wing-hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
-    font-size: clamp(3rem, 6vw, 5.4rem);
-    line-height: 0.98;
-    color: var(--parchment);
-    letter-spacing: -0.012em;
-    margin-bottom: 1.8rem;
-  }
-  .wing-hero-sub {
-    font-size: 1.15rem;
-    color: var(--parchment-soft);
-    line-height: 1.6;
-    max-width: 440px;
-  }
-  .wing-hero-art {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 380px;
-  }
-  /* Decorative celestial SVG art on the right */
-  .celestial-art {
-    width: 100%;
-    max-width: 560px;
-    opacity: 0.9;
+    margin-bottom: 1.6rem;
   }
 
-  /* ---------- TILES SECTION ---------- */
-  .tiles {
-    position: relative;
-    padding: 3rem 3rem 6rem;
-    background: var(--night);
-    background-image:
-      radial-gradient(ellipse at 20% 30%, rgba(224, 183, 102, 0.10) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 70%, rgba(224, 183, 102, 0.08) 0%, transparent 55%),
-      radial-gradient(ellipse at 50% 100%, rgba(224, 183, 102, 0.06) 0%, transparent 60%);
-  }
-  .tiles-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  .tiles-header h2 {
-    font-family: 'Cinzel', serif;
+  .wing-hero-title {
+    font-family: 'Cormorant SC', 'Cormorant Garamond', serif;
     font-weight: 500;
-    font-size: 0.85rem;
-    letter-spacing: 0.32em;
-    color: var(--gold-bright);
-    text-transform: uppercase;
-    margin-bottom: 0.8rem;
+    color: var(--tobacco);
+    line-height: 1.0;
+    letter-spacing: 0;
+    margin-bottom: 0.4rem;
   }
-  .tiles-header-ornament {
-    display: inline-block;
+  .wing-hero-title .line-1 {
+    display: block;
+    font-family: 'Cormorant SC', 'Cormorant Garamond', serif;
+    font-size: clamp(2.6rem, 5.6vw, 4.8rem);
+    letter-spacing: 0.04em;
+    font-weight: 500;
+    color: var(--tobacco);
+  }
+  .wing-hero-title .line-2 {
+    display: block;
+    font-family: 'Pinyon Script', 'Dancing Script', cursive;
+    font-style: normal;
+    font-size: clamp(3.6rem, 8.4vw, 7.4rem);
+    color: var(--tobacco);
+    font-weight: 400;
+    margin-top: -0.35rem;
+    margin-left: 0.5rem;
+    line-height: 1.0;
+    letter-spacing: 0;
+  }
+
+  .wing-hero-divider {
+    margin: 1.4rem 0 1.6rem;
     color: var(--gold);
-    font-size: 0.7rem;
-    letter-spacing: 0.8em;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    letter-spacing: 0.3em;
     opacity: 0.8;
+  }
+
+  .wing-hero-couplet {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.45rem;
+    color: var(--tobacco-soft);
+    line-height: 1.4;
+    margin-bottom: 1.4rem;
+    font-weight: 400;
+  }
+  .wing-hero-couplet span {
+    display: block;
+  }
+
+  .wing-hero-body {
+    font-size: 1.06rem;
+    color: var(--tobacco-soft);
+    line-height: 1.7;
+    max-width: 30rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .wing-hero-cta {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: var(--forest-deep);
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    align-self: flex-start;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.06),
+      0 6px 18px rgba(58, 69, 48, 0.22);
+    transition: background .3s ease, transform .3s ease;
+  }
+  .wing-hero-cta:hover {
+    background: var(--forest);
+    transform: translateY(-1px);
+  }
+
+  .wing-hero-image {
+    position: relative;
+    overflow: hidden;
+    background: var(--paper-deep);
+  }
+  .wing-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* ====================================================== */
+  /* CHOOSE YOUR PATH                                       */
+  /* ====================================================== */
+  .path-section {
+    padding: 5.5rem 4rem 6rem;
+    background: var(--cream);
+  }
+
+  .path-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+  .path-header .ornament {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.5em;
+    color: var(--tobacco-mute);
+    text-transform: uppercase;
+  }
+  .path-header .ornament::before,
+  .path-header .ornament::after {
+    content: '—';
+    color: var(--gold);
+    margin: 0 1rem;
+    opacity: 0.7;
   }
 
   .tiles-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.4rem;
-    max-width: 1280px;
+    gap: 2rem;
+    max-width: 1240px;
     margin: 0 auto;
-    position: relative;
   }
 
   .tile-card {
     position: relative;
-    display: block;
-    aspect-ratio: 1 / 1;
-    overflow: visible;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: transform 0.5s ease;
-  }
-  /* Brass glow halo behind each tile */
-  .tile-card::after {
-    content: '';
-    position: absolute;
-    inset: -8px;
-    z-index: -1;
-    border-radius: 8px;
-    background: radial-gradient(ellipse at center, rgba(224, 183, 102, 0.18) 0%, rgba(224, 183, 102, 0.06) 50%, transparent 75%);
-    opacity: 0.6;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-  }
-  .tile-card:hover::after { opacity: 1; }
-  .tile-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    background: var(--paper);
+    border-radius: 6px;
     overflow: hidden;
-    border-radius: 4px;
     box-shadow:
-      0 10px 30px rgba(0, 0, 0, 0.5),
-      0 2px 8px rgba(0, 0, 0, 0.3),
-      0 0 0 1px rgba(224, 183, 102, 0.18);
-    transition: box-shadow 0.5s ease;
+      0 1px 0 rgba(255,255,255,0.5) inset,
+      0 10px 32px rgba(45, 36, 25, 0.10),
+      0 2px 8px rgba(45, 36, 25, 0.06);
+    transition: transform .35s ease, box-shadow .35s ease;
+    display: flex;
+    flex-direction: column;
   }
-  .tile-card:hover {
-    transform: translateY(-6px);
-  }
-  .tile-card:hover .tile-card-inner {
+  .tile-card.is-live { cursor: pointer; }
+  .tile-card.is-live:hover {
+    transform: translateY(-4px);
     box-shadow:
-      0 20px 50px rgba(0, 0, 0, 0.55),
-      0 4px 14px rgba(0, 0, 0, 0.35),
-      0 0 0 1px rgba(240, 208, 137, 0.35),
-      0 0 24px rgba(224, 183, 102, 0.18);
+      0 1px 0 rgba(255,255,255,0.5) inset,
+      0 18px 44px rgba(45, 36, 25, 0.16),
+      0 4px 12px rgba(45, 36, 25, 0.08);
   }
-  .tile-card img {
+
+  .tile-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: var(--paper);
+    overflow: hidden;
+  }
+  .tile-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.9s ease, filter 0.5s ease;
-    filter: brightness(1.08);
-  }
-  .tile-card:hover img { transform: scale(1.04); }
-
-  /* Soft gold border-glow on hover for live tiles */
-  .tile-card.is-live::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 4px;
-    border: 1px solid transparent;
-    pointer-events: none;
-    transition: border-color 0.4s ease;
-    z-index: 2;
-  }
-  .tile-card.is-live:hover::before {
-    border-color: var(--gold-bright);
-    box-shadow: inset 0 0 24px rgba(230, 194, 121, 0.15);
+    object-position: center;
+    display: block;
   }
 
-  /* "Enter" cue on live tiles — appears on hover */
-  .tile-enter-cue {
-    position: absolute;
-    bottom: 1.2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(13, 10, 6, 0.88);
-    color: var(--gold-bright);
-    font-family: 'Cinzel', serif;
-    font-size: 0.62rem;
-    letter-spacing: 0.32em;
-    padding: 0.55rem 1.2rem;
-    border: 1px solid var(--gold);
-    border-radius: 2px;
-    text-transform: uppercase;
-    opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    z-index: 3;
-    white-space: nowrap;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-  }
-  .tile-card.is-live:hover .tile-enter-cue {
-    opacity: 1;
-    transform: translateX(-50%) translateY(-4px);
+  .tile-footer {
+    display: flex;
+    justify-content: center;
+    padding: 1.3rem 1rem 1.5rem;
+    background: var(--paper);
   }
 
-  /* "Coming Soon" ribbon — always visible on locked tiles */
-  .tile-soon {
-    position: absolute;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(13, 10, 6, 0.88);
-    color: var(--gold-bright);
-    font-family: 'Cinzel', serif;
-    font-size: 0.58rem;
-    letter-spacing: 0.32em;
-    padding: 0.45rem 1rem;
-    border: 1px solid var(--gold);
-    border-radius: 2px;
-    text-transform: uppercase;
-    z-index: 3;
-    white-space: nowrap;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-  }
-  /* Slight darken on locked tiles so they read as inactive */
-  .tile-card.is-locked img {
-    filter: brightness(0.85);
-  }
-  .tile-card.is-locked { cursor: default; }
-  .tile-card.is-locked:hover {
-    transform: translateY(-3px);
-  }
-  .tile-card.is-locked:hover img {
-    transform: scale(1);
-  }
-
-  /* ---------- DREAMOMETER PANEL ---------- */
-  .dreamometer-panel {
-    margin: 4rem auto 0;
-    max-width: 1280px;
-    background: linear-gradient(135deg, var(--night-warm) 0%, var(--night-soft) 100%);
-    border: 1px solid var(--rule);
-    border-radius: 6px;
-    padding: 3rem 3rem;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 3rem;
-    align-items: center;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-    position: relative;
-    overflow: hidden;
-  }
-  .dreamometer-panel::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background:
-      radial-gradient(circle at 15% 50%, rgba(230, 194, 121, 0.08) 0%, transparent 40%),
-      radial-gradient(circle at 85% 50%, rgba(230, 194, 121, 0.05) 0%, transparent 40%);
-    pointer-events: none;
-  }
-
-  .dreamometer-icon {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    z-index: 1;
-  }
-  .dreamometer-icon svg { width: 100%; height: 100%; }
-
-  .dreamometer-text {
-    position: relative;
-    z-index: 1;
-  }
-  .dreamometer-title {
-    font-family: 'Cinzel', serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.28em;
-    color: var(--gold-bright);
-    text-transform: uppercase;
-    margin-bottom: 0.8rem;
-  }
-  .dreamometer-rule {
-    width: 36px;
-    height: 1px;
-    background: var(--gold);
-    margin-bottom: 1rem;
-  }
-  .dreamometer-headline {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    color: var(--parchment);
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-  }
-  .dreamometer-sub {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1rem;
-    color: var(--parchment-soft);
-  }
-
-  .dreamometer-cta {
-    position: relative;
-    z-index: 1;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
+  .tile-enter {
+    display: inline-block;
     font-family: 'Cinzel', serif;
     font-size: 0.72rem;
-    letter-spacing: 0.28em;
-    color: var(--night);
-    background: var(--gold-bright);
-    padding: 1rem 1.8rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: #1f2438;
+    padding: 0.7rem 1.8rem;
     border-radius: 3px;
-    text-transform: uppercase;
-    transition: all 0.35s ease;
-    white-space: nowrap;
+    border: 1px solid rgba(212, 175, 80, 0.45);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.08),
+      0 4px 12px rgba(20, 24, 40, 0.18);
+    transition: background .3s ease, transform .3s ease;
   }
-  .dreamometer-cta:hover {
-    background: var(--parchment);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(230, 194, 121, 0.25);
+  .tile-card.is-live:hover .tile-enter {
+    background: #2a3151;
+    transform: translateY(-1px);
   }
-  .dreamometer-cta::after {
-    content: '→';
-    transition: transform 0.3s ease;
-  }
-  .dreamometer-cta:hover::after { transform: translateX(4px); }
 
-  .dreamometer-link {
-    display: block;
-    text-align: center;
-    margin-top: 1.4rem;
+  .tile-soon {
     font-family: 'Cinzel', serif;
-    font-size: 0.62rem;
-    letter-spacing: 0.24em;
-    color: var(--parchment-mute);
-    text-transform: lowercase;
-    position: relative;
-    z-index: 1;
-  }
-  .dreamometer-link a {
-    color: var(--gold-soft);
-    transition: color 0.3s;
-  }
-  .dreamometer-link a:hover { color: var(--gold-bright); }
-
-  /* ---------- BACK LINK ---------- */
-  .back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    margin: 5rem auto 0;
-    font-family: 'Cinzel', serif;
-    font-size: 0.68rem;
-    letter-spacing: 0.28em;
-    color: var(--parchment-mute);
+    font-size: 0.72rem;
+    letter-spacing: 0.34em;
     text-transform: uppercase;
-    transition: color 0.3s, gap 0.3s;
-    text-align: center;
-    width: 100%;
-    justify-content: center;
-  }
-  .back-link::before {
-    content: '←';
-    transition: transform 0.3s;
-  }
-  .back-link:hover {
-    color: var(--gold-bright);
-    gap: 0.9rem;
-  }
-  .back-link:hover::before { transform: translateX(-4px); }
-
-  /* ---------- FOOTER ---------- */
-  footer {
-    background: var(--night-soft);
-    padding: 4.5rem 3rem 2.5rem;
-    color: var(--parchment-soft);
-    text-align: center;
+    color: var(--tobacco-mute);
+    padding: 0.7rem 1.8rem;
     border-top: 1px solid var(--rule-soft);
+    border-bottom: 1px solid var(--rule-soft);
+    opacity: 0.82;
+  }
+  .tile-soon::before,
+  .tile-soon::after {
+    content: '✦';
+    color: var(--gold);
+    margin: 0 0.6rem;
+    font-size: 0.7em;
+    opacity: 0.7;
+  }
+
+  /* ====================================================== */
+  /* DREAMOMETER PLACEHOLDER PANEL                          */
+  /* ====================================================== */
+  .dreamometer {
+    margin: 0 4rem 5rem;
+    background: var(--paper);
+    border: 1px solid var(--rule-soft);
+    border-radius: 6px;
+    padding: 3.5rem 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.5) inset,
+      0 10px 32px rgba(45, 36, 25, 0.08);
+  }
+
+  .dm-left .dm-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.36em;
+    color: var(--tobacco-mute);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .dm-left h3 {
+    font-family: 'Cormorant SC', 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    letter-spacing: 0.04em;
+    color: var(--tobacco);
+    margin-bottom: 0.2rem;
+  }
+  .dm-left h3 .dm-tm {
+    font-size: 0.55em;
+    vertical-align: super;
+    letter-spacing: 0;
+    color: var(--gold);
+    margin-left: 0.05em;
+  }
+  .dm-left .dm-divider {
+    color: var(--gold);
+    font-size: 0.9rem;
+    margin: 0.8rem 0 1.2rem;
+    opacity: 0.7;
+  }
+  .dm-left p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--tobacco-soft);
+    line-height: 1.5;
+    margin-bottom: 1.6rem;
+    max-width: 28rem;
+  }
+  .dm-coming {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--tobacco-mute);
+    padding: 0.7rem 1.6rem;
+    display: inline-block;
+    border-top: 1px solid var(--rule-soft);
+    border-bottom: 1px solid var(--rule-soft);
+    opacity: 0.85;
+  }
+  .dm-coming::before,
+  .dm-coming::after {
+    content: '✦';
+    color: var(--gold);
+    margin: 0 0.6rem;
+    font-size: 0.7em;
+    opacity: 0.7;
+  }
+
+  .dm-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .dm-dial-placeholder {
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1 / 1;
+    opacity: 0.85;
+  }
+
+  /* ====================================================== */
+  /* FOOTER                                                 */
+  /* ====================================================== */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    padding: 4rem 2rem 3rem;
   }
   .footer-mark {
     font-family: 'Cinzel', serif;
-    font-size: 0.78rem;
-    letter-spacing: 0.36em;
-    color: var(--parchment);
-    margin-bottom: 0.6rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.35em;
+    color: var(--gold-soft);
+    margin-bottom: 0.5rem;
   }
   .footer-tag {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    color: var(--parchment-mute);
-    font-size: 1rem;
-    margin-bottom: 2.4rem;
+    font-size: 1.05rem;
+    color: rgba(246, 241, 230, 0.7);
+    margin-bottom: 2rem;
   }
   .footer-nav {
     display: flex;
-    gap: 2rem;
     justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
   }
   .footer-nav a {
     font-family: 'Cinzel', serif;
-    font-size: 0.68rem;
+    font-size: 0.7rem;
     letter-spacing: 0.22em;
-    color: var(--parchment-soft);
-    transition: color 0.3s;
     text-transform: uppercase;
+    color: var(--paper);
+    opacity: 0.7;
+    transition: opacity .3s ease, color .3s ease;
   }
-  .footer-nav a:hover { color: var(--gold-bright); }
-
+  .footer-nav a:hover { color: var(--gold-soft); opacity: 1; }
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .footer-social a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--paper);
+    opacity: 0.55;
+    transition: opacity .3s ease, color .3s ease;
+  }
+  .footer-social a:hover { color: var(--gold-soft); opacity: 1; }
+  .footer-contact {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: rgba(246, 241, 230, 0.6);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  .footer-contact a { color: var(--gold-soft); }
   .footer-copy {
-    font-size: 0.82rem;
-    color: var(--parchment-mute);
-    margin-top: 1.2rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    color: rgba(246, 241, 230, 0.35);
   }
 
-  /* ---------- ANIMATION ---------- */
+  /* ====================================================== */
+  /* REVEAL                                                 */
+  /* ====================================================== */
   .reveal {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(24px);
     transition: opacity 0.9s ease, transform 0.9s ease;
   }
-  .reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+  /* ====================================================== */
+  /* RESPONSIVE                                             */
+  /* ====================================================== */
+  @media (max-width: 980px) {
+    nav { padding: 0.8rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-logo-text { font-size: 0.68rem; }
+
+    .wing-hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    .wing-hero-text {
+      padding: 3.5rem 1.6rem 3rem;
+      order: 2;
+    }
+    .wing-hero-image {
+      order: 1;
+      aspect-ratio: 4 / 3;
+    }
+
+    .path-section { padding: 4rem 1.5rem 4.5rem; }
+    .tiles-grid {
+      grid-template-columns: 1fr;
+      gap: 1.6rem;
+      max-width: 420px;
+    }
+
+    .dreamometer {
+      margin: 0 1.5rem 4rem;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 2.5rem 1.6rem;
+    }
+    .dm-left { text-align: center; }
+    .dm-left p { margin-left: auto; margin-right: auto; }
   }
 
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 1024px) {
-    .wing-hero { padding: 8rem 2rem 4rem; }
-    .wing-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    .wing-hero-art { min-height: 280px; }
-    .tiles-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .dreamometer-panel {
-      grid-template-columns: 1fr;
-      text-align: center;
-      gap: 1.6rem;
-      padding: 2.5rem 2rem;
-    }
-    .dreamometer-icon { margin: 0 auto; }
-    .dreamometer-rule { margin: 0 auto 1rem; }
-  }
-  @media (max-width: 720px) {
-    nav { padding: 1rem 1.4rem; }
-    .nav-links { display: none; }
-    .nav-logo-text { display: none; }
-    .nav-cta { padding: 0.6rem 1.2rem; font-size: 0.62rem; }
-    .wing-hero { padding: 7rem 1.4rem 3rem; }
-    .tiles { padding: 2rem 1.4rem 4rem; }
-    .tiles-grid { grid-template-columns: 1fr; }
-    footer { padding-left: 1.4rem; padding-right: 1.4rem; }
-    .footer-nav { gap: 1rem; }
+  @media (min-width: 981px) and (max-width: 1180px) {
+    .tiles-grid { grid-template-columns: repeat(2, 1fr); max-width: 820px; }
+    .dreamometer { grid-template-columns: 1fr; gap: 2rem; }
   }
 </style>
 </head>
@@ -620,237 +617,176 @@
     <li><a href="/#wings" class="active">The Library</a></li>
     <li><a href="/#louise">About Louise</a></li>
   </ul>
-  <a href="/" class="nav-cta">Inside Your Library</a>
+  <a href="/" class="nav-cta">Return Home</a>
 </nav>
 
 <!-- ============================================== -->
 <!-- HERO                                           -->
 <!-- ============================================== -->
 <section class="wing-hero">
-  <div class="wing-hero-inner">
-    <div class="wing-hero-text reveal">
-      <div class="wing-hero-eyebrow">The Metaphysical Wing</div>
-      <h1>Explore the<br>Unseen</h1>
-      <p class="wing-hero-sub">Step beyond the ordinary and into the realm of symbols, spirit and the subtle threads that connect us all.</p>
-    </div>
-
-    <div class="wing-hero-art reveal" aria-hidden="true">
-      <!-- Decorative celestial SVG — orrery + crystal + books motif -->
-      <svg class="celestial-art" viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg">
-        <!-- background stars -->
-        <g fill="#e6c279" opacity="0.55">
-          <circle cx="120" cy="60" r="1"/>
-          <circle cx="200" cy="40" r="1.4"/>
-          <circle cx="320" cy="55" r="1"/>
-          <circle cx="420" cy="80" r="1.2"/>
-          <circle cx="500" cy="50" r="1"/>
-          <circle cx="80" cy="120" r="1"/>
-          <circle cx="540" cy="180" r="1.2"/>
-          <circle cx="40" cy="200" r="1"/>
-          <circle cx="490" cy="260" r="1"/>
-          <circle cx="150" cy="180" r="0.8"/>
-          <circle cx="380" cy="40" r="0.8"/>
-        </g>
-
-        <!-- 4-point sparkle star top center -->
-        <g transform="translate(280, 50)">
-          <polygon points="0,-26 4,0 0,4 -4,0" fill="#e6c279"/>
-          <polygon points="0,26 -4,0 0,-4 4,0" fill="#e6c279"/>
-          <polygon points="-26,0 0,-4 4,0 0,4" fill="#e6c279"/>
-          <polygon points="26,0 0,4 -4,0 0,-4" fill="#e6c279"/>
-          <circle cx="0" cy="0" r="2" fill="#e6c279"/>
-        </g>
-
-        <!-- crystal obelisk on books -->
-        <g transform="translate(170, 280)">
-          <!-- books stack -->
-          <rect x="-50" y="20" width="100" height="18" fill="#2a1f12" stroke="#d4a957" stroke-width="0.6"/>
-          <rect x="-45" y="38" width="90" height="16" fill="#221a10" stroke="#d4a957" stroke-width="0.6"/>
-          <rect x="-50" y="54" width="100" height="14" fill="#2a1f12" stroke="#d4a957" stroke-width="0.6"/>
-          <!-- decorative spines -->
-          <line x1="-50" y1="29" x2="50" y2="29" stroke="#d4a957" stroke-width="0.4" opacity="0.5"/>
-          <line x1="-45" y1="46" x2="45" y2="46" stroke="#d4a957" stroke-width="0.4" opacity="0.5"/>
-          <!-- crystal obelisk -->
-          <polygon points="-12,20 12,20 14,-20 8,-40 -8,-40 -14,-20" fill="none" stroke="#e6c279" stroke-width="1.4" stroke-linejoin="round"/>
-          <polygon points="-12,20 12,20 0,-50" fill="none" stroke="#e6c279" stroke-width="0.8" opacity="0.6"/>
-          <line x1="-8" y1="-40" x2="0" y2="-50" stroke="#e6c279" stroke-width="1"/>
-          <line x1="8" y1="-40" x2="0" y2="-50" stroke="#e6c279" stroke-width="1"/>
-        </g>
-
-        <!-- candle in centre -->
-        <g transform="translate(290, 310)">
-          <rect x="-5" y="-30" width="10" height="40" fill="#ebe0c4" stroke="#d4a957" stroke-width="0.8"/>
-          <!-- flame -->
-          <ellipse cx="0" cy="-38" rx="3" ry="6" fill="#e6c279"/>
-          <ellipse cx="0" cy="-38" rx="1.5" ry="3" fill="#fff5d8"/>
-          <!-- glow -->
-          <circle cx="0" cy="-38" r="14" fill="#e6c279" opacity="0.08"/>
-          <circle cx="0" cy="-38" r="22" fill="#e6c279" opacity="0.05"/>
-          <!-- base -->
-          <ellipse cx="0" cy="11" rx="10" ry="3" fill="none" stroke="#d4a957" stroke-width="0.8"/>
-        </g>
-
-        <!-- armillary sphere / orrery on right -->
-        <g transform="translate(440, 220)">
-          <!-- equatorial ring -->
-          <ellipse cx="0" cy="0" rx="80" ry="22" fill="none" stroke="#e6c279" stroke-width="1.6"/>
-          <ellipse cx="0" cy="0" rx="80" ry="22" fill="none" stroke="#e6c279" stroke-width="0.4" stroke-dasharray="2 4" opacity="0.5"/>
-          <!-- meridian ring (vertical) -->
-          <ellipse cx="0" cy="0" rx="22" ry="80" fill="none" stroke="#d4a957" stroke-width="1.4"/>
-          <!-- tilted ring -->
-          <ellipse cx="0" cy="0" rx="78" ry="34" fill="none" stroke="#d4a957" stroke-width="1" opacity="0.7" transform="rotate(-22)"/>
-          <ellipse cx="0" cy="0" rx="78" ry="34" fill="none" stroke="#d4a957" stroke-width="1" opacity="0.7" transform="rotate(22)"/>
-          <!-- centre sun -->
-          <circle cx="0" cy="0" r="6" fill="#e6c279"/>
-          <circle cx="0" cy="0" r="10" fill="none" stroke="#e6c279" stroke-width="0.5" opacity="0.5"/>
-          <!-- small orbiting bodies -->
-          <circle cx="-80" cy="0" r="2.5" fill="#e6c279"/>
-          <circle cx="62" cy="-16" r="1.8" fill="#e6c279"/>
-          <!-- stand -->
-          <line x1="0" y1="80" x2="0" y2="120" stroke="#d4a957" stroke-width="1.8"/>
-          <ellipse cx="0" cy="124" rx="20" ry="4" fill="none" stroke="#d4a957" stroke-width="1.4"/>
-          <line x1="-14" y1="124" x2="-18" y2="138" stroke="#d4a957" stroke-width="1.4"/>
-          <line x1="14" y1="124" x2="18" y2="138" stroke="#d4a957" stroke-width="1.4"/>
-          <line x1="0" y1="124" x2="0" y2="138" stroke="#d4a957" stroke-width="1.4"/>
-        </g>
-
-        <!-- faint constellation lines top right -->
-        <g stroke="#d4a957" stroke-width="0.5" fill="none" opacity="0.35">
-          <line x1="380" y1="40" x2="420" y2="80"/>
-          <line x1="420" y1="80" x2="500" y2="50"/>
-          <line x1="500" y1="50" x2="540" y2="100"/>
-        </g>
-      </svg>
-    </div>
+  <div class="wing-hero-text">
+    <div class="wing-hero-flourish">✦ ❦ ✦</div>
+    <div class="wing-hero-eyebrow">Welcome to the</div>
+    <h1 class="wing-hero-title">
+      <span class="line-1">Metaphysical</span>
+      <span class="line-2">Wing</span>
+    </h1>
+    <div class="wing-hero-divider">✦</div>
+    <p class="wing-hero-couplet">
+      <span>The deeper shelves.</span>
+      <span>The quieter questions.</span>
+    </p>
+    <p class="wing-hero-body">
+      Explore the ancient arts of meaning, symbolism, and inner knowing.
+      These timeless tools have guided seekers for centuries.
+      They are here for you.
+    </p>
+    <a href="#paths" class="wing-hero-cta">Step Into the Wing</a>
+  </div>
+  <div class="wing-hero-image">
+    <img src="metaphysical-room.jpg" alt="The Metaphysical Wing — a sunlit antechamber with bookshelves, an open astrology chart, a brass candlestick, and an arched doorway leading deeper into a study with a globe and orrery." fetchpriority="high" decoding="async" loading="eager">
   </div>
 </section>
 
 <!-- ============================================== -->
-<!-- TILES                                          -->
+<!-- CHOOSE YOUR PATH                               -->
 <!-- ============================================== -->
-<section class="tiles">
-  <div class="tiles-header reveal">
-    <h2>Choose a Path within the Metaphysical Wing</h2>
-    <div class="tiles-header-ornament">✦ ✦ ✦</div>
+<section id="paths" class="path-section">
+  <div class="path-header reveal">
+    <span class="ornament">Choose Your Path</span>
   </div>
 
   <div class="tiles-grid">
 
-    <!-- IN YOUR DREAMS — LIVE — Position 1 (blue) -->
-    <a href="https://inyourdreams.app" target="_blank" rel="noopener" class="tile-card is-live reveal" aria-label="Enter In Your Dreams">
-      <div class="tile-card-inner">
-        <span class="tile-enter-cue">Enter →</span>
-        <img src="tile-dreams.jpg" alt="In Your Dreams — Dream Interpretation for self-discovery, guidance and a deeper understanding of your inner world." loading="lazy" decoding="async">
-      </div>
-    </a>
-
-    <!-- IN YOUR HANDWRITING — LIVE — Position 2 (charcoal) -->
+    <!-- HANDWRITING — LIVE -->
     <a href="https://inyourhands.app" target="_blank" rel="noopener" class="tile-card is-live reveal" aria-label="Enter In Your Handwriting">
-      <div class="tile-card-inner">
-        <span class="tile-enter-cue">Enter →</span>
-        <img src="tile-handwriting.jpg" alt="In Your Handwriting — What your handwriting reveals through graphology." loading="lazy" decoding="async">
+      <div class="tile-image">
+        <img src="tile-handwriting.jpg" alt="In Your Handwriting — quill, ink, and old books on parchment" loading="lazy" decoding="async">
+      </div>
+      <div class="tile-footer">
+        <span class="tile-enter">Enter</span>
       </div>
     </a>
 
-    <!-- IN YOUR STARS — OPENING SOON — Position 3 (blue) -->
-    <div class="tile-card is-locked reveal" aria-label="In Your Stars — coming soon">
-      <div class="tile-card-inner">
+    <!-- STARS — COMING SOON -->
+    <div class="tile-card reveal" aria-label="In Your Stars — coming soon">
+      <div class="tile-image">
+        <img src="tile-stars.jpg" alt="In Your Stars — brass telescope, leather books and celestial globe" loading="lazy" decoding="async">
+      </div>
+      <div class="tile-footer">
         <span class="tile-soon">Coming Soon</span>
-        <img src="tile-stars.jpg" alt="In Your Stars — Astrology for self-discovery, alignment and a life written in the stars." loading="lazy" decoding="async">
       </div>
     </div>
 
-    <!-- IN YOUR NUMBERS — OPENING SOON — Position 4 (green) -->
-    <div class="tile-card is-locked reveal" aria-label="In Your Numbers — coming soon">
-      <div class="tile-card-inner">
+    <!-- PALMS — COMING SOON -->
+    <div class="tile-card reveal" aria-label="In Your Palms — coming soon">
+      <div class="tile-image">
+        <img src="tile-palms.jpg" alt="In Your Palms — two open hands with a guiding star between them" loading="lazy" decoding="async">
+      </div>
+      <div class="tile-footer">
         <span class="tile-soon">Coming Soon</span>
-        <img src="tile-numbers.jpg" alt="In Your Numbers — Numerology for self-awareness, life purpose and the numbers that shape your path." loading="lazy" decoding="async">
       </div>
     </div>
 
-    <!-- IN YOUR PALMS — OPENING SOON — Position 5 (purple) -->
-    <div class="tile-card is-locked reveal" aria-label="In Your Palms — coming soon">
-      <div class="tile-card-inner">
+    <!-- CUP — COMING SOON -->
+    <div class="tile-card reveal" aria-label="In Your Cup — coming soon">
+      <div class="tile-image">
+        <img src="tile-cup.jpg" alt="In Your Cup — ornate teacup and saucer flanked by compass roses" loading="lazy" decoding="async">
+      </div>
+      <div class="tile-footer">
         <span class="tile-soon">Coming Soon</span>
-        <img src="tile-palms.jpg" alt="In Your Palms — Palmistry for self-discovery, intuition and a life written in your hands." loading="lazy" decoding="async">
       </div>
     </div>
 
-    <!-- IN YOUR CUP — OPENING SOON — Position 6 (brown) -->
-    <div class="tile-card is-locked reveal" aria-label="In Your Cup — coming soon">
-      <div class="tile-card-inner">
+    <!-- NUMBERS — COMING SOON -->
+    <div class="tile-card reveal" aria-label="In Your Numbers — coming soon">
+      <div class="tile-image">
+        <img src="tile-numbers.jpg" alt="In Your Numbers — open numerology book, crystal and brass candlestick" loading="lazy" decoding="async">
+      </div>
+      <div class="tile-footer">
         <span class="tile-soon">Coming Soon</span>
-        <img src="tile-cup.jpg" alt="In Your Cup — Tasseography for self-discovery, intuition and a life revealed in the leaves." loading="lazy" decoding="async">
       </div>
     </div>
+
+    <!-- DREAMS — LIVE -->
+    <a href="https://inyourdreams.app" target="_blank" rel="noopener" class="tile-card is-live reveal" aria-label="Enter In Your Dreams">
+      <div class="tile-image">
+        <img src="tile-dreams.jpg" alt="In Your Dreams — stacked leather dream books and a single candle beneath a crescent moon" loading="lazy" decoding="async">
+      </div>
+      <div class="tile-footer">
+        <span class="tile-enter">Enter</span>
+      </div>
+    </a>
 
   </div>
+</section>
 
-  <!-- ============================================== -->
-  <!-- DREAMOMETER PANEL                              -->
-  <!-- ============================================== -->
-  <div class="dreamometer-panel reveal">
-    <div class="dreamometer-icon" aria-hidden="true">
-      <svg viewBox="0 0 120 120">
-        <!-- outer ring -->
-        <circle cx="60" cy="60" r="56" fill="#14100a" stroke="#d4a957" stroke-width="1.4"/>
-        <circle cx="60" cy="60" r="50" fill="none" stroke="#d4a957" stroke-width="0.6" opacity="0.5"/>
-        <!-- compass tick marks -->
-        <g stroke="#e6c279" stroke-width="1.2" stroke-linecap="round">
-          <line x1="60" y1="14" x2="60" y2="20"/>
-          <line x1="60" y1="100" x2="60" y2="106"/>
-          <line x1="14" y1="60" x2="20" y2="60"/>
-          <line x1="100" y1="60" x2="106" y2="60"/>
-        </g>
-        <!-- minor ticks -->
-        <g stroke="#d4a957" stroke-width="0.8" opacity="0.7">
-          <line x1="29" y1="29" x2="33" y2="33"/>
-          <line x1="91" y1="29" x2="87" y2="33"/>
-          <line x1="29" y1="91" x2="33" y2="87"/>
-          <line x1="91" y1="91" x2="87" y2="87"/>
-        </g>
-        <!-- inner dial face -->
-        <circle cx="60" cy="60" r="36" fill="none" stroke="#d4a957" stroke-width="0.6"/>
-        <!-- compass labels (just markers) -->
-        <g fill="#e6c279" font-family="Cinzel, serif" font-size="6" text-anchor="middle">
-          <text x="60" y="30">N</text>
-          <text x="60" y="96">S</text>
-          <text x="92" y="62">E</text>
-          <text x="28" y="62">W</text>
-        </g>
-        <!-- pointer needle -->
-        <g transform="translate(60, 60) rotate(35)">
-          <polygon points="0,-30 4,0 0,4 -4,0" fill="#e6c279"/>
-          <polygon points="0,30 -3,0 0,-2 3,0" fill="#d4a957" opacity="0.7"/>
-        </g>
-        <!-- centre cap -->
-        <circle cx="60" cy="60" r="3" fill="#e6c279"/>
-        <!-- decorative stars -->
-        <circle cx="44" cy="44" r="0.8" fill="#e6c279"/>
-        <circle cx="78" cy="78" r="0.8" fill="#e6c279"/>
-        <circle cx="44" cy="78" r="0.8" fill="#e6c279"/>
-        <circle cx="78" cy="44" r="0.8" fill="#e6c279"/>
-      </svg>
-    </div>
+<!-- ============================================== -->
+<!-- DREAMOMETER PLACEHOLDER                        -->
+<!-- ============================================== -->
+<section class="dreamometer reveal" aria-label="The Dreamometer">
 
-    <div class="dreamometer-text">
-      <div class="dreamometer-title">The Dreamometer</div>
-      <div class="dreamometer-rule"></div>
-      <div class="dreamometer-headline">Discover what the world is dreaming about.</div>
-      <div class="dreamometer-sub">Contribute to a living global dream tracker for free.</div>
-    </div>
-
-    <a href="https://inyourdreams.app" target="_blank" rel="noopener" class="dreamometer-cta">Visit the Dreamometer</a>
+  <div class="dm-left">
+    <div class="dm-eyebrow">A Living Instrument</div>
+    <h3>The Dreamometer<span class="dm-tm">™</span></h3>
+    <div class="dm-divider">✦</div>
+    <p>A world-first public tracker of human dreaming &mdash; listening to the symbols, themes and patterns rising across the globe in real time.</p>
+    <span class="dm-coming">Coming Soon</span>
   </div>
 
-  <div class="dreamometer-link">
-    <a href="https://inyourdreams.app" target="_blank" rel="noopener">inyourdreams.app ↗</a>
+  <div class="dm-right">
+    <svg class="dm-dial-placeholder" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <radialGradient id="dialFaceQuiet" cx="50%" cy="45%" r="60%">
+          <stop offset="0%" stop-color="#3a2818" stop-opacity="0.10"/>
+          <stop offset="100%" stop-color="#3a2818" stop-opacity="0.02"/>
+        </radialGradient>
+      </defs>
+
+      <!-- Outer brass ring -->
+      <circle cx="140" cy="140" r="132" fill="none" stroke="#a87f3c" stroke-width="2" opacity="0.55"/>
+      <circle cx="140" cy="140" r="124" fill="none" stroke="#a87f3c" stroke-width="0.6" opacity="0.4"/>
+
+      <!-- Quiet face -->
+      <circle cx="140" cy="140" r="120" fill="url(#dialFaceQuiet)"/>
+
+      <!-- Compass roses around the rim -->
+      <g stroke="#a87f3c" stroke-width="1" stroke-linecap="round" opacity="0.55" fill="none">
+        <line x1="140" y1="14" x2="140" y2="26"/>
+        <line x1="140" y1="254" x2="140" y2="266"/>
+        <line x1="14" y1="140" x2="26" y2="140"/>
+        <line x1="254" y1="140" x2="266" y2="140"/>
+      </g>
+      <g stroke="#a87f3c" stroke-width="0.6" stroke-linecap="round" opacity="0.35" fill="none">
+        <line x1="55" y1="55" x2="63" y2="63"/>
+        <line x1="217" y1="55" x2="225" y2="63"/>
+        <line x1="55" y1="217" x2="63" y2="225"/>
+        <line x1="217" y1="217" x2="225" y2="225"/>
+      </g>
+
+      <!-- Inner ring -->
+      <circle cx="140" cy="140" r="72" fill="none" stroke="#a87f3c" stroke-width="0.8" opacity="0.4"/>
+
+      <!-- Central star -->
+      <g transform="translate(140 140)" fill="#a87f3c" opacity="0.75">
+        <polygon points="0,-44 5,-6 44,0 5,6 0,44 -5,6 -44,0 -5,-6"/>
+        <circle r="3" fill="#a87f3c"/>
+      </g>
+
+      <!-- Faint scattered stars -->
+      <g fill="#a87f3c" opacity="0.45">
+        <circle cx="100" cy="100" r="1"/>
+        <circle cx="180" cy="95" r="0.8"/>
+        <circle cx="195" cy="180" r="1"/>
+        <circle cx="90" cy="190" r="0.8"/>
+        <circle cx="200" cy="135" r="0.6"/>
+        <circle cx="80" cy="135" r="0.6"/>
+        <circle cx="140" cy="80" r="0.7"/>
+        <circle cx="140" cy="200" r="0.7"/>
+      </g>
+    </svg>
   </div>
 
-  <!-- ============================================== -->
-  <!-- BACK LINK                                      -->
-  <!-- ============================================== -->
-  <a href="/" class="back-link">Return to the Library</a>
 </section>
 
 <!-- ============================================== -->
@@ -861,19 +797,22 @@
   <div class="footer-tag">Tended by Louise. Already written. Already yours.</div>
 
   <div class="footer-nav">
-    <a href="/">Home</a>
     <a href="/#wings">The Library</a>
     <a href="/#louise">About Louise</a>
     <a href="https://inyourhands.app" target="_blank" rel="noopener">In Your Handwriting</a>
     <a href="https://inyourdreams.app" target="_blank" rel="noopener">In Your Dreams</a>
   </div>
 
+  <div class="footer-social">
+    <a href="https://www.instagram.com/insideyourlibrary" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@insideyourlibrary" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.pinterest.com/insideyourlibrary" target="_blank" rel="noopener">Pinterest</a>
+  </div>
+
+  <p class="footer-contact">Write to the library — <a href="mailto:hello@insideyourlibrary.com">hello@insideyourlibrary.com</a></p>
   <p class="footer-copy">© 2026 Inside Your Library. All rights reserved.</p>
 </footer>
 
-<!-- ============================================== -->
-<!-- SCRIPT                                         -->
-<!-- ============================================== -->
 <script>
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -883,8 +822,8 @@
       }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
+
 </body>
 </html>
