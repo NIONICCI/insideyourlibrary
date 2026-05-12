@@ -431,6 +431,13 @@
     pointer-events: auto;
   }
 
+  /* Coming Soon caption — sits BELOW the tile image rather than over it */
+  .tile-caption-band {
+    display: flex;
+    justify-content: center;
+    padding: 1.1rem 0 0.3rem;
+  }
+
   .tile-enter {
     display: inline-block;
     font-family: 'Cinzel', serif;
@@ -461,20 +468,20 @@
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: #f4ead0;
-    background: rgba(58, 40, 24, 0.82);
+    background: rgba(58, 75, 53, 0.86);
     padding: 0.4rem 1rem;
     border-radius: 3px;
-    border: 1px solid rgba(212, 175, 80, 0.4);
+    border: 1px solid rgba(194, 178, 130, 0.45);
     box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.06),
-      0 4px 12px rgba(45, 36, 25, 0.25);
+      inset 0 1px 0 rgba(255,255,255,0.08),
+      0 4px 12px rgba(45, 60, 36, 0.28);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
   }
   .tile-soon::before,
   .tile-soon::after {
     content: '✦';
-    color: var(--gold-soft);
+    color: #c2b282;
     margin: 0 0.4rem;
     font-size: 0.7em;
     opacity: 0.9;
@@ -853,38 +860,7 @@
     <!-- IN YOUR EYES — COMING SOON -->
     <div class="tile-card reveal" aria-label="In Your Eyes — coming soon">
       <div class="tile-image">
-        <div class="tile-placeholder">
-          <svg class="tile-corner tl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner tr" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner bl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner br" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <div class="tile-placeholder-eyebrow">In Your</div>
-          <div class="tile-placeholder-title">Eyes</div>
-          <div class="tile-placeholder-illo" aria-hidden="true">
-            <svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-              <path d="M10 30 Q 70 -10, 130 30 Q 70 70, 10 30 Z"/>
-              <circle cx="70" cy="30" r="14"/>
-              <circle cx="70" cy="30" r="5" fill="currentColor" stroke="none"/>
-            </svg>
-          </div>
-          <div class="tile-placeholder-body">Iridology and what the eyes can tell.</div>
-        </div>
+        <img src="tile-eyes.jpg" alt="In Your Eyes — iridology with apothecary bottles, an open iridology reference chart and magnifying glass on a botanical background" loading="lazy" decoding="async">
         <div class="tile-overlay">
           <span class="tile-soon">Coming Soon</span>
         </div>
@@ -894,41 +870,7 @@
     <!-- IN YOUR SLEEP — COMING SOON -->
     <div class="tile-card reveal" aria-label="In Your Sleep — coming soon">
       <div class="tile-image">
-        <div class="tile-placeholder">
-          <svg class="tile-corner tl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner tr" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner bl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner br" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <div class="tile-placeholder-eyebrow">In Your</div>
-          <div class="tile-placeholder-title">Sleep</div>
-          <div class="tile-placeholder-illo" aria-hidden="true">
-            <svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-              <path d="M40 38 Q 70 4, 100 38 Q 90 20, 70 16 Q 50 20, 40 38 Z"/>
-              <circle cx="40" cy="20" r="1.5" fill="currentColor"/>
-              <circle cx="105" cy="22" r="1" fill="currentColor"/>
-              <circle cx="30" cy="32" r="1" fill="currentColor"/>
-              <circle cx="115" cy="34" r="1.5" fill="currentColor"/>
-              <circle cx="70" cy="8" r="1" fill="currentColor"/>
-            </svg>
-          </div>
-          <div class="tile-placeholder-body">For the long nights and the restless ones &mdash; the gentle ways back to sleep.</div>
-        </div>
+        <img src="tile-sleep.jpg" alt="In Your Sleep — sleep-blend candle, valerian root, herbal tea and a lavender eye mask under a crescent moon" loading="lazy" decoding="async">
         <div class="tile-overlay">
           <span class="tile-soon">Coming Soon</span>
         </div>
@@ -938,41 +880,7 @@
     <!-- IN YOUR GARDEN — COMING SOON -->
     <div class="tile-card reveal" aria-label="In Your Garden — coming soon">
       <div class="tile-image">
-        <div class="tile-placeholder">
-          <svg class="tile-corner tl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner tr" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner bl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner br" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <div class="tile-placeholder-eyebrow">In Your</div>
-          <div class="tile-placeholder-title">Garden</div>
-          <div class="tile-placeholder-illo" aria-hidden="true">
-            <svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-              <path d="M70 55 L 70 18"/>
-              <path d="M70 35 Q 50 30, 45 20 Q 56 24, 70 30"/>
-              <path d="M70 40 Q 90 35, 95 25 Q 84 29, 70 35"/>
-              <path d="M70 24 Q 60 18, 56 10 Q 65 14, 70 22"/>
-              <path d="M70 26 Q 80 20, 84 12 Q 75 16, 70 24"/>
-              <ellipse cx="70" cy="14" rx="3" ry="2" fill="currentColor" opacity="0.6" stroke="none"/>
-            </svg>
-          </div>
-          <div class="tile-placeholder-body">The healing garden &mdash; herbs, plants and the medicine that grows.</div>
-        </div>
+        <img src="tile-garden.jpg" alt="In Your Garden — basket of daisies, a watering can, potted herbs and two botanical reference books" loading="lazy" decoding="async">
         <div class="tile-overlay">
           <span class="tile-soon">Coming Soon</span>
         </div>
@@ -982,44 +890,7 @@
     <!-- THE SCENT CABINET — COMING SOON -->
     <div class="tile-card reveal" aria-label="The Scent Cabinet — coming soon">
       <div class="tile-image">
-        <div class="tile-placeholder">
-          <svg class="tile-corner tl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner tr" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner bl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner br" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <div class="tile-placeholder-eyebrow">The</div>
-          <div class="tile-placeholder-title">Scent Cabinet</div>
-          <div class="tile-placeholder-illo" aria-hidden="true">
-            <svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-              <!-- Three apothecary bottles -->
-              <path d="M50 22 L 50 18 L 56 18 L 56 22 L 58 26 L 58 52 L 48 52 L 48 26 Z"/>
-              <path d="M68 18 L 68 14 L 76 14 L 76 18 L 79 22 L 79 52 L 65 52 L 65 22 Z"/>
-              <path d="M88 20 L 88 17 L 94 17 L 94 20 L 96 24 L 96 52 L 86 52 L 86 24 Z"/>
-              <line x1="48" y1="38" x2="58" y2="38" opacity="0.5"/>
-              <line x1="65" y1="36" x2="79" y2="36" opacity="0.5"/>
-              <line x1="86" y1="38" x2="96" y2="38" opacity="0.5"/>
-              <!-- Wisp -->
-              <path d="M53 18 Q 53 12, 55 10 Q 53 8, 55 4" opacity="0.45"/>
-            </svg>
-          </div>
-          <div class="tile-placeholder-body">Aromatherapy &mdash; essential oils and the language of scent.</div>
-        </div>
+        <img src="tile-scent.jpg" alt="In Your Scent Cabinet — apothecary shelf of essential oils, a lavender candle and a botanical fragrance guide" loading="lazy" decoding="async">
         <div class="tile-overlay">
           <span class="tile-soon">Coming Soon</span>
         </div>
@@ -1029,43 +900,7 @@
     <!-- IN YOUR WATER — COMING SOON -->
     <div class="tile-card reveal" aria-label="In Your Water — coming soon">
       <div class="tile-image">
-        <div class="tile-placeholder">
-          <svg class="tile-corner tl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner tr" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner bl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner br" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <div class="tile-placeholder-eyebrow">In Your</div>
-          <div class="tile-placeholder-title">Water</div>
-          <div class="tile-placeholder-illo" aria-hidden="true">
-            <svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-              <!-- Dropper bottle -->
-              <path d="M68 16 L 68 22 L 60 22 L 60 50 Q 60 56, 66 56 L 78 56 Q 84 56, 84 50 L 84 22 L 76 22 L 76 16 Z"/>
-              <line x1="68" y1="22" x2="76" y2="22"/>
-              <!-- Falling drops -->
-              <path d="M40 18 Q 38 22, 40 25 Q 42 22, 40 18 Z" fill="currentColor" opacity="0.5" stroke="none"/>
-              <path d="M100 20 Q 98 24, 100 27 Q 102 24, 100 20 Z" fill="currentColor" opacity="0.45" stroke="none"/>
-              <path d="M108 32 Q 106 36, 108 39 Q 110 36, 108 32 Z" fill="currentColor" opacity="0.35" stroke="none"/>
-              <path d="M32 30 Q 30 34, 32 37 Q 34 34, 32 30 Z" fill="currentColor" opacity="0.4" stroke="none"/>
-            </svg>
-          </div>
-          <div class="tile-placeholder-body">Homeopathy &mdash; the gentle tradition of like cures like.</div>
-        </div>
+        <img src="tile-water.jpg" alt="In Your Water — homeopathic remedies, mother tinctures and an open materia medica reference book" loading="lazy" decoding="async">
         <div class="tile-overlay">
           <span class="tile-soon">Coming Soon</span>
         </div>
@@ -1075,45 +910,7 @@
     <!-- THE TEA CABINET — COMING SOON -->
     <div class="tile-card reveal" aria-label="The Tea Cabinet — coming soon">
       <div class="tile-image">
-        <div class="tile-placeholder">
-          <svg class="tile-corner tl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner tr" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner bl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <svg class="tile-corner br" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-            <path d="M2 14 Q 2 2, 14 2"/>
-            <path d="M6 14 Q 6 6, 14 6" opacity="0.55"/>
-            <path d="M4 8 L 8 4" opacity="0.5"/>
-          </svg>
-          <div class="tile-placeholder-eyebrow">The</div>
-          <div class="tile-placeholder-title">Tea Cabinet</div>
-          <div class="tile-placeholder-illo" aria-hidden="true">
-            <svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-              <!-- Teacup -->
-              <path d="M50 30 L 50 46 Q 50 52, 56 52 L 86 52 Q 92 52, 92 46 L 92 30 Z"/>
-              <!-- Saucer -->
-              <ellipse cx="71" cy="54" rx="32" ry="3"/>
-              <!-- Handle -->
-              <path d="M92 34 Q 100 34, 100 40 Q 100 46, 92 46"/>
-              <!-- Steam -->
-              <path d="M62 26 Q 60 20, 62 14 Q 60 10, 62 4" opacity="0.4"/>
-              <path d="M72 26 Q 70 20, 72 14 Q 70 10, 72 4" opacity="0.5"/>
-              <path d="M82 26 Q 80 20, 82 14 Q 80 10, 82 4" opacity="0.4"/>
-            </svg>
-          </div>
-          <div class="tile-placeholder-body">A curated shelf of teas and the rituals around them.</div>
-        </div>
+        <img src="tile-tea.jpg" alt="In Your Tea Cabinet — herbal tisane jars, teapot, daisies and an open botanical notebook" loading="lazy" decoding="async">
         <div class="tile-overlay">
           <span class="tile-soon">Coming Soon</span>
         </div>
