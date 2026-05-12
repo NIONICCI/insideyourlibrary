@@ -139,22 +139,51 @@
   .nav-cta:hover { background: var(--gold); }
 
   /* ====================================================== */
-  /* HERO — left text column, right room photo              */
+  /* HERO — full-bleed room photo with overlay text on left */
   /* ====================================================== */
   .wing-hero {
-    display: grid;
-    grid-template-columns: 1fr 1.25fr;
-    min-height: 78vh;
-    background: var(--cream);
     position: relative;
+    min-height: 88vh;
+    background: var(--cream);
+    overflow: hidden;
+  }
+
+  .wing-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .wing-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+  }
+  /* Soft cream wash on the left so the text reads cleanly on the wall area */
+  .wing-hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(246, 241, 230, 0.92) 0%,
+      rgba(246, 241, 230, 0.78) 22%,
+      rgba(246, 241, 230, 0.35) 38%,
+      rgba(246, 241, 230, 0.05) 50%,
+      rgba(246, 241, 230, 0) 60%
+    );
+    pointer-events: none;
   }
 
   .wing-hero-text {
-    padding: 5rem 4rem 5rem 5rem;
+    position: relative;
+    z-index: 1;
+    padding: 6rem 4rem 6rem 5.5rem;
+    max-width: 620px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: relative;
+    min-height: 88vh;
   }
 
   .wing-hero-flourish {
@@ -253,18 +282,6 @@
   .wing-hero-cta:hover {
     background: var(--forest);
     transform: translateY(-1px);
-  }
-
-  .wing-hero-image {
-    position: relative;
-    overflow: hidden;
-    background: var(--paper-deep);
-  }
-  .wing-hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
   }
 
   /* ====================================================== */
@@ -567,16 +584,24 @@
     .nav-logo-text { font-size: 0.68rem; }
 
     .wing-hero {
-      grid-template-columns: 1fr;
       min-height: auto;
     }
     .wing-hero-text {
-      padding: 3.5rem 1.6rem 3rem;
-      order: 2;
+      padding: 3.5rem 1.6rem 3.5rem;
+      min-height: auto;
+      max-width: 100%;
     }
-    .wing-hero-image {
-      order: 1;
-      aspect-ratio: 4 / 3;
+    .wing-hero-bg img {
+      object-position: center right;
+    }
+    .wing-hero-bg::after {
+      background: linear-gradient(
+        180deg,
+        rgba(246, 241, 230, 0.95) 0%,
+        rgba(246, 241, 230, 0.82) 40%,
+        rgba(246, 241, 230, 0.5) 70%,
+        rgba(246, 241, 230, 0.2) 100%
+      );
     }
 
     .path-section { padding: 4rem 1.5rem 4.5rem; }
@@ -624,6 +649,10 @@
 <!-- HERO                                           -->
 <!-- ============================================== -->
 <section class="wing-hero">
+  <div class="wing-hero-bg" aria-hidden="true">
+    <img src="metaphysical-room.jpg" alt="" fetchpriority="high" decoding="async" loading="eager">
+  </div>
+
   <div class="wing-hero-text">
     <div class="wing-hero-flourish">✦ ❦ ✦</div>
     <div class="wing-hero-eyebrow">Welcome to the</div>
@@ -642,9 +671,6 @@
       They are here for you.
     </p>
     <a href="#paths" class="wing-hero-cta">Step Into the Wing</a>
-  </div>
-  <div class="wing-hero-image">
-    <img src="metaphysical-room.jpg" alt="The Metaphysical Wing — a sunlit antechamber with bookshelves, an open astrology chart, a brass candlestick, and an arched doorway leading deeper into a study with a globe and orrery." fetchpriority="high" decoding="async" loading="eager">
   </div>
 </section>
 
