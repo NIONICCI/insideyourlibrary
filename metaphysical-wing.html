@@ -110,28 +110,36 @@
   }
   .wing-hero-inner {
     position: relative;
-    display: grid;
-    grid-template-columns: minmax(420px, 1fr) minmax(0, 1.6fr);
-    align-items: stretch;
-    min-height: clamp(520px, 70vh, 720px);
+    min-height: clamp(560px, 80vh, 820px);
+  }
+  .wing-hero-image {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .wing-hero-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(246, 241, 230, 0.55) 0%,
+      rgba(246, 241, 230, 0.25) 35%,
+      rgba(246, 241, 230, 0) 60%
+    );
+    pointer-events: none;
+    z-index: 1;
   }
   .wing-hero-text {
-    padding: 4rem 3rem 4rem 5rem;
+    position: relative;
+    z-index: 2;
+    max-width: 560px;
+    padding: 5rem 3rem 5rem 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: var(--cream);
-    position: relative;
-    z-index: 2;
-  }
-  .wing-hero-text::after {
-    content: '';
-    position: absolute;
-    top: 0; bottom: 0;
-    right: -1px;
-    width: 120px;
-    background: linear-gradient(to right, var(--cream) 0%, rgba(246,241,230,0.0) 100%);
-    pointer-events: none;
+    min-height: clamp(560px, 80vh, 820px);
   }
   .wing-hero-ornament {
     color: var(--gold);
@@ -182,9 +190,8 @@
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    background: var(--cream);
     color: var(--gold);
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     padding: 0 6px;
   }
   .wing-hero-sub {
@@ -201,7 +208,6 @@
     line-height: 1.65;
     max-width: 440px;
   }
-  .wing-hero-image { position: relative; overflow: hidden; }
   .wing-hero-image img {
     width: 100%; height: 100%;
     object-fit: cover;
@@ -511,18 +517,21 @@
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 1100px) {
     .wing-hero-inner {
-      grid-template-columns: 1fr;
       min-height: auto;
     }
-    .wing-hero-text {
-      padding: 3rem 2rem 2rem;
-      text-align: center;
-      align-items: center;
+    .wing-hero-image::after {
+      background: linear-gradient(
+        to right,
+        rgba(246, 241, 230, 0.72) 0%,
+        rgba(246, 241, 230, 0.4) 50%,
+        rgba(246, 241, 230, 0.15) 100%
+      );
     }
-    .wing-hero-text::after { display: none; }
-    .wing-hero-divider { margin-left: auto; margin-right: auto; }
-    .wing-hero-desc { margin: 0 auto; }
-    .wing-hero-image { height: 60vh; min-height: 380px; max-height: 540px; }
+    .wing-hero-text {
+      padding: 4rem 2.5rem;
+      max-width: 100%;
+      min-height: clamp(480px, 65vh, 640px);
+    }
     .tiles-grid { grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
     .dreamometer-panel {
       grid-template-columns: 1fr;
@@ -538,12 +547,18 @@
     .nav-links { display: none; }
     .nav-logo-text { display: none; }
     .nav-cta { padding: 0.55rem 1rem; font-size: 0.6rem; }
-    .wing-hero-text { padding: 2rem 1.4rem 1.5rem; }
+    .wing-hero-image::after {
+      background: linear-gradient(
+        to right,
+        rgba(246, 241, 230, 0.82) 0%,
+        rgba(246, 241, 230, 0.6) 100%
+      );
+    }
+    .wing-hero-text { padding: 3rem 1.6rem; min-height: clamp(440px, 60vh, 560px); }
     .wing-hero h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
     .wing-hero h1 .script { font-size: clamp(2.8rem, 11vw, 4rem); }
     .wing-hero-sub { font-size: 1.1rem; }
     .wing-hero-desc { font-size: 1rem; }
-    .wing-hero-image { height: 50vh; min-height: 320px; }
     .choose-path { padding: 2.5rem 1.4rem 1.5rem; }
     .choose-path-label { font-size: 0.7rem; gap: 0.8rem; }
     .choose-path-label::before, .choose-path-label::after { width: 30px; }
@@ -575,6 +590,9 @@
 
 <section class="wing-hero">
   <div class="wing-hero-inner">
+    <div class="wing-hero-image">
+      <img src="metaphysical-page.jpg" alt="The Metaphysical Wing — a sunlit library room with shelves of leather books, an open astrology chart, a candlelit doorway leading to an inner study with antique globe and celestial chart" fetchpriority="high">
+    </div>
     <div class="wing-hero-text reveal">
       <div class="wing-hero-ornament">✦</div>
       <div class="wing-hero-eyebrow">Welcome to the</div>
@@ -585,9 +603,6 @@
       <div class="wing-hero-divider"></div>
       <p class="wing-hero-sub">The deeper shelves.<br>The quieter questions.</p>
       <p class="wing-hero-desc">Explore the ancient arts of meaning, symbolism, and inner knowing. These timeless tools have guided seekers for centuries. They are here for you.</p>
-    </div>
-    <div class="wing-hero-image reveal">
-      <img src="metaphysical-page.jpg" alt="The Metaphysical Wing — a sunlit library room with shelves of leather books, an open astrology chart, a candlelit doorway leading to an inner study with antique globe and celestial chart" fetchpriority="high">
     </div>
   </div>
 </section>
