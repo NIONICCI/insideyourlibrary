@@ -355,6 +355,17 @@
     width: 110px; height: 110px;
   }
   .apothecary-icon svg { width: 100%; height: 100%; }
+  .apothecary-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    border: 1.4px solid #b4a878;
+    box-shadow: 0 0 0 1px rgba(180, 168, 120, 0.4),
+                0 4px 14px rgba(15, 20, 8, 0.45);
+  }
   .apothecary-text {}
   .apothecary-title {
     font-family: 'Cinzel', serif;
@@ -704,7 +715,7 @@
 
     <!-- CENTRE: today's feature -->
     <div class="apothecary-centre">
-      <div class="apothecary-icon" aria-hidden="true">
+      <div class="apothecary-icon" id="apothecary-icon" aria-hidden="true">
         <svg viewBox="0 0 120 120">
           <circle cx="60" cy="60" r="56" fill="#0f1408" stroke="#b4a878" stroke-width="1.4"/>
           <circle cx="60" cy="60" r="50" fill="none" stroke="#b4a878" stroke-width="0.6" opacity="0.5"/>
@@ -821,46 +832,79 @@
     {
       category: 'HERB',
       name: 'Chamomile',
+      image: 'apothecary-chamomile.jpg',
       sub: 'A gentle ally for restless minds and quiet evenings.',
       note: 'Traditionally used as a soothing tea before sleep, chamomile has tended to body and spirit for centuries.'
     },
     {
       category: 'REMEDY',
       name: 'Arnica montana',
+      image: 'apothecary-arnica.jpg',
       sub: 'The homeopath\'s companion for bumps, bruises and the body\'s recovery.',
       note: 'One of the most familiar names in homeopathy — a remedy long associated with rest and gentle restoration.'
     },
     {
       category: 'CRYSTAL',
       name: 'Rose Quartz',
+      image: 'apothecary-rose-quartz.jpg',
       sub: 'The stone of the heart. Soft pink, soft purpose.',
       note: 'Carried for centuries as a token of tenderness, self-kindness and quiet emotional return.'
     },
     {
       category: 'HERB',
       name: 'Lavender',
+      image: 'apothecary-lavender.jpg',
       sub: 'For the long days and the longer nights.',
       note: 'The scent of calm. Used in pillows, oils and bathwater across generations to invite stillness.'
     },
     {
       category: 'REMEDY',
-      name: 'Rescue Remedy',
-      sub: 'A traditional Bach flower blend for moments of overwhelm.',
-      note: 'Five flower essences combined — a small bottle kept close for the difficult hour.'
+      name: 'Calendula',
+      image: 'apothecary-calendula.jpg',
+      sub: 'The golden flower of the garden first-aid shelf.',
+      note: 'Long used in herbal salves, washes and homeopathic preparations for the skin\u2019s small injuries and quiet repair.'
     },
     {
       category: 'CRYSTAL',
       name: 'Amethyst',
+      image: 'apothecary-amethyst.jpg',
       sub: 'The quiet violet stone. For rest, reflection and the deeper hours.',
       note: 'Long associated with calm thought and peaceful sleep. A bedside companion in many traditions.'
     },
     {
       category: 'HERB',
       name: 'Peppermint',
+      image: 'apothecary-peppermint.jpg',
       sub: 'The bright herb. For digestion, focus and a clearer head.',
       note: 'A cup of peppermint after a meal is one of the oldest small rituals in the herbal kitchen.'
     }
   ];
+
+  /* The fallback SVG mortar-and-pestle icon for entries with no image yet,
+     or if an image fails to load. Stored as a JS constant so we can restore
+     it cleanly. */
+  const APOTHECARY_FALLBACK_SVG = `<svg viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="56" fill="#0f1408" stroke="#b4a878" stroke-width="1.4"/>
+    <circle cx="60" cy="60" r="50" fill="none" stroke="#b4a878" stroke-width="0.6" opacity="0.5"/>
+    <path d="M 38 72 Q 38 90 60 90 Q 82 90 82 72 Z" fill="none" stroke="#d4c98a" stroke-width="1.2"/>
+    <path d="M 36 72 L 84 72" stroke="#d4c98a" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="60" y1="68" x2="76" y2="36" stroke="#d4c98a" stroke-width="1.6" stroke-linecap="round"/>
+    <circle cx="76" cy="36" r="3.2" fill="#d4c98a"/>
+    <g stroke="#b4a878" stroke-width="0.9" fill="none" stroke-linecap="round">
+      <path d="M 30 50 Q 32 38 38 30"/>
+      <path d="M 33 42 Q 28 40 26 36"/>
+      <path d="M 35 36 Q 30 33 28 30"/>
+      <path d="M 37 32 Q 34 28 33 24"/>
+    </g>
+    <g stroke="#b4a878" stroke-width="0.9" fill="none" stroke-linecap="round">
+      <path d="M 90 50 Q 88 38 82 30"/>
+      <path d="M 87 42 Q 92 40 94 36"/>
+      <path d="M 85 36 Q 90 33 92 30"/>
+    </g>
+    <ellipse cx="38" cy="30" rx="2.2" ry="1" fill="#d4c98a" transform="rotate(-35 38 30)"/>
+    <ellipse cx="33" cy="24" rx="2" ry="0.9" fill="#d4c98a" transform="rotate(-50 33 24)"/>
+    <ellipse cx="82" cy="30" rx="2.2" ry="1" fill="#d4c98a" transform="rotate(35 82 30)"/>
+  </svg>`;
 
   function getDayOfYear() {
     const now = new Date();
@@ -876,6 +920,24 @@
     document.getElementById('apothecary-headline').textContent = entry.name;
     document.getElementById('apothecary-sub').textContent = entry.sub;
     document.getElementById('apothecary-note').textContent = entry.note;
+
+    /* Swap the icon: if entry has an image, render a photo;
+       if not (or if the photo 404s), show the SVG mortar-and-pestle. */
+    const iconEl = document.getElementById('apothecary-icon');
+    if (entry.image) {
+      const img = new Image();
+      img.alt = entry.name + ' — ' + entry.category.toLowerCase();
+      img.onload = () => {
+        iconEl.innerHTML = '';
+        iconEl.appendChild(img);
+      };
+      img.onerror = () => {
+        iconEl.innerHTML = APOTHECARY_FALLBACK_SVG;
+      };
+      img.src = entry.image;
+    } else {
+      iconEl.innerHTML = APOTHECARY_FALLBACK_SVG;
+    }
   }
 
   /* Moon phase calculation — Conway's algorithm, accurate enough for display.
