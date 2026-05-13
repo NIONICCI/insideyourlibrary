@@ -444,6 +444,14 @@
     color: rgba(246, 241, 230, 0.62);
     line-height: 1.45;
   }
+  .apothecary-side-hemi {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    color: rgba(180, 168, 120, 0.5);
+    text-transform: uppercase;
+    margin-top: 0.7rem;
+  }
 
   /* ---------- BACK LINK ---------- */
   .back-link-wrap {
@@ -691,6 +699,7 @@
       </div>
       <div class="apothecary-side-name" id="apothecary-moon-name">Loading</div>
       <div class="apothecary-side-detail" id="apothecary-moon-detail"></div>
+      <div class="apothecary-side-hemi" id="apothecary-moon-hemi"></div>
     </div>
 
     <!-- CENTRE: today's feature -->
@@ -738,6 +747,7 @@
       </div>
       <div class="apothecary-side-name" id="apothecary-season-name">Loading</div>
       <div class="apothecary-side-detail" id="apothecary-season-detail"></div>
+      <div class="apothecary-side-hemi" id="apothecary-season-hemi"></div>
     </div>
 
   </div>
@@ -771,6 +781,35 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* ---------- HEMISPHERE DETECTION ----------
+     Auto-detect from browser timezone. Most timezones map cleanly;
+     equatorial timezones default to Northern (the moon orientation
+     is roughly upright there anyway, so it's the safer default). */
+  function getHemisphere() {
+    let tz = '';
+    try {
+      tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    } catch (e) {
+      return 'N';
+    }
+    // Southern Hemisphere timezone patterns
+    const southPatterns = [
+      /^Australia\//,
+      /^Pacific\/(Auckland|Chatham|Fiji|Norfolk|Noumea|Tongatapu|Apia|Easter|Gambier|Marquesas|Pitcairn|Tahiti)/,
+      /^Antarctica\//,
+      /^Africa\/(Johannesburg|Maseru|Mbabane|Maputo|Harare|Lusaka|Blantyre|Windhoek|Gaborone|Bujumbura|Kigali|Dar_es_Salaam|Lilongwe|Luanda|Brazzaville|Kinshasa|Lubumbashi|Antananarivo|Mauritius|Reunion|Mayotte)/,
+      /^America\/(Argentina|Buenos_Aires|Sao_Paulo|Santiago|Montevideo|Asuncion|La_Paz|Lima|Bogota|Guayaquil|Recife|Bahia|Fortaleza|Cuiaba|Campo_Grande|Maceio|Araguaina|Rio_Branco|Manaus|Porto_Velho|Punta_Arenas|Catamarca|Cordoba|Jujuy|Mendoza|Rio_Gallegos|Salta|San_Juan|San_Luis|Tucuman|Ushuaia|La_Rioja|Stanley)/,
+      /^Indian\/(Antananarivo|Comoro|Mauritius|Mayotte|Reunion)/,
+      /^Atlantic\/(Stanley|South_Georgia)/
+    ];
+    for (const pattern of southPatterns) {
+      if (pattern.test(tz)) return 'S';
+    }
+    return 'N';
+  }
+
+  const HEMISPHERE = getHemisphere();
 
   /* ---------- HEALING APOTHECARY — daily rotation + moon + season ----------
      Three streams:
@@ -878,56 +917,68 @@
     document.getElementById('apothecary-moon-name').textContent = name;
     document.getElementById('apothecary-moon-detail').textContent =
       detail + ' ' + Math.round(illumination * 100) + '% illuminated.';
+    document.getElementById('apothecary-moon-hemi').textContent =
+      HEMISPHERE === 'S' ? 'Southern view' : 'Northern view';
 
-    // Render the moon visually — shadow moves left or right depending on waxing/waning
+    // Render the moon visually — shadow position based on phase.
+    // In the Southern Hemisphere the moon appears flipped relative to the Northern
+    // Hemisphere view, so we invert the shadow direction.
     const shadow = document.getElementById('moon-shadow');
     if (!shadow) return;
     const r = 30;
-    const cx = 40, cy = 40;
-    // phase 0 = new, 0.5 = full, 1 = new again
-    // waxing 0 -> 0.5: shadow moves left (cx decreases from 40 to 10 to -20)
-    // waning 0.5 -> 1: shadow moves right (cx increases from 80 to 100)
+    const cx = 40;
     let shadowCx;
     if (phase < 0.5) {
-      // waxing — shadow on left side, retreats leftward
-      shadowCx = cx - (phase * 4 * r);
+      // waxing
+      shadowCx = HEMISPHERE === 'S'
+        ? cx - (phase * 4 * r)   // Southern: shadow retreats leftward, lit side on left
+        : cx + (phase * 4 * r);  // Northern: shadow retreats rightward, lit side on right
     } else {
-      // waning — shadow on right side, advances from left
-      shadowCx = cx + ((phase - 0.5) * 4 * r);
+      // waning
+      shadowCx = HEMISPHERE === 'S'
+        ? cx + ((phase - 0.5) * 4 * r)   // Southern: shadow advances from right
+        : cx - ((phase - 0.5) * 4 * r);  // Northern: shadow advances from left
     }
     shadow.setAttribute('cx', shadowCx);
   }
 
-  /* Season — Southern Hemisphere meteorological seasons (Australia).
-     Dec-Feb summer, Mar-May autumn, Jun-Aug winter, Sep-Nov spring. */
+  /* Season — uses detected hemisphere.
+     Southern (AU/NZ/etc): Dec-Feb summer, Mar-May autumn, Jun-Aug winter, Sep-Nov spring.
+     Northern (UK/US/EU/etc): Jun-Aug summer, Sep-Nov autumn, Dec-Feb winter, Mar-May spring. */
   function getSeason() {
     const month = new Date().getMonth() + 1;
-    if (month === 12 || month <= 2) {
-      return {
-        name: 'Summer',
-        detail: 'The long bright days. Light herbs and cooling waters.',
-        icon: 'sun'
-      };
-    }
-    if (month >= 3 && month <= 5) {
-      return {
-        name: 'Autumn',
-        detail: 'Roots, barks and the harvest moon. Time to gather and dry.',
-        icon: 'leaf'
-      };
-    }
-    if (month >= 6 && month <= 8) {
-      return {
-        name: 'Winter',
-        detail: 'The deep season. Warming spices, slow teas, quiet rooms.',
-        icon: 'flame'
-      };
-    }
-    return {
+    const summerDef = {
+      name: 'Summer',
+      detail: 'The long bright days. Light herbs and cooling waters.',
+      icon: 'sun'
+    };
+    const autumnDef = {
+      name: 'Autumn',
+      detail: 'Roots, barks and the harvest moon. Time to gather and dry.',
+      icon: 'leaf'
+    };
+    const winterDef = {
+      name: 'Winter',
+      detail: 'The deep season. Warming spices, slow teas, quiet rooms.',
+      icon: 'flame'
+    };
+    const springDef = {
       name: 'Spring',
       detail: 'First greens. Tender shoots. The body remembers light.',
       icon: 'sprout'
     };
+
+    if (HEMISPHERE === 'S') {
+      if (month === 12 || month <= 2) return summerDef;
+      if (month >= 3 && month <= 5) return autumnDef;
+      if (month >= 6 && month <= 8) return winterDef;
+      return springDef;
+    } else {
+      if (month >= 6 && month <= 8) return summerDef;
+      if (month >= 9 && month <= 11) return autumnDef;
+      if (month === 12 || month <= 2) return winterDef;
+      return springDef;
+    }
   }
 
   const seasonSvgs = {
@@ -971,6 +1022,8 @@
     document.getElementById('apothecary-season-name').textContent = season.name;
     document.getElementById('apothecary-season-detail').textContent = season.detail;
     document.getElementById('apothecary-season-icon').innerHTML = seasonSvgs[season.icon];
+    document.getElementById('apothecary-season-hemi').textContent =
+      HEMISPHERE === 'S' ? 'Southern hemisphere' : 'Northern hemisphere';
   }
 
   loadApothecaryEntry();
