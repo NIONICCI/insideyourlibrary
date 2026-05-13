@@ -281,45 +281,10 @@
   .tile-card.is-live:hover img { transform: scale(1.03); }
 
   /* Live ENTER cue — only appears on hover */
-  .tile-enter {
-    position: absolute;
-    bottom: 1.6rem;
-    left: 50%;
-    transform: translateX(-50%) translateY(8px);
-    background: rgba(45, 36, 25, 0.88);
-    color: var(--cream-soft);
-    font-family: 'Cinzel', serif;
-    font-size: 0.66rem;
-    letter-spacing: 0.32em;
-    padding: 0.55rem 1.3rem;
-    border-radius: 2px;
-    text-transform: uppercase;
-    transition: all 0.4s ease;
-    border: 1px solid rgba(212, 185, 127, 0.55);
-    z-index: 3;
-    white-space: nowrap;
-    opacity: 0;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-  }
-  .tile-card.is-live:hover .tile-enter {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-  .tile-enter::after {
-    content: ' →';
-    transition: transform 0.3s ease;
-    display: inline-block;
-    margin-left: 0.2em;
-  }
-  .tile-card.is-live:hover .tile-enter::after {
-    transform: translateX(3px);
-  }
-
   /* Coming Soon brass tag — warm brass on cream, matching tile aesthetic */
   .tile-soon {
     position: absolute;
-    top: 1.2rem;
+    bottom: 1.2rem;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(235, 224, 196, 0.94);
@@ -616,12 +581,10 @@
 
     <a href="https://inyourdreams.app" target="_blank" rel="noopener" class="tile-card is-live reveal" aria-label="Enter In Your Dreams">
       <img src="tile-dreams.jpg" alt="In Your Dreams — Dream interpretation for self-discovery, guidance and a deeper understanding of your inner world." loading="lazy" decoding="async">
-      <span class="tile-enter">Enter</span>
     </a>
 
     <a href="https://inyourhands.app" target="_blank" rel="noopener" class="tile-card is-live reveal" aria-label="Enter In Your Handwriting">
       <img src="tile-handwriting.jpg" alt="In Your Handwriting — What your handwriting reveals through graphology." loading="lazy" decoding="async">
-      <span class="tile-enter">Enter</span>
     </a>
 
     <div class="tile-card is-locked reveal" aria-label="In Your Stars — coming soon">
