@@ -111,7 +111,7 @@
   .wing-hero-inner {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(420px, 1fr) minmax(0, 1.6fr);
+    grid-template-columns: minmax(500px, 1.05fr) minmax(0, 1.25fr);
     align-items: stretch;
     min-height: clamp(520px, 70vh, 720px);
   }
@@ -123,13 +123,14 @@
     background: var(--cream);
     position: relative;
     z-index: 2;
+    min-width: 0;
   }
   .wing-hero-text::after {
     content: '';
     position: absolute;
     top: 0; bottom: 0;
     right: -1px;
-    width: 120px;
+    width: 40px;
     background: linear-gradient(to right, var(--cream) 0%, rgba(246,241,230,0.0) 100%);
     pointer-events: none;
   }
