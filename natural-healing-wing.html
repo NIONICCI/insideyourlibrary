@@ -4,48 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Natural Healing Wing — Inside Your Library</title>
-<meta name="description" content="The old remedies. The slow knowing. A room of plants, simples and the quiet practices that support wellbeing — herbs, sleep, the healing garden, homeopathy, aromatherapy and teas.">
+<meta name="description" content="The greener shelves. The gentler remedies. Explore the timeless traditions of natural healing — herbs, oils, waters and the body's own wisdom.">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://insideyourlibrary.com/natural-healing-wing.html">
 
 <meta property="og:title" content="The Natural Healing Wing — Inside Your Library">
-<meta property="og:description" content="The old remedies. The slow knowing. A room of plants, simples and the quiet practices that support wellbeing.">
+<meta property="og:description" content="The greener shelves. The gentler remedies.">
 <meta property="og:url" content="https://insideyourlibrary.com/natural-healing-wing.html">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://insideyourlibrary.com/natural-healing-page.jpg">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Natural Healing Wing — Inside Your Library">
-<meta name="twitter:description" content="The old remedies. The slow knowing.">
-<meta name="twitter:image" content="https://insideyourlibrary.com/natural-healing-page.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="natural-healing-page.jpg" fetchpriority="high">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500;600&family=Cinzel:wght@400;500;600&family=Cormorant+Upright:wght@300;400;500&family=Pinyon+Script&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --cream:           #f6f1e6;
-    --cream-warm:      #efe7d4;
-    --paper:           #ede4cf;
-    --paper-deep:      #e3d6b9;
-    --ink:             #2d2419;
-    --ink-soft:        #4a3e2d;
-    --ink-mute:        #6b5e48;
-    /* Tobacco brown — for headlines, matches landing page wordmark */
-    --tobacco:         #3a2818;
-    --tobacco-soft:    #54402a;
-    --tobacco-mute:    #7a6347;
-    --gold:            #a87f3c;
-    --gold-soft:       #c2a266;
-    --gold-glow:       rgba(168, 127, 60, 0.18);
-    /* Forest green from homepage CTA — for continuity */
-    --forest:          #4f5a43;
-    --forest-deep:     #3a4530;
-    --sage:            #6d7a5c;
-    --sage-deep:       #4f5a43;
-    --rule:            rgba(45, 36, 25, 0.18);
-    --rule-soft:       rgba(45, 36, 25, 0.08);
+    --cream:          #f6f1e6;
+    --cream-warm:     #efe7d4;
+    --cream-soft:     #f8f3e6;
+    --parchment:      #ebe0c4;
+    --oak-deep:       #a8845a;
+    --ink:            #2d2419;
+    --ink-soft:       #4a3c2a;
+    --ink-mute:       #6a5840;
+    --gold:           #b08a52;
+    --gold-soft:      #c9a877;
+    --gold-bright:    #d4b97f;
+    --rule:           rgba(168, 132, 90, 0.32);
+    --rule-soft:      rgba(168, 132, 90, 0.16);
+    --night-button:   #1f2a3d;
+    --night-button-h: #2a3853;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -62,45 +51,24 @@
   }
 
   a { color: inherit; text-decoration: none; }
-  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
   img { display: block; max-width: 100%; }
 
-  .label {
-    font-family: 'Cinzel', serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.32em;
-    color: var(--ink-mute);
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-
-  /* ====================================================== */
-  /* NAV (mirrors index.html)                               */
-  /* ====================================================== */
+  /* ---------- NAV ---------- */
   nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    padding: 1.2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: rgba(246, 241, 230, 0.92);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--rule-soft);
-    padding: 0.9rem 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    color: var(--ink);
-  }
-  .nav-logo img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-  }
+  .nav-logo { display: flex; align-items: center; gap: 0.9rem; }
+  .nav-logo img { width: 44px; height: 44px; object-fit: contain; }
   .nav-logo-text {
     font-family: 'Cinzel', serif;
     font-size: 0.78rem;
@@ -108,699 +76,529 @@
     color: var(--ink);
     font-weight: 500;
   }
-  .nav-links {
-    display: flex;
-    gap: 2.4rem;
-    list-style: none;
-  }
+  .nav-links { display: flex; gap: 2.6rem; list-style: none; }
   .nav-links a {
     font-family: 'Cinzel', serif;
-    font-size: 0.78rem;
-    letter-spacing: 0.22em;
+    font-size: 0.72rem;
+    letter-spacing: 0.24em;
     color: var(--ink-soft);
-    text-transform: uppercase;
+    transition: color 0.3s, border-color 0.3s;
     padding-bottom: 4px;
     border-bottom: 1px solid transparent;
-    transition: color .3s ease, border-color .3s ease;
   }
   .nav-links a:hover,
   .nav-links a.active { color: var(--gold); border-color: var(--gold); }
   .nav-cta {
     font-family: 'Cinzel', serif;
-    font-size: 0.74rem;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--cream);
-    background: var(--ink);
-    padding: 0.65rem 1.4rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    color: var(--ink);
+    padding: 0.7rem 1.6rem;
+    border: 1px solid var(--gold);
     border-radius: 999px;
-    transition: background .3s ease;
+    transition: all 0.3s;
+    background: transparent;
   }
-  .nav-cta:hover { background: var(--gold); }
+  .nav-cta:hover { background: var(--gold); color: var(--cream); }
 
-  /* ====================================================== */
-  /* HERO — full-bleed room photo with overlay text on left */
-  /* ====================================================== */
+  /* ---------- HERO ---------- */
   .wing-hero {
     position: relative;
-    min-height: 72vh;
+    padding-top: 5.5rem;
     background: var(--cream);
     overflow: hidden;
   }
-
-  .wing-hero-bg {
+  .wing-hero-inner {
+    position: relative;
+    min-height: clamp(620px, 88vh, 900px);
+  }
+  .wing-hero-image {
     position: absolute;
     inset: 0;
-    z-index: 0;
+    overflow: hidden;
+    z-index: 1;
   }
-  .wing-hero-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: right 25%;
+  .wing-hero-image img {
+    object-position: center top;
   }
-  /* Soft cream wash on the left so the text reads cleanly on the wall area */
-  .wing-hero-bg::after {
+  .wing-hero-image::after {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(
-      90deg,
-      rgba(246, 241, 230, 0.92) 0%,
-      rgba(246, 241, 230, 0.78) 22%,
-      rgba(246, 241, 230, 0.35) 38%,
-      rgba(246, 241, 230, 0.05) 50%,
-      rgba(246, 241, 230, 0) 60%
+      to right,
+      rgba(246, 241, 230, 0.5) 0%,
+      rgba(246, 241, 230, 0.22) 38%,
+      rgba(246, 241, 230, 0) 62%
     );
     pointer-events: none;
+    z-index: 1;
   }
-
   .wing-hero-text {
     position: relative;
-    z-index: 1;
-    padding: 5rem 4rem 5rem 5.5rem;
-    max-width: 620px;
+    z-index: 2;
+    max-width: 560px;
+    padding: 5rem 3rem 5rem 5rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    min-height: 72vh;
+    justify-content: flex-end;
+    min-height: clamp(620px, 88vh, 900px);
   }
-
-  .wing-hero-eyebrow {
-    font-family: 'Cinzel', serif;
-    font-size: 0.82rem;
-    letter-spacing: 0.34em;
-    color: var(--tobacco-mute);
-    text-transform: uppercase;
-    margin-bottom: 1.6rem;
-  }
-
-  .wing-hero-title {
-    font-family: 'Cormorant SC', 'Cormorant Garamond', serif;
-    font-weight: 500;
-    color: var(--forest-deep);
-    line-height: 1.0;
-    letter-spacing: 0;
-    margin-bottom: 0.4rem;
-  }
-  .wing-hero-title .line-1 {
-    display: block;
-    font-family: 'Cormorant SC', 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 3.6vw, 3.1rem);
-    letter-spacing: 0.04em;
-    font-weight: 500;
-    color: var(--forest-deep);
-    white-space: nowrap;
-  }
-  .wing-hero-title .line-2 {
-    display: block;
-    font-family: 'Pinyon Script', 'Dancing Script', cursive;
-    font-style: normal;
-    font-size: clamp(3.2rem, 6vw, 5.4rem);
-    color: var(--forest-deep);
-    font-weight: 400;
-    margin-top: -0.25rem;
-    margin-left: 0.4rem;
-    line-height: 1.0;
-    letter-spacing: 0;
-  }
-
-  .wing-hero-divider {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    margin: 1.6rem 0 1.8rem;
-  }
-  .wing-hero-divider .star {
-    width: 14px;
-    height: 14px;
-    flex-shrink: 0;
+  .wing-hero-ornament {
     color: var(--gold);
+    font-size: 1.2rem;
+    letter-spacing: 0.4em;
+    margin-bottom: 1.4rem;
     opacity: 0.85;
   }
-  .wing-hero-divider .bar {
-    height: 1px;
-    width: 110px;
-    background: var(--gold);
-    opacity: 0.55;
+  .wing-hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.34em;
+    color: var(--ink-mute);
+    margin-bottom: 1.4rem;
+    text-transform: uppercase;
   }
-
-  .wing-hero-couplet {
+  .wing-hero h1 {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+    line-height: 1.02;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+  }
+  .wing-hero h1 .script {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(3.4rem, 6.6vw, 5.4rem);
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-top: 0.2rem;
+    line-height: 0.9;
+    text-transform: none;
+  }
+  .wing-hero-divider {
+    width: 80px;
+    height: 1px;
+    background: var(--gold);
+    margin: 2rem 0 1.6rem;
+    position: relative;
+  }
+  .wing-hero-divider::before {
+    content: '✦';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--gold);
+    font-size: 0.7rem;
+    padding: 0 6px;
+  }
+  .wing-hero-sub {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 1.45rem;
-    color: var(--tobacco-soft);
+    font-size: 1.3rem;
+    color: var(--ink-soft);
     line-height: 1.4;
-    margin-bottom: 1.4rem;
-    font-weight: 400;
+    margin-bottom: 1.8rem;
   }
-  .wing-hero-couplet span {
+  .wing-hero-desc {
+    font-size: 1.08rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    max-width: 440px;
+  }
+  .wing-hero-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center center;
     display: block;
   }
 
-  .wing-hero-body {
-    font-size: 1.06rem;
-    color: var(--tobacco-soft);
-    line-height: 1.7;
-    max-width: 30rem;
-    margin-bottom: 0;
-  }
-
-  /* ====================================================== */
-  /* CHOOSE YOUR PATH                                       */
-  /* ====================================================== */
-  .path-section {
-    padding: 5.5rem 4rem 6rem;
+  /* ---------- CHOOSE YOUR PATH ---------- */
+  .choose-path {
+    text-align: center;
+    padding: 4rem 3rem 2.5rem;
     background: var(--cream);
   }
-
-  .path-header {
-    text-align: center;
-    margin-bottom: 3.5rem;
-  }
-  .path-header .ornament {
+  .choose-path-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.4rem;
     font-family: 'Cinzel', serif;
-    font-size: 0.78rem;
-    letter-spacing: 0.5em;
-    color: var(--tobacco-mute);
+    font-size: 0.82rem;
+    letter-spacing: 0.36em;
+    color: var(--ink-mute);
     text-transform: uppercase;
   }
-  .path-header .ornament::before,
-  .path-header .ornament::after {
-    content: '—';
-    color: var(--gold);
-    margin: 0 1rem;
-    opacity: 0.7;
+  .choose-path-label::before,
+  .choose-path-label::after {
+    content: '';
+    display: inline-block;
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
   }
 
+  /* ---------- TILES ---------- */
+  .tiles {
+    position: relative;
+    padding: 2rem 3rem 5rem;
+    background: var(--cream);
+  }
   .tiles-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1240px;
+    gap: 1.8rem;
+    max-width: 1280px;
     margin: 0 auto;
   }
-
   .tile-card {
     position: relative;
-    background: var(--paper);
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow:
-      0 1px 0 rgba(255,255,255,0.5) inset,
-      0 10px 32px rgba(45, 36, 25, 0.10),
-      0 2px 8px rgba(45, 36, 25, 0.06);
-    transition: transform .35s ease, box-shadow .35s ease;
     display: block;
-  }
-  .tile-card.is-live { cursor: pointer; }
-  .tile-card.is-live:hover {
-    transform: translateY(-4px);
-    box-shadow:
-      0 1px 0 rgba(255,255,255,0.5) inset,
-      0 18px 44px rgba(45, 36, 25, 0.16),
-      0 4px 12px rgba(45, 36, 25, 0.08);
-  }
-
-  .tile-image {
-    position: relative;
-    width: 100%;
     aspect-ratio: 1 / 1;
-    background: var(--paper);
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    box-shadow:
+      0 6px 22px rgba(70, 50, 30, 0.10),
+      0 2px 6px rgba(70, 50, 30, 0.06);
+  }
+  .tile-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 18px 40px rgba(70, 50, 30, 0.18),
+      0 4px 10px rgba(70, 50, 30, 0.10);
+  }
+  .tile-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1s ease, filter 0.5s ease;
+  }
+  .tile-card.is-live:hover img { transform: scale(1.03); }
+
+  /* Live ENTER cue — only appears on hover */
+  /* Coming Soon brass tag — warm brass on cream, matching tile aesthetic */
+  .tile-soon {
+    position: absolute;
+    bottom: 0.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(235, 224, 196, 0.94);
+    color: var(--ink-soft);
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.32em;
+    padding: 0.45rem 1rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+    z-index: 3;
+    white-space: nowrap;
+    border: 1px solid var(--gold);
+    box-shadow: 0 2px 6px rgba(70, 50, 30, 0.10);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .tile-card.is-locked { cursor: default; }
+  .tile-card.is-locked img { filter: brightness(0.92) saturate(0.9); }
+  .tile-card.is-locked:hover { transform: translateY(-3px); }
+  .tile-card.is-locked:hover img { transform: scale(1); }
+
+  /* ---------- HEALING APOTHECARY (daily rotating feature) ---------- */
+  .apothecary-section {
+    background: var(--cream);
+    padding: 3rem 3rem 6rem;
+  }
+  .apothecary-panel {
+    max-width: 1280px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #1f2818 0%, #131a0f 100%);
+    border: 1px solid rgba(180, 168, 120, 0.32);
+    border-radius: 6px;
+    padding: 2.4rem 2.6rem;
+    display: grid;
+    grid-template-columns: 1fr 2.2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    box-shadow: 0 12px 40px rgba(40, 50, 30, 0.22);
+    position: relative;
     overflow: hidden;
   }
-  .tile-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-
-  /* Parchment placeholder for tiles without painted illustration */
-  .tile-placeholder {
+  .apothecary-panel::before {
+    content: '';
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse at 30% 25%, rgba(255,255,255,0.45), transparent 60%),
-      radial-gradient(ellipse at 70% 75%, rgba(168,127,60,0.05), transparent 55%),
-      linear-gradient(135deg, #f0e8d2 0%, #e8dfc4 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 2.2rem 1.6rem 1.2rem;
-    text-align: center;
-  }
-  /* Inner brass-line frame */
-  .tile-placeholder::before {
-    content: '';
-    position: absolute;
-    inset: 14px;
-    border: 1px solid rgba(168, 127, 60, 0.35);
-    border-radius: 2px;
+      radial-gradient(circle at 15% 50%, rgba(180, 168, 120, 0.10) 0%, transparent 38%),
+      radial-gradient(circle at 88% 50%, rgba(180, 168, 120, 0.08) 0%, transparent 42%);
     pointer-events: none;
   }
-  /* Corner ornaments (4) */
-  .tile-corner {
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    color: #a87f3c;
-    opacity: 0.65;
-    pointer-events: none;
-  }
-  .tile-corner.tl { top: 6px; left: 6px; }
-  .tile-corner.tr { top: 6px; right: 6px; transform: scaleX(-1); }
-  .tile-corner.bl { bottom: 6px; left: 6px; transform: scaleY(-1); }
-  .tile-corner.br { bottom: 6px; right: 6px; transform: scale(-1, -1); }
-
-  .tile-placeholder-eyebrow {
-    font-family: 'Cinzel', serif;
-    font-size: 0.78rem;
-    letter-spacing: 0.32em;
-    color: var(--tobacco-mute);
-    text-transform: uppercase;
-    margin-bottom: 0.2rem;
+  /* CENTRE column */
+  .apothecary-centre {
     position: relative;
     z-index: 1;
-  }
-  .tile-placeholder-title {
-    font-family: 'Pinyon Script', 'Dancing Script', cursive;
-    font-size: 2.6rem;
-    color: var(--tobacco);
-    line-height: 1.0;
-    margin-bottom: 1.4rem;
-    position: relative;
-    z-index: 1;
-  }
-  .tile-placeholder-illo {
-    width: 60%;
-    max-width: 140px;
-    margin: 0 auto 1rem;
-    color: rgba(77, 90, 67, 0.55);
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-  }
-  .tile-placeholder-illo svg { width: 100%; height: auto; display: block; }
-  .tile-placeholder-body {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.92rem;
-    color: var(--tobacco-soft);
-    line-height: 1.4;
-    max-width: 80%;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-    font-style: italic;
-  }
-
-  /* Button/caption overlay — anchored to bottom of image */
-  .tile-overlay {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    padding: 0 1rem 0.85rem;
-    pointer-events: none;
-  }
-  .tile-overlay > * {
-    pointer-events: auto;
-  }
-
-  /* Coming Soon caption — sits BELOW the tile image rather than over it */
-  .tile-caption-band {
-    display: flex;
-    justify-content: center;
-    padding: 1.1rem 0 0.3rem;
-  }
-
-  .tile-enter {
-    display: inline-block;
-    font-family: 'Cinzel', serif;
-    font-size: 0.58rem;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: #f4ead0;
-    background: rgba(31, 36, 56, 0.92);
-    padding: 0.42rem 1.1rem;
-    border-radius: 3px;
-    border: 1px solid rgba(212, 175, 80, 0.55);
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.08),
-      0 6px 16px rgba(20, 24, 40, 0.32);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    transition: background .3s ease, transform .3s ease;
-  }
-  .tile-card.is-live:hover .tile-enter {
-    background: rgba(42, 49, 81, 0.95);
-    transform: translateY(-1px);
-  }
-
-  .tile-soon {
-    display: inline-block;
-    font-family: 'Cinzel', serif;
-    font-size: 0.56rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: #f4ead0;
-    background: rgba(58, 75, 53, 0.86);
-    padding: 0.4rem 1rem;
-    border-radius: 3px;
-    border: 1px solid rgba(194, 178, 130, 0.45);
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.08),
-      0 4px 12px rgba(45, 60, 36, 0.28);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-  }
-  .tile-soon::before,
-  .tile-soon::after {
-    content: '✦';
-    color: #c2b282;
-    margin: 0 0.4rem;
-    font-size: 0.7em;
-    opacity: 0.9;
-  }
-
-  /* ====================================================== */
-  /* LIVING INSTRUMENT PLACEHOLDER PANEL                    */
-  /* (used by Dreamometer + Nature's Pulse)                 */
-  /* ====================================================== */
-  .dreamometer {
-    margin: 0 4rem 5rem;
-    background: var(--paper);
-    border: 1px solid var(--rule-soft);
-    border-radius: 6px;
-    padding: 3.5rem 3.5rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
     align-items: center;
-    box-shadow:
-      0 1px 0 rgba(255,255,255,0.5) inset,
-      0 10px 32px rgba(45, 36, 25, 0.08);
+    padding: 0 1.5rem;
+    border-left: 1px solid rgba(180, 168, 120, 0.18);
+    border-right: 1px solid rgba(180, 168, 120, 0.18);
   }
-  /* Sage variant for Nature's Pulse */
-  .dreamometer.is-nature {
-    background:
-      radial-gradient(circle at 20% 30%, rgba(168,127,60,0.06), transparent 55%),
-      radial-gradient(circle at 80% 70%, rgba(109,122,92,0.08), transparent 55%),
-      var(--paper);
+  .apothecary-icon {
+    width: 110px; height: 110px;
   }
-  .dreamometer.is-nature .dm-left .dm-eyebrow,
-  .dreamometer.is-nature .dm-left h3,
-  .dreamometer.is-nature .dm-coming {
-    color: var(--forest-deep);
-  }
-  .dreamometer.is-nature .dm-left h3 {
-    color: var(--forest-deep);
-  }
-  .dreamometer.is-nature .dm-left h3 .dm-tm {
-    color: var(--sage);
-  }
-  .dreamometer.is-nature .dm-left .dm-divider {
-    color: var(--sage);
-  }
-
-  .dm-left .dm-eyebrow {
+  .apothecary-icon svg { width: 100%; height: 100%; }
+  .apothecary-text {}
+  .apothecary-title {
     font-family: 'Cinzel', serif;
-    font-size: 0.74rem;
+    font-size: 1rem;
+    letter-spacing: 0.32em;
+    color: #d4c98a;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .apothecary-rule {
+    width: 36px; height: 1px;
+    background: #b4a878;
+    margin-bottom: 0.9rem;
+  }
+  .apothecary-category {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.4em;
+    color: #b4a878;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    opacity: 0.85;
+  }
+  .apothecary-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.7rem;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+    line-height: 1.25;
+  }
+  .apothecary-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: rgba(246, 241, 230, 0.78);
+    line-height: 1.5;
+  }
+  .apothecary-note {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: rgba(246, 241, 230, 0.62);
+    margin-top: 0.7rem;
+    line-height: 1.5;
+  }
+  .apothecary-footer {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.32em;
+    color: rgba(180, 168, 120, 0.55);
+    text-transform: uppercase;
+    margin-top: 1rem;
+  }
+  /* SIDE columns (moon + season) */
+  .apothecary-side {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0.5rem 0.5rem;
+  }
+  .apothecary-side-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
     letter-spacing: 0.36em;
-    color: var(--tobacco-mute);
+    color: #d4c98a;
     text-transform: uppercase;
     margin-bottom: 1rem;
   }
-  .dm-left h3 {
-    font-family: 'Cormorant SC', 'Cormorant Garamond', serif;
-    font-weight: 500;
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    letter-spacing: 0.04em;
-    color: var(--tobacco);
-    margin-bottom: 0.2rem;
+  .apothecary-moon,
+  .apothecary-season-icon {
+    width: 80px; height: 80px;
+    margin: 0 auto 0.9rem;
   }
-  .dm-left h3 .dm-tm {
-    font-size: 0.55em;
-    vertical-align: super;
-    letter-spacing: 0;
-    color: var(--gold);
-    margin-left: 0.05em;
-  }
-  .dm-left .dm-divider {
-    color: var(--gold);
-    font-size: 0.9rem;
-    margin: 0.8rem 0 1.2rem;
-    opacity: 0.7;
-  }
-  .dm-left p {
+  .apothecary-moon svg,
+  .apothecary-season-icon svg { width: 100%; height: 100%; }
+  .apothecary-side-name {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-size: 1.2rem;
-    color: var(--tobacco-soft);
-    line-height: 1.5;
-    margin-bottom: 1.6rem;
-    max-width: 28rem;
+    color: var(--cream);
+    line-height: 1.25;
+    margin-bottom: 0.3rem;
   }
-  .dm-coming {
-    font-family: 'Cinzel', serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.34em;
-    text-transform: uppercase;
-    color: var(--tobacco-mute);
-    padding: 0.7rem 1.6rem;
-    display: inline-block;
-    border-top: 1px solid var(--rule-soft);
-    border-bottom: 1px solid var(--rule-soft);
-    opacity: 0.85;
-  }
-  .dm-coming::before,
-  .dm-coming::after {
-    content: '✦';
-    color: var(--gold);
-    margin: 0 0.6rem;
-    font-size: 0.7em;
-    opacity: 0.7;
+  .apothecary-side-detail {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.92rem;
+    color: rgba(246, 241, 230, 0.62);
+    line-height: 1.45;
   }
 
-  .dm-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-  }
-  .dm-dial-placeholder {
-    width: 100%;
-    max-width: 280px;
-    aspect-ratio: 1 / 1;
-    opacity: 0.85;
-  }
-
-  /* ====================================================== */
-  /* FOOTER                                                 */
-  /* ====================================================== */
-  footer {
-    background: var(--ink);
-    color: var(--paper);
+  /* ---------- BACK LINK ---------- */
+  .back-link-wrap {
     text-align: center;
-    padding: 4rem 2rem 3rem;
+    padding: 1rem 3rem 4rem;
+    background: var(--cream);
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    transition: color 0.3s, gap 0.3s;
+  }
+  .back-link::before {
+    content: '←';
+    transition: transform 0.3s;
+  }
+  .back-link:hover {
+    color: var(--gold);
+    gap: 0.9rem;
+  }
+  .back-link:hover::before { transform: translateX(-4px); }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--cream-warm);
+    padding: 4rem 3rem 2.5rem;
+    color: var(--ink-soft);
+    text-align: center;
+    border-top: 1px solid var(--rule-soft);
   }
   .footer-mark {
     font-family: 'Cinzel', serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.35em;
-    color: var(--gold-soft);
-    margin-bottom: 0.5rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.36em;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
   }
   .footer-tag {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 1.05rem;
-    color: rgba(246, 241, 230, 0.7);
-    margin-bottom: 2rem;
+    color: var(--ink-mute);
+    font-size: 1rem;
+    margin-bottom: 2.4rem;
   }
   .footer-nav {
     display: flex;
-    justify-content: center;
     gap: 2rem;
-    margin-bottom: 1.5rem;
+    justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 2rem;
   }
   .footer-nav a {
     font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     letter-spacing: 0.22em;
+    color: var(--ink-soft);
+    transition: color 0.3s;
     text-transform: uppercase;
-    color: var(--paper);
-    opacity: 0.7;
-    transition: opacity .3s ease, color .3s ease;
   }
-  .footer-nav a:hover { color: var(--gold-soft); opacity: 1; }
-  .footer-social {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  .footer-social a {
-    font-family: 'Cinzel', serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--paper);
-    opacity: 0.55;
-    transition: opacity .3s ease, color .3s ease;
-  }
-  .footer-social a:hover { color: var(--gold-soft); opacity: 1; }
-  .footer-contact {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    color: rgba(246, 241, 230, 0.6);
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-  }
-  .footer-contact a { color: var(--gold-soft); }
+  .footer-nav a:hover { color: var(--gold); }
   .footer-copy {
-    font-family: 'Cinzel', serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.22em;
-    color: rgba(246, 241, 230, 0.35);
+    font-size: 0.82rem;
+    color: var(--ink-mute);
+    margin-top: 1.2rem;
   }
 
-  /* ====================================================== */
-  /* REVEAL                                                 */
-  /* ====================================================== */
+  /* ---------- ANIMATION ---------- */
   .reveal {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(28px);
     transition: opacity 0.9s ease, transform 0.9s ease;
   }
-  .reveal.is-visible { opacity: 1; transform: translateY(0); }
-
-  /* ====================================================== */
-  /* RESPONSIVE                                             */
-  /* ====================================================== */
-  @media (max-width: 980px) {
-    nav {
-      padding: 0.7rem 1rem;
-    }
-    .nav-links { display: none; }
-    .nav-logo {
-      gap: 0.5rem;
-    }
-    .nav-logo img {
-      width: 32px;
-      height: 32px;
-    }
-    .nav-logo-text {
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      white-space: nowrap;
-    }
-    .nav-cta {
-      padding: 0.5rem 0.9rem;
-      font-size: 0.62rem;
-      letter-spacing: 0.18em;
-      white-space: nowrap;
-      border-radius: 999px;
-    }
-
-    .wing-hero {
-      min-height: auto;
-    }
-    .wing-hero-text {
-      padding: 3rem 1.4rem 3.5rem;
-      min-height: 62vh;
-      max-width: 100%;
-    }
-    .wing-hero-eyebrow {
-      font-size: 0.7rem;
-      letter-spacing: 0.3em;
-      margin-bottom: 1.1rem;
-    }
-    .wing-hero-title .line-1 {
-      font-size: clamp(1.7rem, 7.4vw, 2.5rem);
-      letter-spacing: 0.02em;
-    }
-    .wing-hero-title .line-2 {
-      font-size: clamp(2.8rem, 14vw, 4.5rem);
-      margin-left: 0;
-      margin-top: -0.15rem;
-    }
-    .wing-hero-divider {
-      margin: 1.2rem 0 1.4rem;
-    }
-    .wing-hero-divider .bar { width: 80px; }
-    .wing-hero-couplet {
-      font-size: 1.2rem;
-      margin-bottom: 1.2rem;
-    }
-    .wing-hero-body {
-      font-size: 0.98rem;
-      line-height: 1.6;
-      margin-bottom: 0;
-    }
-    .wing-hero-bg img {
-      object-position: 70% 25%;
-    }
-    .wing-hero-bg::after {
-      background: linear-gradient(
-        180deg,
-        rgba(246, 241, 230, 0.78) 0%,
-        rgba(246, 241, 230, 0.55) 40%,
-        rgba(246, 241, 230, 0.25) 75%,
-        rgba(246, 241, 230, 0.05) 100%
-      );
-    }
-
-    .path-section { padding: 3.5rem 1.2rem 4rem; }
-    .path-header { margin-bottom: 2.5rem; }
-    .path-header .ornament {
-      font-size: 0.66rem;
-      letter-spacing: 0.36em;
-    }
-    .path-header .ornament::before,
-    .path-header .ornament::after {
-      margin: 0 0.5rem;
-    }
-    .tiles-grid {
-      grid-template-columns: 1fr;
-      gap: 1.4rem;
-      max-width: 420px;
-    }
-
-    .dreamometer {
-      margin: 0 1.2rem 4rem;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      padding: 2.5rem 1.4rem;
-    }
-    .dm-left { text-align: center; }
-    .dm-left p { margin-left: auto; margin-right: auto; }
-    .dm-dial-placeholder { max-width: 220px; }
-
-    footer {
-      padding: 3rem 1.4rem 2.5rem;
-    }
-    .footer-nav { gap: 1.2rem; }
-    .footer-social { gap: 1.2rem; }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  @media (min-width: 981px) and (max-width: 1180px) {
-    .tiles-grid { grid-template-columns: repeat(2, 1fr); max-width: 820px; }
-    .dreamometer { grid-template-columns: 1fr; gap: 2rem; }
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 1100px) {
+    .wing-hero-inner {
+      min-height: auto;
+    }
+    .wing-hero-image::after {
+      background: linear-gradient(
+        to right,
+        rgba(246, 241, 230, 0.72) 0%,
+        rgba(246, 241, 230, 0.4) 50%,
+        rgba(246, 241, 230, 0.15) 100%
+      );
+    }
+    .wing-hero-text {
+      padding: 4rem 2.5rem;
+      max-width: 100%;
+      min-height: clamp(480px, 65vh, 640px);
+      justify-content: center;
+    }
+    .tiles-grid { grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
+    .apothecary-panel {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 1.8rem;
+      padding: 2.2rem 1.8rem;
+    }
+    .apothecary-centre {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      padding: 1.6rem 0;
+      border-left: none;
+      border-right: none;
+      border-top: 1px solid rgba(180, 168, 120, 0.18);
+      border-bottom: 1px solid rgba(180, 168, 120, 0.18);
+    }
+    .apothecary-icon { margin: 0 auto; }
+    .apothecary-rule { margin: 0 auto 0.9rem; }
+  }
+  @media (max-width: 720px) {
+    nav { padding: 1rem 1.2rem; }
+    .nav-links { display: none; }
+    .nav-logo-text { display: none; }
+    .nav-cta { padding: 0.55rem 1rem; font-size: 0.6rem; }
+    .wing-hero-image::after {
+      background: linear-gradient(
+        to right,
+        rgba(246, 241, 230, 0.82) 0%,
+        rgba(246, 241, 230, 0.6) 100%
+      );
+    }
+    .wing-hero-text { padding: 3rem 1.6rem; min-height: clamp(440px, 60vh, 560px); }
+    .wing-hero h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+    .wing-hero h1 .script { font-size: clamp(2.8rem, 11vw, 4rem); }
+    .wing-hero-sub { font-size: 1.1rem; }
+    .wing-hero-desc { font-size: 1rem; }
+    .choose-path { padding: 2.5rem 1.4rem 1.5rem; }
+    .choose-path-label { font-size: 0.7rem; gap: 0.8rem; }
+    .choose-path-label::before, .choose-path-label::after { width: 30px; }
+    .tiles { padding: 1rem 1.4rem 3rem; }
+    .tiles-grid { grid-template-columns: 1fr; gap: 1.2rem; max-width: 380px; }
+    .apothecary-section { padding: 2rem 1.4rem 3rem; }
+    .apothecary-title { font-size: 0.88rem; }
+    .apothecary-headline { font-size: 1.35rem; }
+    .apothecary-sub { font-size: 0.98rem; }
+    .back-link-wrap { padding: 0.5rem 1.4rem 3rem; }
+    footer { padding: 3rem 1.4rem 2rem; }
+    .footer-nav { gap: 1rem; }
   }
 </style>
 </head>
 <body>
 
-<!-- ============================================== -->
-<!-- NAV                                            -->
-<!-- ============================================== -->
 <nav>
   <a href="/" class="nav-logo">
     <img src="iyl-logo.png" alt="Inside Your Library">
@@ -811,230 +609,154 @@
     <li><a href="/#wings" class="active">The Library</a></li>
     <li><a href="/#louise">About Louise</a></li>
   </ul>
-  <a href="/" class="nav-cta">← Home</a>
+  <a href="/" class="nav-cta">Inside Your Library</a>
 </nav>
 
-<!-- ============================================== -->
-<!-- HERO                                           -->
-<!-- ============================================== -->
 <section class="wing-hero">
-  <div class="wing-hero-bg" aria-hidden="true">
-    <img src="natural-healing-page.jpg" alt="" fetchpriority="high" decoding="async" loading="eager">
-  </div>
-
-  <div class="wing-hero-text">
-    <div class="wing-hero-eyebrow">Welcome to the</div>
-    <h1 class="wing-hero-title">
-      <span class="line-1">Natural Healing</span>
-      <span class="line-2">Wing</span>
-    </h1>
-    <div class="wing-hero-divider" aria-hidden="true">
-      <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z" fill="currentColor"/>
-      </svg>
-      <span class="bar"></span>
+  <div class="wing-hero-inner">
+    <div class="wing-hero-image">
+      <img src="natural-healing-page.jpg" alt="The Natural Healing Wing — a light-filled apothecary library with shelves of botanical books, hanging herbs, an arched window letting in morning light, and a soft reading nook beyond an archway" fetchpriority="high">
     </div>
-    <p class="wing-hero-couplet">
-      <span>The old remedies.</span>
-      <span>The slow knowing.</span>
-    </p>
-    <p class="wing-hero-body">
-      Step into a room of plants, simples and the quiet practices that support wellbeing.
-      Here are the traditions &mdash; the herbs that lined the windowsill,
-      the remedies passed down without writing.
-      The garden remembers. So does the body.
-    </p>
+    <div class="wing-hero-text reveal">
+      <div class="wing-hero-ornament">✦</div>
+      <div class="wing-hero-eyebrow">Welcome to the</div>
+      <h1>
+        Natural Healing
+        <span class="script">Wing</span>
+      </h1>
+      <div class="wing-hero-divider"></div>
+      <p class="wing-hero-sub">The greener shelves.<br>The gentler remedies.</p>
+      <p class="wing-hero-desc">Explore the timeless traditions of natural healing — herbs, oils, waters and the body's own wisdom. These remedies have tended to body and mind for generations. They are here for you.</p>
+    </div>
   </div>
 </section>
 
-<!-- ============================================== -->
-<!-- CHOOSE YOUR PATH                               -->
-<!-- ============================================== -->
-<section id="paths" class="path-section">
-  <div class="path-header reveal">
-    <span class="ornament">Choose Your Path</span>
-  </div>
+<section class="choose-path">
+  <div class="choose-path-label reveal">Choose Your Path</div>
+</section>
 
+<section class="tiles">
   <div class="tiles-grid">
 
-    <!-- IN YOUR EYES — COMING SOON -->
-    <div class="tile-card reveal" aria-label="In Your Eyes — coming soon">
-      <div class="tile-image">
-        <img src="tile-eyes.jpg" alt="In Your Eyes — iridology with apothecary bottles, an open iridology reference chart and magnifying glass on a botanical background" loading="lazy" decoding="async">
-        <div class="tile-overlay">
-          <span class="tile-soon">Coming Soon</span>
-        </div>
-      </div>
+    <div class="tile-card is-locked reveal" aria-label="In Your Eyes — coming soon">
+      <span class="tile-soon">Coming Soon</span>
+      <img src="tile-eyes.jpg" alt="In Your Eyes — Iridology and what the eyes can tell." loading="lazy" decoding="async">
     </div>
 
-    <!-- IN YOUR SLEEP — COMING SOON -->
-    <div class="tile-card reveal" aria-label="In Your Sleep — coming soon">
-      <div class="tile-image">
-        <img src="tile-sleep.jpg" alt="In Your Sleep — sleep-blend candle, valerian root, herbal tea and a lavender eye mask under a crescent moon" loading="lazy" decoding="async">
-        <div class="tile-overlay">
-          <span class="tile-soon">Coming Soon</span>
-        </div>
-      </div>
+    <div class="tile-card is-locked reveal" aria-label="In Your Garden — coming soon">
+      <span class="tile-soon">Coming Soon</span>
+      <img src="tile-garden.jpg" alt="In Your Garden — The healing garden. Herbs, plants and the medicine that grows." loading="lazy" decoding="async">
     </div>
 
-    <!-- IN YOUR GARDEN — COMING SOON -->
-    <div class="tile-card reveal" aria-label="In Your Garden — coming soon">
-      <div class="tile-image">
-        <img src="tile-garden.jpg" alt="In Your Garden — basket of daisies, a watering can, potted herbs and two botanical reference books" loading="lazy" decoding="async">
-        <div class="tile-overlay">
-          <span class="tile-soon">Coming Soon</span>
-        </div>
-      </div>
+    <div class="tile-card is-locked reveal" aria-label="In Your Scent Cabinet — coming soon">
+      <span class="tile-soon">Coming Soon</span>
+      <img src="tile-scent.jpg" alt="In Your Scent Cabinet — Aromatherapy. Essential oils and the language of scent." loading="lazy" decoding="async">
     </div>
 
-    <!-- THE SCENT CABINET — COMING SOON -->
-    <div class="tile-card reveal" aria-label="The Scent Cabinet — coming soon">
-      <div class="tile-image">
-        <img src="tile-scent.jpg" alt="In Your Scent Cabinet — apothecary shelf of essential oils, a lavender candle and a botanical fragrance guide" loading="lazy" decoding="async">
-        <div class="tile-overlay">
-          <span class="tile-soon">Coming Soon</span>
-        </div>
-      </div>
+    <div class="tile-card is-locked reveal" aria-label="In Your Tea Cabinet — coming soon">
+      <span class="tile-soon">Coming Soon</span>
+      <img src="tile-tea.jpg" alt="In Your Tea Cabinet — A curated shelf of teas and the rituals around them." loading="lazy" decoding="async">
     </div>
 
-    <!-- IN YOUR WATER — COMING SOON -->
-    <div class="tile-card reveal" aria-label="In Your Water — coming soon">
-      <div class="tile-image">
-        <img src="tile-water.jpg" alt="In Your Water — homeopathic remedies, mother tinctures and an open materia medica reference book" loading="lazy" decoding="async">
-        <div class="tile-overlay">
-          <span class="tile-soon">Coming Soon</span>
-        </div>
-      </div>
+    <div class="tile-card is-locked reveal" aria-label="In Your Energy — coming soon">
+      <span class="tile-soon">Coming Soon</span>
+      <img src="tile-energy.jpg" alt="In Your Energy — Energy healing traditions and practices for balance and renewal." loading="lazy" decoding="async">
     </div>
 
-    <!-- THE TEA CABINET — COMING SOON -->
-    <div class="tile-card reveal" aria-label="The Tea Cabinet — coming soon">
-      <div class="tile-image">
-        <img src="tile-tea.jpg" alt="In Your Tea Cabinet — herbal tisane jars, teapot, daisies and an open botanical notebook" loading="lazy" decoding="async">
-        <div class="tile-overlay">
-          <span class="tile-soon">Coming Soon</span>
-        </div>
-      </div>
+    <div class="tile-card is-locked reveal" aria-label="In Your Water — coming soon">
+      <span class="tile-soon">Coming Soon</span>
+      <img src="tile-water.jpg" alt="In Your Water — Homeopathy. The gentle tradition of like cures like." loading="lazy" decoding="async">
     </div>
 
   </div>
 </section>
 
-<!-- ============================================== -->
-<!-- NATURE'S PULSE PLACEHOLDER                     -->
-<!-- ============================================== -->
-<section class="dreamometer is-nature reveal" aria-label="Nature's Pulse">
+<!-- HEALING APOTHECARY — daily rotating feature + moon phase + season -->
+<section class="apothecary-section">
+  <div class="apothecary-panel reveal">
 
-  <div class="dm-left">
-    <div class="dm-eyebrow">A Living Instrument</div>
-    <h3>Nature&rsquo;s Pulse</h3>
-    <div class="dm-divider">&#10042;</div>
-    <p>A weekly reading of what nature is calling attention to &mdash; the plant of the moment, the season&rsquo;s remedy, the small ritual to hold close.</p>
-    <span class="dm-coming">Coming Soon</span>
+    <!-- LEFT: moon phase -->
+    <div class="apothecary-side">
+      <div class="apothecary-side-label">Tonight</div>
+      <div class="apothecary-moon" id="apothecary-moon" aria-hidden="true">
+        <svg viewBox="0 0 80 80">
+          <defs>
+            <clipPath id="moon-clip"><circle cx="40" cy="40" r="30"/></clipPath>
+          </defs>
+          <circle cx="40" cy="40" r="30" fill="#0f1408" stroke="#b4a878" stroke-width="1"/>
+          <circle id="moon-lit" cx="40" cy="40" r="30" fill="#d4c98a" clip-path="url(#moon-clip)"/>
+          <circle id="moon-shadow" cx="40" cy="40" r="30" fill="#0f1408" clip-path="url(#moon-clip)"/>
+          <circle cx="40" cy="40" r="30" fill="none" stroke="#b4a878" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="apothecary-side-name" id="apothecary-moon-name">Loading</div>
+      <div class="apothecary-side-detail" id="apothecary-moon-detail"></div>
+    </div>
+
+    <!-- CENTRE: today's feature -->
+    <div class="apothecary-centre">
+      <div class="apothecary-icon" aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="56" fill="#0f1408" stroke="#b4a878" stroke-width="1.4"/>
+          <circle cx="60" cy="60" r="50" fill="none" stroke="#b4a878" stroke-width="0.6" opacity="0.5"/>
+          <path d="M 38 72 Q 38 90 60 90 Q 82 90 82 72 Z" fill="none" stroke="#d4c98a" stroke-width="1.2"/>
+          <path d="M 36 72 L 84 72" stroke="#d4c98a" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="60" y1="68" x2="76" y2="36" stroke="#d4c98a" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="76" cy="36" r="3.2" fill="#d4c98a"/>
+          <g stroke="#b4a878" stroke-width="0.9" fill="none" stroke-linecap="round">
+            <path d="M 30 50 Q 32 38 38 30"/>
+            <path d="M 33 42 Q 28 40 26 36"/>
+            <path d="M 35 36 Q 30 33 28 30"/>
+            <path d="M 37 32 Q 34 28 33 24"/>
+          </g>
+          <g stroke="#b4a878" stroke-width="0.9" fill="none" stroke-linecap="round">
+            <path d="M 90 50 Q 88 38 82 30"/>
+            <path d="M 87 42 Q 92 40 94 36"/>
+            <path d="M 85 36 Q 90 33 92 30"/>
+          </g>
+          <ellipse cx="38" cy="30" rx="2.2" ry="1" fill="#d4c98a" transform="rotate(-35 38 30)"/>
+          <ellipse cx="33" cy="24" rx="2" ry="0.9" fill="#d4c98a" transform="rotate(-50 33 24)"/>
+          <ellipse cx="82" cy="30" rx="2.2" ry="1" fill="#d4c98a" transform="rotate(35 82 30)"/>
+        </svg>
+      </div>
+      <div class="apothecary-text">
+        <div class="apothecary-title">The Healing Apothecary</div>
+        <div class="apothecary-rule"></div>
+        <div class="apothecary-category" id="apothecary-category">HERB</div>
+        <div class="apothecary-headline" id="apothecary-headline">Today's wisdom is loading.</div>
+        <div class="apothecary-sub" id="apothecary-sub">A new healing tradition each day.</div>
+        <div class="apothecary-note" id="apothecary-note"></div>
+        <div class="apothecary-footer">Today's feature · Returns tomorrow</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: season -->
+    <div class="apothecary-side">
+      <div class="apothecary-side-label">The Season</div>
+      <div class="apothecary-season-icon" id="apothecary-season-icon" aria-hidden="true">
+        <!-- filled by JS -->
+      </div>
+      <div class="apothecary-side-name" id="apothecary-season-name">Loading</div>
+      <div class="apothecary-side-detail" id="apothecary-season-detail"></div>
+    </div>
+
   </div>
-
-  <div class="dm-right">
-    <svg class="dm-dial-placeholder" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <radialGradient id="dialFaceSage" cx="50%" cy="45%" r="60%">
-          <stop offset="0%" stop-color="#4f5a43" stop-opacity="0.10"/>
-          <stop offset="100%" stop-color="#4f5a43" stop-opacity="0.02"/>
-        </radialGradient>
-      </defs>
-
-      <!-- Oak/sage outer ring -->
-      <circle cx="140" cy="140" r="132" fill="none" stroke="#7a6347" stroke-width="2" opacity="0.55"/>
-      <circle cx="140" cy="140" r="124" fill="none" stroke="#7a6347" stroke-width="0.6" opacity="0.4"/>
-
-      <!-- Quiet face -->
-      <circle cx="140" cy="140" r="120" fill="url(#dialFaceSage)"/>
-
-      <!-- Four cardinal seasonal markers -->
-      <g stroke="#6d7a5c" stroke-width="1" stroke-linecap="round" opacity="0.65" fill="none">
-        <line x1="140" y1="14" x2="140" y2="26"/>
-        <line x1="140" y1="254" x2="140" y2="266"/>
-        <line x1="14" y1="140" x2="26" y2="140"/>
-        <line x1="254" y1="140" x2="266" y2="140"/>
-      </g>
-      <g stroke="#6d7a5c" stroke-width="0.6" stroke-linecap="round" opacity="0.4" fill="none">
-        <line x1="55" y1="55" x2="63" y2="63"/>
-        <line x1="217" y1="55" x2="225" y2="63"/>
-        <line x1="55" y1="217" x2="63" y2="225"/>
-        <line x1="217" y1="217" x2="225" y2="225"/>
-      </g>
-
-      <!-- Season labels -->
-      <g font-family="Cinzel, serif" font-size="8" fill="#6d7a5c" opacity="0.85" letter-spacing="1.5">
-        <text x="140" y="42" text-anchor="middle">SPRING</text>
-        <text x="140" y="246" text-anchor="middle">AUTUMN</text>
-        <text x="42" y="143" text-anchor="middle">WINTER</text>
-        <text x="238" y="143" text-anchor="middle">SUMMER</text>
-      </g>
-
-      <!-- Inner ring -->
-      <circle cx="140" cy="140" r="72" fill="none" stroke="#7a6347" stroke-width="0.8" opacity="0.4"/>
-
-      <!-- Central tree-of-life — simplified botanical -->
-      <g transform="translate(140 140)" stroke="#4f5a43" stroke-width="1.4" stroke-linecap="round" fill="none">
-        <!-- Trunk -->
-        <path d="M 0 30 L 0 -10"/>
-        <!-- Roots -->
-        <path d="M 0 30 Q -8 36, -16 40"/>
-        <path d="M 0 30 Q 8 36, 16 40"/>
-        <path d="M 0 30 Q -4 38, -8 44"/>
-        <path d="M 0 30 Q 4 38, 8 44"/>
-        <!-- Canopy -->
-        <circle cx="0" cy="-22" r="22" stroke="#4f5a43" stroke-width="1.2" fill="none" opacity="0.85"/>
-        <!-- Branches -->
-        <path d="M 0 -8 Q -10 -16, -16 -22" opacity="0.65"/>
-        <path d="M 0 -8 Q 10 -16, 16 -22" opacity="0.65"/>
-        <path d="M 0 -2 Q -14 -10, -20 -16" opacity="0.55"/>
-        <path d="M 0 -2 Q 14 -10, 20 -16" opacity="0.55"/>
-        <!-- Leaves -->
-        <circle cx="-12" cy="-30" r="2" fill="#4f5a43" opacity="0.7"/>
-        <circle cx="14" cy="-32" r="2" fill="#4f5a43" opacity="0.7"/>
-        <circle cx="0" cy="-40" r="2" fill="#4f5a43" opacity="0.7"/>
-        <circle cx="-18" cy="-18" r="1.5" fill="#4f5a43" opacity="0.5"/>
-        <circle cx="18" cy="-18" r="1.5" fill="#4f5a43" opacity="0.5"/>
-      </g>
-
-      <!-- Faint scattered botanical dots -->
-      <g fill="#6d7a5c" opacity="0.4">
-        <circle cx="100" cy="100" r="1"/>
-        <circle cx="180" cy="95" r="0.8"/>
-        <circle cx="195" cy="180" r="1"/>
-        <circle cx="90" cy="190" r="0.8"/>
-        <circle cx="200" cy="135" r="0.6"/>
-        <circle cx="80" cy="135" r="0.6"/>
-        <circle cx="140" cy="80" r="0.7"/>
-        <circle cx="140" cy="200" r="0.7"/>
-      </g>
-    </svg>
-  </div>
-
 </section>
 
-<!-- ============================================== -->
-<!-- FOOTER                                         -->
-<!-- ============================================== -->
+<div class="back-link-wrap">
+  <a href="/" class="back-link">Return to the Library</a>
+</div>
+
 <footer>
   <div class="footer-mark">INSIDE YOUR LIBRARY</div>
   <div class="footer-tag">Tended by Louise. Already written. Already yours.</div>
-
   <div class="footer-nav">
+    <a href="/">Home</a>
     <a href="/#wings">The Library</a>
     <a href="/#louise">About Louise</a>
     <a href="https://inyourhands.app" target="_blank" rel="noopener">In Your Handwriting</a>
     <a href="https://inyourdreams.app" target="_blank" rel="noopener">In Your Dreams</a>
   </div>
-
-  <div class="footer-social">
-    <a href="https://www.instagram.com/insideyourlibrary" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://www.tiktok.com/@insideyourlibrary" target="_blank" rel="noopener">TikTok</a>
-    <a href="https://www.pinterest.com/insideyourlibrary" target="_blank" rel="noopener">Pinterest</a>
-  </div>
-
-  <p class="footer-contact">Write to the library — <a href="mailto:hello@insideyourlibrary.com">hello@insideyourlibrary.com</a></p>
   <p class="footer-copy">© 2026 Inside Your Library. All rights reserved.</p>
 </footer>
 
@@ -1047,8 +769,213 @@
       }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-</script>
 
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* ---------- HEALING APOTHECARY — daily rotation + moon + season ----------
+     Three streams:
+     1. Daily feature (herb/remedy/crystal) — rotates by day-of-year
+     2. Moon phase — calculated from current date, no API
+     3. Season — Southern Hemisphere by default (Australia)
+  ----------------------------------------------------------- */
+  const apothecaryEntries = [
+    {
+      category: 'HERB',
+      name: 'Chamomile',
+      sub: 'A gentle ally for restless minds and quiet evenings.',
+      note: 'Traditionally used as a soothing tea before sleep, chamomile has tended to body and spirit for centuries.'
+    },
+    {
+      category: 'REMEDY',
+      name: 'Arnica montana',
+      sub: 'The homeopath\'s companion for bumps, bruises and the body\'s recovery.',
+      note: 'One of the most familiar names in homeopathy — a remedy long associated with rest and gentle restoration.'
+    },
+    {
+      category: 'CRYSTAL',
+      name: 'Rose Quartz',
+      sub: 'The stone of the heart. Soft pink, soft purpose.',
+      note: 'Carried for centuries as a token of tenderness, self-kindness and quiet emotional return.'
+    },
+    {
+      category: 'HERB',
+      name: 'Lavender',
+      sub: 'For the long days and the longer nights.',
+      note: 'The scent of calm. Used in pillows, oils and bathwater across generations to invite stillness.'
+    },
+    {
+      category: 'REMEDY',
+      name: 'Rescue Remedy',
+      sub: 'A traditional Bach flower blend for moments of overwhelm.',
+      note: 'Five flower essences combined — a small bottle kept close for the difficult hour.'
+    },
+    {
+      category: 'CRYSTAL',
+      name: 'Amethyst',
+      sub: 'The quiet violet stone. For rest, reflection and the deeper hours.',
+      note: 'Long associated with calm thought and peaceful sleep. A bedside companion in many traditions.'
+    },
+    {
+      category: 'HERB',
+      name: 'Peppermint',
+      sub: 'The bright herb. For digestion, focus and a clearer head.',
+      note: 'A cup of peppermint after a meal is one of the oldest small rituals in the herbal kitchen.'
+    }
+  ];
+
+  function getDayOfYear() {
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 0);
+    const diff = now - start;
+    return Math.floor(diff / (1000 * 60 * 60 * 24));
+  }
+
+  function loadApothecaryEntry() {
+    const idx = getDayOfYear() % apothecaryEntries.length;
+    const entry = apothecaryEntries[idx];
+    document.getElementById('apothecary-category').textContent = entry.category;
+    document.getElementById('apothecary-headline').textContent = entry.name;
+    document.getElementById('apothecary-sub').textContent = entry.sub;
+    document.getElementById('apothecary-note').textContent = entry.note;
+  }
+
+  /* Moon phase calculation — Conway's algorithm, accurate enough for display.
+     Returns illumination 0-1 and phase name. */
+  function getMoonPhase() {
+    const now = new Date();
+    let y = now.getFullYear();
+    let m = now.getMonth() + 1;
+    const d = now.getDate();
+    if (m < 3) { y -= 1; m += 12; }
+    const a = Math.floor(y / 100);
+    const b = Math.floor(a / 4);
+    const c = 2 - a + b;
+    const e = Math.floor(365.25 * (y + 4716));
+    const f = Math.floor(30.6001 * (m + 1));
+    const jd = c + d + e + f - 1524.5;
+    const daysSinceNew = jd - 2451549.5;
+    const cycles = daysSinceNew / 29.53058867;
+    const phase = cycles - Math.floor(cycles);
+    const age = phase * 29.53058867;
+    const illumination = (1 - Math.cos(phase * 2 * Math.PI)) / 2;
+
+    let name, detail;
+    if (age < 1.84566) { name = 'New Moon'; detail = 'A clean slate. The dark phase.'; }
+    else if (age < 5.53699) { name = 'Waxing Crescent'; detail = 'Growing light. The beginning.'; }
+    else if (age < 9.22831) { name = 'First Quarter'; detail = 'Half-lit. Decisions made.'; }
+    else if (age < 12.91963) { name = 'Waxing Gibbous'; detail = 'Building toward fullness.'; }
+    else if (age < 16.61096) { name = 'Full Moon'; detail = 'Whole and bright. Peak energy.'; }
+    else if (age < 20.30228) { name = 'Waning Gibbous'; detail = 'The slow release begins.'; }
+    else if (age < 23.99361) { name = 'Last Quarter'; detail = 'Half-lit. Letting go.'; }
+    else if (age < 27.68493) { name = 'Waning Crescent'; detail = 'The final sliver. Rest.'; }
+    else { name = 'New Moon'; detail = 'A clean slate. The dark phase.'; }
+
+    return { name, detail, illumination, phase };
+  }
+
+  function renderMoon() {
+    const { name, detail, illumination, phase } = getMoonPhase();
+    document.getElementById('apothecary-moon-name').textContent = name;
+    document.getElementById('apothecary-moon-detail').textContent =
+      detail + ' ' + Math.round(illumination * 100) + '% illuminated.';
+
+    // Render the moon visually — shadow moves left or right depending on waxing/waning
+    const shadow = document.getElementById('moon-shadow');
+    if (!shadow) return;
+    const r = 30;
+    const cx = 40, cy = 40;
+    // phase 0 = new, 0.5 = full, 1 = new again
+    // waxing 0 -> 0.5: shadow moves left (cx decreases from 40 to 10 to -20)
+    // waning 0.5 -> 1: shadow moves right (cx increases from 80 to 100)
+    let shadowCx;
+    if (phase < 0.5) {
+      // waxing — shadow on left side, retreats leftward
+      shadowCx = cx - (phase * 4 * r);
+    } else {
+      // waning — shadow on right side, advances from left
+      shadowCx = cx + ((phase - 0.5) * 4 * r);
+    }
+    shadow.setAttribute('cx', shadowCx);
+  }
+
+  /* Season — Southern Hemisphere meteorological seasons (Australia).
+     Dec-Feb summer, Mar-May autumn, Jun-Aug winter, Sep-Nov spring. */
+  function getSeason() {
+    const month = new Date().getMonth() + 1;
+    if (month === 12 || month <= 2) {
+      return {
+        name: 'Summer',
+        detail: 'The long bright days. Light herbs and cooling waters.',
+        icon: 'sun'
+      };
+    }
+    if (month >= 3 && month <= 5) {
+      return {
+        name: 'Autumn',
+        detail: 'Roots, barks and the harvest moon. Time to gather and dry.',
+        icon: 'leaf'
+      };
+    }
+    if (month >= 6 && month <= 8) {
+      return {
+        name: 'Winter',
+        detail: 'The deep season. Warming spices, slow teas, quiet rooms.',
+        icon: 'flame'
+      };
+    }
+    return {
+      name: 'Spring',
+      detail: 'First greens. Tender shoots. The body remembers light.',
+      icon: 'sprout'
+    };
+  }
+
+  const seasonSvgs = {
+    sun: `<svg viewBox="0 0 80 80">
+      <circle cx="40" cy="40" r="30" fill="#0f1408" stroke="#b4a878" stroke-width="1"/>
+      <circle cx="40" cy="40" r="14" fill="#d4c98a"/>
+      <g stroke="#d4c98a" stroke-width="1.6" stroke-linecap="round">
+        <line x1="40" y1="14" x2="40" y2="20"/>
+        <line x1="40" y1="60" x2="40" y2="66"/>
+        <line x1="14" y1="40" x2="20" y2="40"/>
+        <line x1="60" y1="40" x2="66" y2="40"/>
+        <line x1="22" y1="22" x2="26" y2="26"/>
+        <line x1="54" y1="54" x2="58" y2="58"/>
+        <line x1="22" y1="58" x2="26" y2="54"/>
+        <line x1="54" y1="26" x2="58" y2="22"/>
+      </g>
+    </svg>`,
+    leaf: `<svg viewBox="0 0 80 80">
+      <circle cx="40" cy="40" r="30" fill="#0f1408" stroke="#b4a878" stroke-width="1"/>
+      <path d="M 25 55 Q 25 30 50 25 Q 55 50 30 55 Z" fill="none" stroke="#d4c98a" stroke-width="1.4" stroke-linejoin="round"/>
+      <line x1="30" y1="55" x2="48" y2="32" stroke="#d4c98a" stroke-width="1"/>
+      <line x1="36" y1="50" x2="42" y2="42" stroke="#b4a878" stroke-width="0.8"/>
+      <line x1="32" y1="44" x2="38" y2="38" stroke="#b4a878" stroke-width="0.8"/>
+    </svg>`,
+    flame: `<svg viewBox="0 0 80 80">
+      <circle cx="40" cy="40" r="30" fill="#0f1408" stroke="#b4a878" stroke-width="1"/>
+      <path d="M 40 22 Q 30 36 32 48 Q 32 58 40 58 Q 48 58 48 48 Q 50 36 40 22 Z" fill="none" stroke="#d4c98a" stroke-width="1.4" stroke-linejoin="round"/>
+      <path d="M 40 36 Q 36 44 38 50 Q 38 54 40 54 Q 42 54 42 50 Q 44 44 40 36 Z" fill="#d4c98a" opacity="0.6"/>
+    </svg>`,
+    sprout: `<svg viewBox="0 0 80 80">
+      <circle cx="40" cy="40" r="30" fill="#0f1408" stroke="#b4a878" stroke-width="1"/>
+      <line x1="40" y1="58" x2="40" y2="38" stroke="#d4c98a" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M 40 42 Q 32 38 28 32 Q 36 32 40 38" fill="none" stroke="#d4c98a" stroke-width="1.2" stroke-linejoin="round"/>
+      <path d="M 40 38 Q 48 34 52 28 Q 44 28 40 34" fill="none" stroke="#d4c98a" stroke-width="1.2" stroke-linejoin="round"/>
+      <line x1="30" y1="58" x2="50" y2="58" stroke="#b4a878" stroke-width="0.8"/>
+    </svg>`
+  };
+
+  function renderSeason() {
+    const season = getSeason();
+    document.getElementById('apothecary-season-name').textContent = season.name;
+    document.getElementById('apothecary-season-detail').textContent = season.detail;
+    document.getElementById('apothecary-season-icon').innerHTML = seasonSvgs[season.icon];
+  }
+
+  loadApothecaryEntry();
+  renderMoon();
+  renderSeason();
+</script>
 </body>
 </html>
