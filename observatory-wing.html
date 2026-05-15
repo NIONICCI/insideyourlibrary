@@ -115,19 +115,23 @@
   .observatory {
     position: relative;
     width: 100%;
-    min-height: 100vh;
     background: #14100b;
-    padding: 7rem 0 4rem;
+    padding: 0 0 4rem;
     overflow: hidden;
   }
 
   .observatory-title-block {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 3;
     text-align: center;
-    padding: 1rem 1.5rem 2rem;
+    padding: 6rem 1.5rem 2rem;
     color: var(--obs-text);
+    pointer-events: none;
   }
+  .observatory-title-block > * { pointer-events: auto; }
   .observatory-title {
     font-family: 'Cinzel', serif;
     font-size: clamp(2.4rem, 5.5vw, 4.2rem);
@@ -135,7 +139,7 @@
     letter-spacing: 0.14em;
     color: var(--obs-gold-bright);
     margin-bottom: 0.6rem;
-    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 2px 28px rgba(0, 0, 0, 0.75), 0 0 60px rgba(0, 0, 0, 0.5);
   }
   .observatory-divider {
     width: 60px;
@@ -151,25 +155,27 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--obs-gold-bright);
-    background: #14100b;
     padding: 0 0.5rem;
     font-size: 0.7rem;
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
   }
   .observatory-sub {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.05rem, 1.5vw, 1.25rem);
     font-style: italic;
-    color: var(--obs-text-soft);
+    color: var(--obs-text);
     max-width: 640px;
     margin: 0 auto 0.4rem;
     line-height: 1.5;
+    text-shadow: 0 1px 18px rgba(0, 0, 0, 0.85);
   }
   .observatory-sub-prompt {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.05rem, 1.5vw, 1.25rem);
     font-style: italic;
-    color: var(--obs-text-soft);
+    color: var(--obs-text);
     margin-bottom: 1.2rem;
+    text-shadow: 0 1px 18px rgba(0, 0, 0, 0.85);
   }
   .observatory-stars {
     color: var(--obs-gold);
@@ -182,7 +188,7 @@
   .observatory-stage {
     position: relative;
     max-width: 1400px;
-    margin: 1.5rem auto 0;
+    margin: 0 auto;
     width: 100%;
   }
 
@@ -197,46 +203,43 @@
     display: block;
   }
 
-  /* The four cards layered over the empty panels in the image.
-     Positions are percentages of the image's natural dimensions
-     (1456 x 1088 — the rendered panel bottoms occupy roughly y 50%–63%
-     and the four arches are evenly distributed horizontally). */
+  /* The four cards layered over the empty plinths in the image.
+     Each plinth is positioned individually because the room
+     architecture (window, columns, bookshelves) makes the
+     painted plinths asymmetric — they are NOT four equal
+     25% columns. Coordinates measured directly from the image
+     (1456 x 1088 natural size). */
   .observatory-panels {
     position: absolute;
     inset: 0;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
     pointer-events: none;
   }
 
-  .observatory-panel {
-    position: relative;
-    pointer-events: auto;
-  }
-
-  /* The card itself sits in the lower portion of each panel column,
-     matching the dark plinth area beneath each dial. */
   .observatory-card {
     position: absolute;
-    /* Tuned to sit inside the painted plinth beneath each dial */
-    top: 49%;
-    left: 12%;
-    right: 12%;
-    bottom: 24%;
+    /* Vertical bounds: top of plinth ~49%, bottom ~67% of image height */
+    top: 50%;
+    bottom: 33%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 1rem 0.8rem;
+    padding: 0.6rem 0.4rem;
     color: var(--obs-text);
     text-decoration: none;
+    pointer-events: auto;
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
+  /* Per-plinth horizontal positioning, measured from image */
+  .observatory-card.card-tripometer  { left: 10.5%; right: 73.5%; }
+  .observatory-card.card-dreamometer { left: 29.0%; right: 56.5%; }
+  .observatory-card.card-nameometer  { left: 46.0%; right: 39.5%; }
+  .observatory-card.card-ambiometer  { left: 62.5%; right: 21.5%; }
+
   .observatory-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
   }
 
   /* When the card is locked / coming-soon */
@@ -249,33 +252,35 @@
 
   .observatory-card-name {
     font-family: 'Cinzel', serif;
-    font-size: clamp(0.82rem, 1.15vw, 1.05rem);
-    letter-spacing: 0.32em;
+    font-size: clamp(0.65rem, 0.95vw, 0.92rem);
+    letter-spacing: 0.28em;
     color: var(--obs-gold-bright);
-    margin-bottom: 0.7rem;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+    white-space: nowrap;
   }
 
   .observatory-card-desc {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(0.78rem, 0.95vw, 0.92rem);
+    font-size: clamp(0.66rem, 0.78vw, 0.82rem);
     font-style: italic;
     color: var(--obs-text-soft);
-    line-height: 1.45;
-    margin-bottom: 0.9rem;
-    max-width: 90%;
+    line-height: 1.35;
+    margin-bottom: 0.7rem;
+    max-width: 100%;
   }
 
   .observatory-card-enter {
     font-family: 'Cinzel', serif;
-    font-size: clamp(0.66rem, 0.85vw, 0.78rem);
-    letter-spacing: 0.36em;
+    font-size: clamp(0.56rem, 0.7vw, 0.7rem);
+    letter-spacing: 0.32em;
     color: var(--obs-gold-bright);
     border: 1px solid var(--obs-gold);
-    padding: 0.55rem 1.4rem;
+    padding: 0.45rem 1rem;
     border-radius: 1px;
     transition: background 0.35s, color 0.35s, border-color 0.35s;
     background: rgba(20, 16, 11, 0.45);
+    white-space: nowrap;
   }
 
   .observatory-card:hover .observatory-card-enter {
@@ -294,8 +299,8 @@
   .observatory-card::before {
     content: '';
     position: absolute;
-    inset: -5% -10%;
-    background: radial-gradient(ellipse at center, rgba(20, 16, 11, 0.55) 0%, rgba(20, 16, 11, 0) 70%);
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(20, 16, 11, 0.55) 0%, rgba(20, 16, 11, 0) 75%);
     z-index: -1;
     pointer-events: none;
   }
@@ -390,7 +395,20 @@
 
     .observatory { padding: 6rem 0 3rem; }
 
-    /* On narrow screens, abandon the overlay approach.
+    /* Mobile: title block returns to normal block flow above the image
+       (overlay only works on desktop where the image is large enough
+       to host the title without obscuring it). */
+    .observatory-title-block {
+      position: static;
+      padding: 0 1.2rem 1.5rem;
+      pointer-events: auto;
+    }
+    .observatory-title { text-shadow: none; }
+    .observatory-sub,
+    .observatory-sub-prompt { text-shadow: none; color: var(--obs-text-soft); }
+    .observatory-divider::before { background: #14100b; }
+
+    /* On narrow screens, abandon the card-overlay approach.
        The image becomes a pure mood-setter, and the four cards
        restack vertically below it with their own dark panels. */
     .observatory-panels {
@@ -400,20 +418,26 @@
       gap: 1.2rem;
       padding: 2rem 1.2rem 0;
     }
-    .observatory-panel {
-      width: 100%;
-    }
-    .observatory-card {
+    .observatory-card,
+    .observatory-card.card-tripometer,
+    .observatory-card.card-dreamometer,
+    .observatory-card.card-nameometer,
+    .observatory-card.card-ambiometer {
       position: static;
+      left: auto;
+      right: auto;
+      top: auto;
+      bottom: auto;
+      width: 100%;
       background: rgba(20, 16, 11, 0.72);
       border: 1px solid var(--obs-rule);
       border-radius: 2px;
       padding: 1.8rem 1.4rem;
     }
-    .observatory-card::before { display: none; }
-    .observatory-card-name { font-size: 1rem; }
+    .observatory-card-name { font-size: 1rem; white-space: normal; }
     .observatory-card-desc { font-size: 1rem; max-width: 100%; }
     .observatory-card-enter { font-size: 0.74rem; padding: 0.7rem 1.6rem; }
+    .observatory-card::before { display: none; }
   }
 
   @media (max-width: 600px) {
@@ -456,40 +480,32 @@
       <div class="observatory-panels">
 
         <!-- TRIPOMETER -->
-        <div class="observatory-panel">
-          <a href="https://tripometer.app" class="observatory-card is-locked" aria-label="Tripometer — coming soon">
-            <div class="observatory-card-name">TRIPOMETER</div>
-            <div class="observatory-card-desc">Trace the world's movements and keep your own private atlas. Journeys, places, distances, and the stories between them.</div>
-            <div class="observatory-card-enter">COMING SOON</div>
-          </a>
-        </div>
+        <a href="https://tripometer.app" class="observatory-card card-tripometer is-locked" aria-label="Tripometer — coming soon">
+          <div class="observatory-card-name">TRIPOMETER</div>
+          <div class="observatory-card-desc">Trace the world's movements and keep your own private atlas. Journeys, places, distances, and the stories between them.</div>
+          <div class="observatory-card-enter">COMING SOON</div>
+        </a>
 
         <!-- DREAMOMETER -->
-        <div class="observatory-panel">
-          <a href="https://inyourdreams.app" class="observatory-card" aria-label="Enter the Dreamometer">
-            <div class="observatory-card-name">DREAMOMETER</div>
-            <div class="observatory-card-desc">Explore the landscape of your dreams. Symbols, patterns, and the messages within.</div>
-            <div class="observatory-card-enter">ENTER</div>
-          </a>
-        </div>
+        <a href="https://inyourdreams.app" class="observatory-card card-dreamometer" aria-label="Enter the Dreamometer">
+          <div class="observatory-card-name">DREAMOMETER</div>
+          <div class="observatory-card-desc">Explore the landscape of your dreams. Symbols, patterns, and the messages within.</div>
+          <div class="observatory-card-enter">ENTER</div>
+        </a>
 
         <!-- NAMEOMETER -->
-        <div class="observatory-panel">
-          <a href="https://nameometer.app" class="observatory-card is-locked" aria-label="Nameometer — coming soon">
-            <div class="observatory-card-name">NAMEOMETER</div>
-            <div class="observatory-card-desc">Discover the meaning, origin and destiny woven into names. Your name. Any name.</div>
-            <div class="observatory-card-enter">COMING SOON</div>
-          </a>
-        </div>
+        <a href="https://nameometer.app" class="observatory-card card-nameometer is-locked" aria-label="Nameometer — coming soon">
+          <div class="observatory-card-name">NAMEOMETER</div>
+          <div class="observatory-card-desc">Discover the meaning, origin and destiny woven into names. Your name. Any name.</div>
+          <div class="observatory-card-enter">COMING SOON</div>
+        </a>
 
         <!-- AMBIOMETER -->
-        <div class="observatory-panel">
-          <a href="https://ambiometer.app" class="observatory-card is-locked" aria-label="Ambiometer — coming soon">
-            <div class="observatory-card-name">AMBIOMETER</div>
-            <div class="observatory-card-desc">Step into immersive atmospheres of sight and sound. Firesides, rainforests, oceans, skies, cities and more.</div>
-            <div class="observatory-card-enter">COMING SOON</div>
-          </a>
-        </div>
+        <a href="https://ambiometer.app" class="observatory-card card-ambiometer is-locked" aria-label="Ambiometer — coming soon">
+          <div class="observatory-card-name">AMBIOMETER</div>
+          <div class="observatory-card-desc">Step into immersive atmospheres of sight and sound. Firesides, rainforests, oceans, skies, cities and more.</div>
+          <div class="observatory-card-enter">COMING SOON</div>
+        </a>
 
       </div>
     </div>
