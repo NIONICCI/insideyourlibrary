@@ -262,11 +262,11 @@
 
   .observatory-card-desc {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(0.55rem, 0.68vw, 0.72rem);
+    font-size: clamp(0.7rem, 0.85vw, 0.92rem);
     font-style: italic;
     color: var(--obs-text-soft);
-    line-height: 1.3;
-    margin-top: 0.3rem;
+    line-height: 1.35;
+    margin-top: 0.4rem;
     max-width: 100%;
   }
 
@@ -282,12 +282,7 @@
     height: clamp(120px, 13vw, 180px);
     object-fit: contain;
     margin-bottom: 0.4rem;
-    transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  /* Locked instruments: dimmed medallion */
-  .observatory-card.is-locked .observatory-card-medallion {
-    opacity: 0.45;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .observatory-card:hover .observatory-card-medallion {
@@ -298,7 +293,19 @@
     transform: none;
   }
 
-  .observatory-card .observatory-card-status { display: none; }
+  /* "Coming soon" label shown on locked instruments (desktop) */
+  .observatory-card .observatory-card-status {
+    display: none;
+  }
+  .observatory-card.is-locked .observatory-card-status {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.5rem, 0.62vw, 0.66rem);
+    letter-spacing: 0.3em;
+    color: var(--obs-text-mute);
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+  }
 
   /* Subtle ambient glow behind each card to lift the text from the panel */
   .observatory-card::before {
