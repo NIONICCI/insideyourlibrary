@@ -238,7 +238,7 @@
      Plinth widths are ~14-15% of image, asymmetrically placed
      because of room architecture (window, columns, bookshelves).
      Outer plinths nudged inboard slightly to account for perspective. */
-  .observatory-card.card-tripometer  { left: 12.6%; right: 72.9%; }
+  .observatory-card.card-tripometer  { left: 12.6%; right: 72.9%; top: 50%; }
   .observatory-card.card-dreamometer { left: 32.5%; right: 53.5%; }
   .observatory-card.card-nameometer  { left: 52.0%; right: 33.7%; }
   .observatory-card.card-ambiometer  { left: 71.2%; right: 13.4%; }
@@ -276,12 +276,17 @@
   }
 
   /* Medallion is the desktop hero inside each plinth */
-  .observatory-card .observatory-card-medallion {
-    display: block;
+  .observatory-card .observatory-card-medallion-wrap {
+    position: relative;
     width: clamp(120px, 13vw, 180px);
     height: clamp(120px, 13vw, 180px);
-    object-fit: contain;
     margin-bottom: 0.4rem;
+  }
+  .observatory-card .observatory-card-medallion {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
@@ -293,18 +298,25 @@
     transform: none;
   }
 
-  /* "Coming soon" label shown on locked instruments (desktop) */
+  /* "Coming soon" overlay — sits across the lower portion of the medallion,
+     just below the baked-in instrument name */
   .observatory-card .observatory-card-status {
     display: none;
   }
   .observatory-card.is-locked .observatory-card-status {
     display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 56%;
+    text-align: center;
     font-family: 'Cinzel', serif;
-    font-size: clamp(0.5rem, 0.62vw, 0.66rem);
-    letter-spacing: 0.3em;
-    color: var(--obs-text-mute);
+    font-size: clamp(0.45rem, 0.58vw, 0.62rem);
+    letter-spacing: 0.28em;
+    color: var(--obs-text);
     text-transform: uppercase;
-    margin-top: 0.6rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9), 0 0 12px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
   }
 
   /* Subtle ambient glow behind each card to lift the text from the panel */
@@ -469,14 +481,28 @@
       opacity: 0.4;
     }
 
-    .observatory-card .observatory-card-status {
+    .observatory-card .observatory-card-status,
+    .observatory-card.is-locked .observatory-card-status {
       display: block;
+      position: static;
+      top: auto;
+      left: auto;
+      right: auto;
       font-family: 'Cinzel', serif;
       font-size: 0.62rem;
       letter-spacing: 0.28em;
       color: var(--obs-text-mute);
       text-transform: uppercase;
       margin-top: 1rem;
+      text-shadow: none;
+    }
+
+    /* Mobile: medallion wrap is sized normally, status sits below the medallion image */
+    .observatory-card .observatory-card-medallion-wrap {
+      width: 130px;
+      height: 130px;
+      position: relative;
+      margin: 0 auto 1.2rem;
     }
   }
 
@@ -521,7 +547,9 @@
 
         <!-- DREAMOMETER -->
         <a href="https://inyourdreams.app" class="observatory-card card-dreamometer" aria-label="Enter the Dreamometer">
-          <img src="medallion-dreamometer.png" class="observatory-card-medallion" alt="" aria-hidden="true" width="400" height="400" loading="lazy" decoding="async">
+          <div class="observatory-card-medallion-wrap">
+            <img src="medallion-dreamometer.png" class="observatory-card-medallion" alt="" aria-hidden="true" width="400" height="400" loading="lazy" decoding="async">
+          </div>
           <div class="observatory-card-name">DREAMOMETER</div>
           <div class="observatory-card-desc">Explore the landscape of your dreams. Symbols, patterns, and the messages within.</div>
           <div class="observatory-card-enter">ENTER</div>
@@ -529,29 +557,35 @@
 
         <!-- NAMEOMETER -->
         <a href="https://nameometer.app" class="observatory-card card-nameometer is-locked" aria-label="Nameometer — coming soon">
-          <img src="medallion-nameometer.png" class="observatory-card-medallion" alt="" aria-hidden="true" width="400" height="400" loading="lazy" decoding="async">
+          <div class="observatory-card-medallion-wrap">
+            <img src="medallion-nameometer.png" class="observatory-card-medallion" alt="" aria-hidden="true" width="400" height="400" loading="lazy" decoding="async">
+            <div class="observatory-card-status">Coming soon</div>
+          </div>
           <div class="observatory-card-name">NAMEOMETER</div>
           <div class="observatory-card-desc">Discover the meaning, origin and destiny woven into names. Your name. Any name.</div>
           <div class="observatory-card-enter">COMING SOON</div>
-          <div class="observatory-card-status">Coming soon</div>
         </a>
 
         <!-- AMBIOMETER -->
         <a href="https://ambiometer.app" class="observatory-card card-ambiometer is-locked" aria-label="Ambiometer — coming soon">
-          <img src="medallion-ambiometer.png" class="observatory-card-medallion" alt="" aria-hidden="true" width="400" height="400" loading="lazy" decoding="async">
+          <div class="observatory-card-medallion-wrap">
+            <img src="medallion-ambiometer.png" class="observatory-card-medallion" alt="" aria-hidden="true" width="400" height="400" loading="lazy" decoding="async">
+            <div class="observatory-card-status">Coming soon</div>
+          </div>
           <div class="observatory-card-name">AMBIOMETER</div>
           <div class="observatory-card-desc">Step into immersive atmospheres of sight and sound. Firesides, rainforests, oceans, skies, cities<br>and more.</div>
           <div class="observatory-card-enter">COMING SOON</div>
-          <div class="observatory-card-status">Coming soon</div>
         </a>
 
         <!-- TRIPOMETER -->
         <a href="https://tripometer.app" class="observatory-card card-tripometer is-locked" aria-label="Tripometer — coming soon">
-          <img src="medallion-tripometer.png" class="observatory-card-medallion" alt="" aria-hidden="true" width="400" height="400" loading="lazy" decoding="async">
+          <div class="observatory-card-medallion-wrap">
+            <img src="medallion-tripometer.png" class="observatory-card-medallion" alt="" aria-hidden="true" width="400" height="400" loading="lazy" decoding="async">
+            <div class="observatory-card-status">Coming soon</div>
+          </div>
           <div class="observatory-card-name">TRIPOMETER</div>
           <div class="observatory-card-desc">Trace the world's movements and keep your own private atlas. Journeys, places, distances, and<br>the stories between them.</div>
           <div class="observatory-card-enter">COMING SOON</div>
-          <div class="observatory-card-status">Coming soon</div>
         </a>
 
       </div>
