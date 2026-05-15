@@ -127,7 +127,7 @@
     right: 0;
     z-index: 3;
     text-align: center;
-    padding: 6rem 1.5rem 2rem;
+    padding: 4rem 1.5rem 0;
     color: var(--obs-text);
     pointer-events: none;
   }
@@ -217,9 +217,9 @@
 
   .observatory-card {
     position: absolute;
-    /* Vertical bounds: top of plinth ~49%, bottom ~67% of image height */
-    top: 50%;
-    bottom: 33%;
+    /* Plinths sit BELOW the dials in the image, roughly y 70%-88% */
+    top: 70%;
+    bottom: 12%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -252,31 +252,31 @@
 
   .observatory-card-name {
     font-family: 'Cinzel', serif;
-    font-size: clamp(0.65rem, 0.95vw, 0.92rem);
-    letter-spacing: 0.28em;
+    font-size: clamp(0.6rem, 0.88vw, 0.86rem);
+    letter-spacing: 0.26em;
     color: var(--obs-gold-bright);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
     white-space: nowrap;
   }
 
   .observatory-card-desc {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(0.66rem, 0.78vw, 0.82rem);
+    font-size: clamp(0.62rem, 0.72vw, 0.78rem);
     font-style: italic;
     color: var(--obs-text-soft);
-    line-height: 1.35;
-    margin-bottom: 0.7rem;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
     max-width: 100%;
   }
 
   .observatory-card-enter {
     font-family: 'Cinzel', serif;
-    font-size: clamp(0.56rem, 0.7vw, 0.7rem);
-    letter-spacing: 0.32em;
+    font-size: clamp(0.5rem, 0.64vw, 0.66rem);
+    letter-spacing: 0.3em;
     color: var(--obs-gold-bright);
     border: 1px solid var(--obs-gold);
-    padding: 0.45rem 1rem;
+    padding: 0.35rem 0.8rem;
     border-radius: 1px;
     transition: background 0.35s, color 0.35s, border-color 0.35s;
     background: rgba(20, 16, 11, 0.45);
