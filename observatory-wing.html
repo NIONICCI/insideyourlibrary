@@ -127,7 +127,7 @@
     right: 0;
     z-index: 3;
     text-align: center;
-    padding: 4rem 1.5rem 0;
+    padding: 2.5rem 1.5rem 0;
     color: var(--obs-text);
     pointer-events: none;
   }
@@ -299,6 +299,10 @@
     background: transparent;
   }
 
+  /* Medallion + small status text — hidden on desktop, used on mobile */
+  .observatory-card-medallion { display: none; }
+  .observatory-card-status { display: none; }
+
   /* Subtle ambient glow behind each card to lift the text from the panel */
   .observatory-card::before {
     content: '';
@@ -440,8 +444,36 @@
     }
     .observatory-card-name { font-size: 1rem; white-space: normal; }
     .observatory-card-desc { font-size: 1rem; max-width: 100%; }
-    .observatory-card-enter { font-size: 0.74rem; padding: 0.7rem 1.6rem; }
     .observatory-card::before { display: none; }
+
+    /* Mobile: medallion replaces ENTER button as the visible tap target.
+       Card stays clickable across its whole surface (it's an <a>),
+       but visually the medallion is the focal point. */
+    .observatory-card-enter { display: none; }
+
+    .observatory-card-medallion {
+      display: block;
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 1.2rem;
+      object-fit: contain;
+      transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* Locked instruments: dimmed medallion + small "Coming soon" label */
+    .observatory-card.is-locked .observatory-card-medallion {
+      opacity: 0.4;
+    }
+
+    .observatory-card-status {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      color: var(--obs-text-mute);
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
   }
 
   @media (max-width: 600px) {
@@ -485,13 +517,16 @@
 
         <!-- TRIPOMETER -->
         <a href="https://tripometer.app" class="observatory-card card-tripometer is-locked" aria-label="Tripometer — coming soon">
+          <img src="medallion-tripometer.png" class="observatory-card-medallion" alt="" aria-hidden="true">
           <div class="observatory-card-name">TRIPOMETER</div>
           <div class="observatory-card-desc">Trace the world's movements and keep your own private atlas. Journeys, places, distances, and<br>the stories between them.</div>
           <div class="observatory-card-enter">COMING SOON</div>
+          <div class="observatory-card-status">Coming soon</div>
         </a>
 
         <!-- DREAMOMETER -->
         <a href="https://inyourdreams.app" class="observatory-card card-dreamometer" aria-label="Enter the Dreamometer">
+          <img src="medallion-dreamometer.png" class="observatory-card-medallion" alt="" aria-hidden="true">
           <div class="observatory-card-name">DREAMOMETER</div>
           <div class="observatory-card-desc">Explore the landscape of your dreams. Symbols, patterns, and the messages within.</div>
           <div class="observatory-card-enter">ENTER</div>
@@ -499,16 +534,20 @@
 
         <!-- NAMEOMETER -->
         <a href="https://nameometer.app" class="observatory-card card-nameometer is-locked" aria-label="Nameometer — coming soon">
+          <img src="medallion-nameometer.png" class="observatory-card-medallion" alt="" aria-hidden="true">
           <div class="observatory-card-name">NAMEOMETER</div>
           <div class="observatory-card-desc">Discover the meaning, origin and destiny woven into names. Your name. Any name.</div>
           <div class="observatory-card-enter">COMING SOON</div>
+          <div class="observatory-card-status">Coming soon</div>
         </a>
 
         <!-- AMBIOMETER -->
         <a href="https://ambiometer.app" class="observatory-card card-ambiometer is-locked" aria-label="Ambiometer — coming soon">
+          <img src="medallion-ambiometer.png" class="observatory-card-medallion" alt="" aria-hidden="true">
           <div class="observatory-card-name">AMBIOMETER</div>
           <div class="observatory-card-desc">Step into immersive atmospheres of sight and sound. Firesides, rainforests, oceans, skies, cities<br>and more.</div>
           <div class="observatory-card-enter">COMING SOON</div>
+          <div class="observatory-card-status">Coming soon</div>
         </a>
 
       </div>
